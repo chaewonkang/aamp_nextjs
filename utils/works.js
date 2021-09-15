@@ -1,3 +1,5 @@
+import work1 from '../static/';
+
 export default [
   {
     img: 'adsf',
