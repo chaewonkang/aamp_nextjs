@@ -3,7 +3,6 @@ function SmallBlock({ img, title, category }) {
     <div className='small_block container'>
       <img src={img}></img>
       <div className='show'>
-        {' '}
         <span>{title}</span>
         <span>{category}</span>
       </div>
