@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import logo from '../static/images/adj_logo.svg';
+import closeBtn from '../static/images/closeBtn.png';
 
 function InfoBlock() {
   const [isInfoShow, setIsInfoShow] = useState(false);
@@ -10,7 +11,11 @@ function InfoBlock() {
       <span onClick={() => setIsInfoShow(!isInfoShow)}>Info</span>
       {isInfoShow && (
         <div className='overlay'>
-          <span onClick={() => setIsInfoShow(!isInfoShow)}>X</span>
+          <img
+            id='closeBtn'
+            src={closeBtn}
+            onClick={() => setIsInfoShow(!isInfoShow)}
+          ></img>
           <p>
             Adj is a creative agency specializing in branding and advertising.
             We are creative thinkers on a mission to develop brand strategies
@@ -22,7 +27,24 @@ function InfoBlock() {
             positive impact in the world as we work with individuals and
             organizations to create brands that matter.
           </p>
-          <div className='info'></div>
+          <div className='info_detail'>
+            <div>
+              <p>Information</p>
+              <p>Info@adj.kr</p>
+            </div>
+            <div>
+              <p>Telephone</p>
+              <p>82(0)2 320 1960</p>
+            </div>
+            <div>
+              <p>Director</p>
+              <p>jaeunjeon@adj.kr</p>
+            </div>
+            <div>
+              <p>Mobile</p>
+              <p>82(0)10 8909 1663</p>
+            </div>
+          </div>
         </div>
       )}
     </div>

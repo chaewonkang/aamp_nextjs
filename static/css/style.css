@@ -1,11 +1,31 @@
+@font-face {
+    font-family: 	'Helvetica Neue Stmd';
+    src: 			url('/static/fonts/HelveticaNeueLTStd-Md.woff2') format('woff2'),
+        			url('/static/fonts/HelveticaNeueLTStd-Md.woff') format('woff');
+    font-weight: 	normal;
+    font-style: 	normal;
+    font-display: 	swap;
+}
+
+@font-face {
+    font-family: 	'Helvetica Neue Stbd';
+    src: 			url('/static/fonts/HelveticaNeueLTStd-Bd.woff2') format('woff2'),
+        			url('/static/fonts/HelveticaNeueLTStd-Bd.woff') format('woff');
+    font-weight:	normal;
+    font-style: 	normal;
+    font-display: 	swap;
+}
+
+* {
+	font-family: 'Helvetica Neue Stmd', sans-serif;
+}
+
 #body {
 	width: 100%;
 	height: auto;
 	min-height: 100vh;
 	overflow-y: auto;
 	overflow-x: hidden;
-	font-family: 'Helvetica Neue', sans-serif;
-	font-weight: 400;
 	display: flex;
 	flex-flow: wrap;
 }
@@ -30,6 +50,15 @@
 	cursor: pointer;
 }
 
+#closeBtn {
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	cursor: pointer;
+	width: 42px;
+	height: 42px;
+	object-fit: cover;
+}
 
 @-webkit-keyframes gradient {
     0%{background-position:0% 58%}
@@ -99,7 +128,7 @@
 	height: 105px;
 	font-size: 17px;
 	padding-left: 20px;
-
+	letter-spacing: 0.5px;
 }
 
 .footer_inner {
@@ -166,8 +195,6 @@
 	}
 }
 
-@media screen and (max-width: 385px) {}
-
 /* ENDOF Footer */
 
 @media screen and (min-width: 771px) and (max-width: 1459px) {
@@ -182,9 +209,12 @@
 	position: relative;
 }
 
-
+.xl_block > img {
+	object-fit: contain !important;
+}
 
 .overlay {
+	width: 75%;
 	position: absolute;
 	top: 0;
 	left: calc((100vw / 12) * 4);
@@ -198,22 +228,50 @@
   }
 
   .overlay > p {
-	  width: 75%;
+	  width: calc(100% - 145px);
 	  padding-left: 30px;
 	  padding-top: 26px;
 	  line-height: 31px;
 	  font-size: 25px;
+	  letter-spacing: 0.5px;
+	  margin: 0;
   }
 
-  .overlay > span {
-	  position: absolute;
-	  right: 15px;
-	  top: 15px;
-	  width: 30px;
-	  cursor: pointer;
-  }
 
-.info_block img {
+  .info_detail {
+	display: flex;
+	flex-direction: row;
+	flex-flow: wrap;
+	width: 100%;
+	height: 20%;
+	width: 100%;
+	padding-left: 30px;
+	padding-top: 26px;
+	position: absolute;
+	bottom: 0;
+}
+
+.info_detail div {
+		width: 50%;
+		height: 50%;
+}
+
+.info_detail div p:first-child {
+	font-size: 19px;
+	text-decoration: underline;
+	margin: 0;
+	letter-spacing: 0.5px;
+}
+
+.info_detail div p:last-child {
+	font-size: 25px;
+	letter-spacing: 0.5px;
+	margin: 0;
+	margin-top: 5px;
+
+}
+
+.info_block > img {
 	position: absolute;
 	left: 15px;
 	top: 15px;
@@ -390,21 +448,56 @@
 		position: relative;
 	}
 
-	.info_block img {
+	.info_block > img {
 		position: absolute;
 		left: 15px;
 		top: 15px;
 		height: 46px;
 	}
 
-	.info_block span {
-		position: absolute;
-		right: 15px;
-		top: 15px;
-		font-size: 17px;
-		font-weight: 400;
+	.info_block span
+	{
+		position: 		absolute;
+		right: 			15px;
+		top: 			15px;
+		font-size: 		17px;
+		font-weight: 	400;
 	}
 
+	.info_detail
+	{
+		display:        flex;
+		flex-direction: row;
+		flex-flow:      wrap;
+		width: 			100%;
+		height: 		auto;
+		width: 			100%;
+		padding-left: 	20px;
+		padding-top: 	26px;
+		position: 		absolute;
+		bottom: 		0;
+	}
+
+	.info_detail div {
+		width: 50%;
+		height: auto;
+		margin-bottom: 10px;
+	}
+
+	.info_detail div p:first-child {
+		font-size: 15px;
+		text-decoration: underline;
+		margin: 0;
+		letter-spacing: 0.5px;
+	}
+
+	.info_detail div p:last-child {
+		font-size: 15px;
+		letter-spacing: 0.5px;
+		margin: 0;
+		margin-top: 5px;
+
+	}
 
 	.overlay {
 		position: absolute;
@@ -419,12 +512,20 @@
 		background-color: #000000;
 	}
 
+	#closeBtn {
+		position: absolute;
+		right: 20px;
+		width: 32px;
+
+	}
+
 	.overlay > p {
 		width: 85%;
-		padding-left: 30px;
-		padding-top: 15px;
+		padding-left: 20px;
+		padding-top: 20px;
 		line-height: 26px;
-		font-size: 20px;
+		font-size: 18px;
+		margin: 0;
 	}
 
 	.overlay > span {
@@ -650,7 +751,8 @@
 		position: relative;
 	}
 
-	.info_block img {
+
+	.info_block > img {
 		position: absolute;
 		left: 15px;
 		top: 15px;
@@ -665,6 +767,16 @@
 		font-weight: 400;
 	}
 
+	#closeBtn {
+		position: absolute;
+		right: 15px;
+		top: 15px;
+		cursor: pointer;
+		width: 28px;
+		height: 28px;
+		object-fit: cover;
+	}
+
 	.overlay {
 		position: absolute;
 		top: 0;
@@ -676,14 +788,8 @@
 		color: #fff;
 		transition: .5s ease;
 		background-color: #000000;
-	}
-
-	.overlay > p {
-		width: calc(100% - 60px);
-		padding: 30px;
-		padding-top: 20px;
-		line-height: 19px;
-		font-size: 15px;
+		overflow-y: auto;
+		overflow-x:
 	}
 
 	.overlay > span {
@@ -693,6 +799,67 @@
 		width: 30px;
 		cursor: pointer;
 	}
+
+
+	.overlay > p {
+		width: calc(100% - 58px);
+		padding-left: 15px;
+		padding-top: 30px;
+		line-height: 25px;
+		font-size: 18px;
+		letter-spacing: 0.5px;
+		margin: 0;
+	}
+
+
+	.info_detail {
+	  display: flex;
+	  flex-direction: row;
+	  flex-flow: wrap;
+	  width: 100%;
+	  height: auto;
+	  width: 100%;
+	  padding-left: 15px;
+	  padding-top: 26px;
+	  position: relative;
+	  bottom: 0;
+  }
+
+  .info_detail div {
+		  width: 50%;
+		  height: 50%;
+		  margin-bottom: 10px;
+  }
+
+  .info_detail div p:first-child {
+	  font-size: 17px;
+	  text-decoration: underline;
+	  margin: 0;
+	  letter-spacing: 0.5px;
+  }
+
+  .info_detail div p:last-child {
+	  font-size: 17px;
+	  letter-spacing: 0.5px;
+	  margin: 0;
+	  margin-top: 2.5px;
+
+  }
+
+  .info_block > img {
+	  position: absolute;
+	  left: 15px;
+	  top: 15px;
+	  height: 60px;
+  }
+
+  .info_block span {
+	  position: absolute;
+	  right: 15px;
+	  top: 15px;
+	  font-size: 20px;
+	  font-weight: 400;
+  }
 
 	.small_block {
 		width: calc((100vw / 8) * 4);
@@ -849,7 +1016,7 @@
 
 
 
-@media screen and (max-width: 385px) {
+@media screen and (max-width: 415px) {
 	.color_block {
 		width: 100vw;
 		height: 100vw;
@@ -861,12 +1028,6 @@
 		position: relative;
 	}
 
-	.info_block img {
-		position: absolute;
-		left: 10px;
-		top: 10px;
-		height: 32px;
-	}
 
 	.info_block span {
 		position: absolute;
@@ -882,6 +1043,61 @@
 		position: relative;
 	}
 
+  	.info_detail {
+		display: flex;
+		flex-direction: row;
+		flex-flow: wrap;
+		width: 100%;
+		height: auto;
+		width: 100%;
+		padding-left: 10px;
+		padding-top: 26px;
+		position: relative;
+	}
+
+	.info_detail div {
+		width: 50%;
+		height: auto;
+	}
+
+	.info_detail div p:first-child {
+		font-size: 15px;
+		text-decoration: underline;
+		margin: 0;
+		letter-spacing: 0.5px;
+	}
+
+	.info_detail div p:last-child {
+		font-size: 15px;
+		letter-spacing: 0.5px;
+		margin: 0;
+		margin-top: 2.5px;
+	}
+
+	.info_block > img {
+		position: absolute;
+		left: 15px;
+		top: 15px;
+		height: 60px;
+	}
+
+	.info_block span {
+		position: absolute;
+		right: 15px;
+		top: 15px;
+		font-size: 20px;
+		font-weight: 400;
+	}
+
+	#closeBtn {
+		position: absolute;
+		right: 15px;
+		top: 12px;
+		cursor: pointer;
+		width: 20px;
+		height: 20px;
+		object-fit: cover;
+	}
 
 	.overlay {
 		position: absolute;
@@ -897,27 +1113,21 @@
 	}
 
 	.overlay > p {
-		width: calc(100% - 60px);
-		padding: 30px;
-		padding-top: 20px;
+		width: calc(100% - 40px);
+		padding: 12px;
+		padding-top: 12px;
 		line-height: 19px;
 		font-size: 15px;
+		margin: 0;
 	}
 
-	.overlay > span {
-		position: absolute;
-		right: 15px;
-		top: 15px;
-		width: 30px;
-		cursor: pointer;
-	}
+
 
 	.medium_block {
 		width: 100vw;
 		height: 100vw;
 		position: relative;
 	}
-
 
 	.large_block {
 		width: 100vw;
