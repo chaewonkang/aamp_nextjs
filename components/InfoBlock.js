@@ -45,6 +45,18 @@ function InfoBlock() {
               <p>82(0)10 8909 1663</p>
             </div>
           </div>
+          <div className='info_detail_mobile'>
+            <div>
+              <p>Information</p>
+              <p>info@adj.kr</p>
+              <p>82(0)2 320 1960</p>
+            </div>
+            <div>
+              <p>Director</p>
+              <p>jaeunjeon@adj.kr</p>
+              <p>82(0)10 8909 1663</p>
+            </div>
+          </div>
         </div>
       )}
     </div>
