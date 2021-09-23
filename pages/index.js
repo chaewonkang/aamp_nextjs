@@ -35,7 +35,7 @@ const Index = () => {
         <div className='secondrow'>
           <SmallBlock
             img='../static/images/Work_6.jpg'
-            title='Sangsung: Galaxy S8'
+            title='Samsung: Galaxy S8'
             category='Branding, Print'
           ></SmallBlock>
           <SmallBlock
@@ -102,7 +102,7 @@ const Index = () => {
           <MediumBlock
             img='../static/images/Work_10.jpg'
             title='Samsung: Galaxy S7'
-            category='Branding, Degital'
+            category='Branding, Digital'
           ></MediumBlock>
           <SmallBlock
             img='../static/images/Work_12.gif'
