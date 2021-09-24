@@ -1,82 +1,156 @@
-@font-face {
-    font-family: 	'Helvetica Neue Stmd';
-    src: 			url('/static/fonts/HelveticaNeueLTStd-Md.woff2') format('woff2'),
-        			url('/static/fonts/HelveticaNeueLTStd-Md.woff') format('woff');
-    font-weight: 	normal;
-    font-style: 	normal;
-    font-display: 	swap;
+@font-face
+{
+    font-family: 		'Helvetica Neue Stmd';
+    src: 				url('/static/fonts/HelveticaNeueLTStd-Md.woff2') format('woff2'),
+        				url('/static/fonts/HelveticaNeueLTStd-Md.woff') format('woff');
+    font-weight: 		normal;
+    font-style: 		normal;
+    font-display: 		swap;
 }
 
 @font-face {
-    font-family: 	'Helvetica Neue Stbd';
-    src: 			url('/static/fonts/HelveticaNeueLTStd-Bd.woff2') format('woff2'),
-        			url('/static/fonts/HelveticaNeueLTStd-Bd.woff') format('woff');
-    font-weight:	normal;
-    font-style: 	normal;
-    font-display: 	swap;
+    font-family: 		'Helvetica Neue Stbd';
+    src: 				url('/static/fonts/HelveticaNeueLTStd-Bd.woff2') format('woff2'),
+        				url('/static/fonts/HelveticaNeueLTStd-Bd.woff') format('woff');
+    font-weight:		normal;
+    font-style: 		normal;
+    font-display: 		swap;
 }
 
-* {
-	font-family: 	'Helvetica Neue Stmd', sans-serif;
+*
+{
+	font-family: 		'Helvetica Neue Stmd', sans-serif;
 }
 
-#body {
-	width: 			calc(100% - 180px);
-	height: 		auto;
-	min-height: 	100vh;
-	overflow-y: 	auto;
-	overflow-x: 	hidden;
-	display: 		flex;
-	flex-flow: 		wrap;
-	margin-right: 	90px;
-	margin-left: 	90px;
-	margin-top: 	40px;
-	margin-bottom: 40px;
+#body
+{
+	width: 				calc(100% - 180px);
+	height: 			auto;
+	overflow-y: 		auto;
+	overflow-x: 		hidden;
+	display: 			flex;
+	flex-flow: 			wrap;
+	margin-right: 		90px;
+	margin-left: 		90px;
+	margin-top: 		40px;
+	margin-bottom: 		40px;
 }
 
 /* TOPOF Header */
 
-.header_container {
-	width: 			100%;
+.header_container
+{
+	width: 				100%;
 }
 
-.header_container .header_inner {
-	width: 			100%;
-	display: 		flex;
-	flex-direction: row;
+.header_container
+.header_inner
+{
+	width: 				100%;
+	display: 			flex;
+	flex-direction:		row;
 }
 
-.header_container .header_inner div:first-child {
-	width: 			calc((100% / 8) * 5);
-	margin: 		0;
+.header_container
+.header_inner
+div:first-child
+{
+	width: 				calc((100% / 8) * 5);
+	margin: 			0;
 }
 
-.header_container .header_inner div:first-child h1 {
-	font-size: 		25px;
-	font-weight: 	normal;
-	font-stretch: 	normal;
-	font-style: 	normal;
-	line-height: 	normal;
-	letter-spacing: normal;
-	color: 			#1a1919;
-	margin:			0;
+.header_container
+.header_inner
+div:first-child h1
+{
+	font-size: 			25px;
+	font-weight: 		normal;
+	font-stretch: 		normal;
+	font-style: 		normal;
+	line-height: 		normal;
+	letter-spacing: 	normal;
+	color: 				#1a1919;
+	margin:					0;
 }
 
 .header_container .header_inner div:last-child {
-	width: 			calc((100% / 8) * 3);
-	margin: 		0;
-	text-align:		right;
+	width: 				calc((100% / 8) * 3);
+	margin: 			0;
+	text-align:			right;
 }
 
 .header_container .header_inner div:last-child span {
-	font-size:		25px;
-	margin-right:	5px;
+	font-size:			25px;
+	margin-right:		5px;
 }
 
 .header_container .header_inner div:last-child span:last-child {
-	margin:			0;
+	margin:				0;
 }
 
 
 
 /* ENDOF Header */
+
+
+/* TOPOF About */
+
+.about_container {
+	width: 				100%;
+}
+
+.about_container .about_nav {
+	width: 				auto;
+	margin-top: 		70px;
+	border-top: 		1px solid #979797;
+	border-bottom: 		1px solid #979797;
+	display: 			flex;
+	flex-direction: 	row;
+	align-items: 		center;
+	justify-content:	center;
+}
+
+.about_container .about_nav div {
+	margin-right: 		1em;
+	height:				fit-content;
+}
+
+.about_container .about_nav div h2 {
+	font-size: 			25px;
+	font-weight: 		normal;
+	margin:				0;
+	margin-top:			10px;
+	margin-bottom:		6px;
+}
+
+.about_container .about_content {
+	margin-top:			70px;
+}
+
+.about_container .about_content h3 {
+	width: 				100%;
+	font-size: 			36px;
+	font-weight: 		normal;
+	text-align: 		center;
+}
+
+.about_container .about_content .about_content_1 p,
+.about_container .about_content .about_content_2 {
+	font-size:			36px;
+	margin:				0;
+}
+
+.about_container .about_content .about_content_1 p:last-child {
+	margin-top:			25px;
+}
+
+.about_container .about_content .about_content_2 {
+	margin-top:			40px;
+	text-align: 		center;
+}
+
+.about_container .about_content .about_content_2 span {
+	display: 			block;
+}
+
+/* ENDOF About */
