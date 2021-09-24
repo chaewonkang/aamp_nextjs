@@ -11,13 +11,19 @@ const About = () => {
         <div className='about_container'>
           <div className='about_nav'>
             <div>
-              <h2>3rd Curatorial Forum Becoming Local</h2>
+              <h2 style={{ fontStyle: 'italic' }}>
+                3rd Curatorial Forum Becoming Local
+              </h2>
             </div>
             <div>
-              <h2>Program</h2>
+              <Link href='/about/program'>
+                <h2>Program</h2>
+              </Link>
             </div>
             <div>
-              <h2>Past Events</h2>
+              <Link href='/about/past_events'>
+                <h2>Past Events</h2>
+              </Link>
             </div>
           </div>
           <div className='about_content'>

@@ -1,10 +1,9 @@
 import { ThemeProvider } from 'styled-components';
 import Link from 'next/link';
-
 import theme from '../../styles/theme';
 import PageLayout from '../../components/PageLayout';
 
-const Program = () => {
+const PastEvents = () => {
   return (
     <ThemeProvider theme={theme}>
       <PageLayout>
@@ -17,12 +16,12 @@ const Program = () => {
             </div>
             <div>
               <Link href='/about/program'>
-                <h2 style={{ fontStyle: 'italic' }}>Program</h2>
+                <h2>Program</h2>
               </Link>
             </div>
             <div>
               <Link href='/about/past_events'>
-                <h2>Past Events</h2>
+                <h2 style={{ fontStyle: 'italic' }}>Past Events</h2>
               </Link>
             </div>
           </div>
@@ -80,4 +79,4 @@ const Program = () => {
   );
 };
 
-export default Program;
+export default PastEvents;
