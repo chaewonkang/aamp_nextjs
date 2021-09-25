@@ -14,7 +14,7 @@ const GlobalStyles = createGlobalStyle`
 
 		  #__next {
 			  width: 100vw;
-			  height: 100vh;
+			  height: auto;
 			  position: relative;
 		  }
 `;

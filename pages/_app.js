@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import '../static/css/style.css';
+import '../static/css/base.css';
 
 function MyApp({ Component, pageProps }) {
   return (

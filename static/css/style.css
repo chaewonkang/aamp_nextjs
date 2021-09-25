@@ -19,7 +19,16 @@
 
 *
 {
-	font-family: 		'Helvetica Neue Stmd', sans-serif;
+	font-family: 		serif;
+}
+
+p,
+span,
+h1,
+h2,
+h3,
+h4 {
+	margin: 0;
 }
 
 #body
@@ -101,9 +110,11 @@ div:first-child h1
 
 .about_container {
 	width: 				100%;
+	font-size:			36px;
 }
 
-.about_container .about_nav {
+.about_container .about_nav,
+.title_bar {
 	width: 				auto;
 	margin-top: 		70px;
 	border-top: 		1px solid #979797;
@@ -114,6 +125,15 @@ div:first-child h1
 	justify-content:	center;
 }
 
+.title_bar {
+	margin-bottom:		35px;
+}
+
+.title_bar span {
+	margin-top:			5px;
+	margin-bottom:		3px;
+}
+
 .about_container .about_nav div {
 	margin-right: 		1em;
 	height:				fit-content;
@@ -122,7 +142,6 @@ div:first-child h1
 .about_container .about_nav div h2 {
 	font-size: 			25px;
 	font-weight: 		normal;
-	margin:				0;
 	margin-top:			10px;
 	margin-bottom:		6px;
 	cursor:				pointer;
@@ -139,7 +158,6 @@ div:first-child h1
 
 .about_container .about_content h3 {
 	width: 				100%;
-	font-size: 			36px;
 	font-weight: 		normal;
 	text-align: 		center;
 }
@@ -150,14 +168,15 @@ div:first-child h1
 	flex-direction:		column;
 }
 
-.about_container .about_content .about_content_1 p,
-.about_container .about_content .about_content_2 {
-	font-size:			36px;
-	margin:				0;
+.about_container .about_content .about_content_1 div span {
+	width:				100%;
+	text-align:			center;
+	display:			block;
 }
 
-.about_container .about_content .about_content_1 p:last-child {
-	margin-top:			25px;
+.about_container .about_content .about_content_1 p,
+.about_container .about_content .about_content_2 {
+	margin:				0;
 }
 
 .about_container .about_content .about_content_2 {
@@ -165,17 +184,30 @@ div:first-child h1
 	text-align: 		center;
 }
 
+.about_container .about_content .about_content_2 div {
+	margin-bottom:		25px;
+}
+
 .about_container .about_content .about_content_2 span {
 	display: 			block;
+}
+
+.about_container .about_content .about_content_2 p {
+	text-align: 		left;
 }
 
 .about_container .about_content .about_content_1 span {
 	align-self:			center;
 	text-align:			center;
 	width: 				100%;
-	font-size:			36px;
+}
 
+.about_container .about_content_3 {
+}
 
+.about_container .about_content_3 div {
+	text-align:			center;
+	margin-bottom:		25px;
 }
 
 /* ENDOF About */
