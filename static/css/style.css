@@ -49,6 +49,15 @@ h4 {
 	font-style:			italic;
 }
 
+/* TOPOF layout */
+
+.layout_container {
+	max-width: 			1440px;
+	margin: 			0 auto;
+}
+
+/* ENDOF layout */
+
 /* TOPOF Header */
 
 .header_container
@@ -76,6 +85,7 @@ div:first-child
 .header_inner
 div:first-child h1
 {
+	cursor:				pointer;
 	font-size: 			25px;
 	font-weight: 		normal;
 	font-stretch: 		normal;
