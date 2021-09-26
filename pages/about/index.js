@@ -11,7 +11,7 @@ const About = () => {
         <div className='about_container'>
           <div className='about_nav'>
             <div>
-              <h2 style={{ fontStyle: 'italic' }}>
+              <h2 style={{ fontFamily: 'Signifier Italic' }}>
                 3rd Curatorial Forum Becoming Local
               </h2>
             </div>

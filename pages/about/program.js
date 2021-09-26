@@ -17,7 +17,7 @@ const Program = () => {
             </div>
             <div>
               <Link href='/about/program'>
-                <h2 style={{ fontStyle: 'italic' }}>Program</h2>
+                <h2 style={{ fontFamily: 'Signifier Italic' }}>Program</h2>
               </Link>
             </div>
             <div>

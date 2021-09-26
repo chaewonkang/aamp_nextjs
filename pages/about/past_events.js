@@ -21,7 +21,7 @@ const PastEvents = () => {
             </div>
             <div>
               <Link href='/about/past_events'>
-                <h2 style={{ fontStyle: 'italic' }}>Past Events</h2>
+                <h2 style={{ fontFamily: 'Signifier Italic' }}>Past Events</h2>
               </Link>
             </div>
           </div>

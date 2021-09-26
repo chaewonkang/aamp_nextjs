@@ -11,7 +11,7 @@ function Header() {
           <Link href='/about'>
             {router.asPath.includes('about') ? (
               <Link href='/'>
-                <h1 style={{ fontStyle: 'italic' }}>
+                <h1 style={{ fontFamily: 'Signifier Italic' }}>
                   About Artist Workshop, Becoming-Local
                 </h1>
               </Link>
