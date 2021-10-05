@@ -56,6 +56,27 @@ h4 {
 
 /* ENDOF layout */
 
+/* TOPOF main */
+
+.keyword_container {
+	margin-top:			6.3%;
+	display: 			flex;
+	width:				100%;
+}
+
+.keyword_container div {
+	display: 			flex;
+	flex-direction:		column;
+	width: 				25%;
+}
+
+.keyword_container div span {
+
+	font-size: 			25px;
+}
+
+/* ENDOF main */
+
 /* TOPOF Header */
 
 .header_container
