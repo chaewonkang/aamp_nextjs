@@ -105,13 +105,14 @@ const About = () => {
                   Online Archival Exhibition
                 </span>
               </div>
-              <div>
+              <div className='center'>
                 <p>
-                  3rd Curatorial Forum 2020-2021 is organized by GyeongGi
-                  Cultural Foundation, and developed and curated by Asian Artist
-                  Moving Image Platform(AAMP). Artists Workshop Project and
-                  e-journal in collaboration with all members of participating
-                  artists and writers
+                  3rd Curatorial Forum 2020-2021 is organized by <br></br>
+                  GyeongGi Cultural Foundation, and developed and <br></br>
+                  curated by Asian Artist Moving Image Platform(AAMP).<br></br>{' '}
+                  Artists Workshop Project and e-journal<br></br> in
+                  collaboration with all members of participating artists and
+                  writers
                 </p>
               </div>
             </div>
