@@ -96,11 +96,18 @@ h4 {
 	display: 			flex;
 	flex-direction:		column;
 	width: 				25%;
+	padding-right:		20px;
 }
 
 .keyword_container div span {
 
 	font-size: 			36px;
+	text-transform: 	capitalize;
+	cursor:				pointer;
+}
+
+.keyword_container div span:hover {
+	font-style: 		italic;
 }
 
 .footer_container {
