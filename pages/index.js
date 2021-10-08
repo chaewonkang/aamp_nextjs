@@ -2,7 +2,6 @@ import { ThemeProvider } from 'styled-components';
 import { useEffect, useState, useRef } from 'react';
 import theme from '../styles/theme';
 import PageLayout from '../components/PageLayout';
-import jQuery from 'jquery';
 
 const dataSet = [
   {
@@ -123,6 +122,7 @@ const Index = () => {
   const [isItalic, setIsItalic] = useState(false);
   const [thumbUrl, setThumbUrl] = useState('');
   const [flag, setFlag] = useState('');
+  const [isKeyClicked, setIsKeyClicked] = useState(false);
 
   let keywordArr = [].concat.apply(
     [],
@@ -134,8 +134,23 @@ const Index = () => {
       setLoading(true);
     }, 500);
 
+    // console.log(`IsItalic: ${isItalic}`);
+    // console.log(`keyword: ${keyword}`);
+    // console.log(`thumbUrl: ${thumbUrl}`);
+    // console.log(`flag: ${flag}`);
+
+    const spanTarget = [...document.getElementsByClassName('keyword')];
+
+    isKeyClicked
+      ? spanTarget
+          .filter((item) => {
+            if (!item.className.includes(flag)) return item;
+          })
+          .map((item) => (item.style.opacity = '0'))
+      : null;
+
     dataSet.map((item) => {
-      if (item.keyword.includes(keyword)) {
+      if (!isKeyClicked && item.keyword.includes(keyword)) {
         setFlag(item.flag);
         setThumbUrl(item.thumb);
       } else return null;
@@ -146,7 +161,7 @@ const Index = () => {
     isItalic
       ? italicTarget.map((item) => (item.style.fontStyle = 'italic'))
       : italicTarget.map((item) => (item.style.fontStyle = 'normal'));
-  }, [keyword, thumbUrl, flag, isItalic, loading]);
+  }, [keyword, thumbUrl, flag, isItalic, loading, isKeyClicked]);
 
   return (
     <ThemeProvider theme={theme}>
@@ -172,20 +187,26 @@ const Index = () => {
                     .map((item, index) => {
                       return (
                         <span
-                          className={dataSet
+                          className={`${dataSet
                             .map((el) => {
                               if (el.keyword.includes(item)) return el.flag;
                             })
                             .filter((el) => {
                               if (el != ',') return el;
-                            })}
+                            })} keyword`}
                           key={item}
                           onMouseOver={() => {
-                            setIsItalic(true);
-                            setKeyword(item);
+                            if (!isKeyClicked) {
+                              setTimeout(() => setIsItalic(true), 100);
+                              setKeyword(item);
+                            }
                           }}
                           onMouseOut={() => {
                             setIsItalic(false);
+                            setIsKeyClicked(false);
+                          }}
+                          onClick={() => {
+                            setIsKeyClicked(true);
                           }}
                         >
                           {item}
@@ -201,20 +222,24 @@ const Index = () => {
                     .map((item, index) => {
                       return (
                         <span
-                          className={dataSet
+                          className={`${dataSet
                             .map((el) => {
                               if (el.keyword.includes(item)) return el.flag;
                             })
                             .filter((el) => {
                               if (el != ',') return el;
-                            })}
+                            })} keyword`}
                           key={item}
                           onMouseOver={() => {
-                            setIsItalic(true);
+                            setTimeout(() => setIsItalic(true), 100);
                             setKeyword(item);
                           }}
                           onMouseOut={() => {
                             setIsItalic(false);
+                            setIsKeyClicked(false);
+                          }}
+                          onClick={() => {
+                            setIsKeyClicked(true);
                           }}
                         >
                           {item}
@@ -230,20 +255,24 @@ const Index = () => {
                     .map((item, index) => {
                       return (
                         <span
-                          className={dataSet
+                          className={`${dataSet
                             .map((el) => {
                               if (el.keyword.includes(item)) return el.flag;
                             })
                             .filter((el) => {
                               if (el != ',') return el;
-                            })}
+                            })} keyword`}
                           key={item}
                           onMouseOver={() => {
-                            setIsItalic(true);
+                            setTimeout(() => setIsItalic(true), 100);
                             setKeyword(item);
                           }}
                           onMouseOut={() => {
                             setIsItalic(false);
+                            setIsKeyClicked(false);
+                          }}
+                          onClick={() => {
+                            setIsKeyClicked(true);
                           }}
                         >
                           {item}
@@ -260,19 +289,23 @@ const Index = () => {
                       return (
                         <span
                           key={item}
-                          className={dataSet
+                          className={`${dataSet
                             .map((el) => {
                               if (el.keyword.includes(item)) return el.flag;
                             })
                             .filter((el) => {
                               if (el != ',') return el;
-                            })}
+                            })} keyword`}
                           onMouseOver={() => {
-                            setIsItalic(true);
+                            setTimeout(() => setIsItalic(true), 100);
                             setKeyword(item);
                           }}
                           onMouseOut={() => {
                             setIsItalic(false);
+                            setIsKeyClicked(false);
+                          }}
+                          onClick={() => {
+                            setIsKeyClicked(true);
                           }}
                         >
                           {item}
