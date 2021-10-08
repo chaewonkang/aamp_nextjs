@@ -120,9 +120,9 @@ const dataSet = [
 const Index = () => {
   const [keyword, setKeyword] = useState('');
   const [loading, setLoading] = useState(true);
+  const [isItalic, setIsItalic] = useState(false);
   const [thumbUrl, setThumbUrl] = useState('');
   const [flag, setFlag] = useState('');
-  const [prevFlag, setPrevFlag] = useState('');
 
   let keywordArr = [].concat.apply(
     [],
@@ -130,8 +130,6 @@ const Index = () => {
   );
 
   useEffect(() => {
-    window.$ = window.jQuery = jQuery;
-
     setTimeout(() => {
       setLoading(true);
     }, 500);
@@ -139,18 +137,16 @@ const Index = () => {
     dataSet.map((item) => {
       if (item.keyword.includes(keyword)) {
         setFlag(item.flag);
-        setPrevFlag(item.flag);
         setThumbUrl(item.thumb);
       } else return null;
     });
 
-    const flagArray = document.getElementsByClassName(flag);
-    const italicTarget = [...flagArray];
+    const italicTarget = [...document.getElementsByClassName(flag)];
 
-    // if (flag !== prevFlag)
-    //   italicTarget.map((item) => (item.style.fontStyle = 'italic'));
-    // else italicTarget.map((item) => (item.style.fontStyle = 'normal'));
-  }, [keyword, thumbUrl, flag, loading]);
+    isItalic
+      ? italicTarget.map((item) => (item.style.fontStyle = 'italic'))
+      : italicTarget.map((item) => (item.style.fontStyle = 'normal'));
+  }, [keyword, thumbUrl, flag, isItalic, loading]);
 
   return (
     <ThemeProvider theme={theme}>
@@ -162,7 +158,12 @@ const Index = () => {
                 <img id='thumbnail' src={thumbUrl}></img>
               </div>
             )}
-            <div className='keyword_container'>
+            <div
+              className='keyword_container'
+              onMouseOut={() => {
+                setIsItalic(false);
+              }}
+            >
               <div>
                 {keywordArr &&
                   keywordArr
@@ -179,12 +180,12 @@ const Index = () => {
                               if (el != ',') return el;
                             })}
                           key={item}
-                          onMouseEnter={() => {
+                          onMouseOver={() => {
+                            setIsItalic(true);
                             setKeyword(item);
                           }}
-                          onMouseLeave={() => {
-                            setKeyword('');
-                            setFlag('');
+                          onMouseOut={() => {
+                            setIsItalic(false);
                           }}
                         >
                           {item}
@@ -208,12 +209,12 @@ const Index = () => {
                               if (el != ',') return el;
                             })}
                           key={item}
-                          onMouseEnter={() => {
+                          onMouseOver={() => {
+                            setIsItalic(true);
                             setKeyword(item);
                           }}
-                          onMouseLeave={() => {
-                            setKeyword('');
-                            setFlag('');
+                          onMouseOut={() => {
+                            setIsItalic(false);
                           }}
                         >
                           {item}
@@ -237,12 +238,12 @@ const Index = () => {
                               if (el != ',') return el;
                             })}
                           key={item}
-                          onMouseEnter={() => {
+                          onMouseOver={() => {
+                            setIsItalic(true);
                             setKeyword(item);
                           }}
-                          onMouseLeave={() => {
-                            setKeyword('');
-                            setFlag('');
+                          onMouseOut={() => {
+                            setIsItalic(false);
                           }}
                         >
                           {item}
@@ -266,12 +267,12 @@ const Index = () => {
                             .filter((el) => {
                               if (el != ',') return el;
                             })}
-                          onMouseEnter={() => {
+                          onMouseOver={() => {
+                            setIsItalic(true);
                             setKeyword(item);
                           }}
-                          onMouseLeave={() => {
-                            setKeyword('');
-                            setFlag('');
+                          onMouseOut={() => {
+                            setIsItalic(false);
                           }}
                         >
                           {item}

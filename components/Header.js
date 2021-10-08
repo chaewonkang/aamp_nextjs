@@ -8,19 +8,17 @@ function Header() {
     <div className='header_container'>
       <div className='header_inner'>
         <div>
-          <Link href='/about'>
-            {router.asPath.includes('about') ? (
-              <Link href='/'>
-                <h1 style={{ fontFamily: 'Signifier Italic' }}>
-                  About Artist Workshop, Becoming-Local
-                </h1>
-              </Link>
-            ) : (
-              <Link href='/about'>
-                <h1>About Artist Workshop, Becoming-Local</h1>
-              </Link>
-            )}
-          </Link>
+          {router.asPath.includes('about') ? (
+            <Link href='/'>
+              <h1 style={{ fontFamily: 'Signifier Italic' }}>
+                About Artist Workshop, Becoming-Local
+              </h1>
+            </Link>
+          ) : (
+            <Link href='/about'>
+              <h1>About Artist Workshop, Becoming-Local</h1>
+            </Link>
+          )}
         </div>
         <div>
           <span>EN</span>
