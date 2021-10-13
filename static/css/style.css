@@ -298,3 +298,63 @@ div:first-child h1
 }
 
 /* ENDOF About */
+
+
+/* TOPOF Artist */
+
+.keyword_span {
+	width:				100%;
+	font-size:			25px;
+	font-style:			italic;
+	height:				40px;
+	margin-top: 		50px;
+	margin-bottom:		50px;
+	text-align:			center;
+}
+
+.keyword_span span {
+	width:				100%;
+}
+
+.content_container {
+	border-top:			1px solid #000;
+	font-size:			36px;
+}
+
+.content_container .title_container {
+	padding-top:		20px;
+	display:			flex;
+	flex-direction:		row;
+	width:				100%;
+}
+
+.content_container .title_container div {
+	width:				33.3%;
+}
+
+.content_container .title_container div:first-child,
+.content_container .title_container div:last-child
+{
+	display:			flex;
+}
+
+.left_arrow {
+	justify-content: 		flex-start;
+}
+
+.right_arrow {
+	justify-content: 		flex-end;
+}
+
+.content_container .title_container div:nth-child(2) span {
+	display:			block;
+	text-align:			center;
+}
+
+.content_container .description_container {
+	width:				calc((100% / 8) * 6);
+	margin:				0 auto;
+	padding-top:		40px;
+}
+
+/* ENDOF Artist */

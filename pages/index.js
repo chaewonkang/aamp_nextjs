@@ -2,6 +2,7 @@ import { ThemeProvider } from 'styled-components';
 import { useEffect, useState, useRef } from 'react';
 import theme from '../styles/theme';
 import PageLayout from '../components/PageLayout';
+import Link from 'next/link';
 
 const dataSet = [
   {
@@ -9,110 +10,108 @@ const dataSet = [
     flag: 'taiki',
     artist: 'Taiki Sakpisit',
     keyword: [
-      'Alchemical Transmutation',
-      'Disembodiment',
-      'Divination',
-      'Eschatology',
-      'Mysticism',
-      'Phantasmagoria',
-      'Sensory Stimulus',
-      'Spectrality',
+      'alchemical Transmutation',
+      'mysticism',
+      'phantasmagoria',
+      'disembodiment',
+      'sensory Stimulus',
+      'eschatology',
+      'spectrality',
     ],
-    thumb: '../static/images/example1.png',
+    thumb: '../static/images/taiki.jpg',
   },
   {
     index: 1,
     flag: 'wonjung',
     artist: 'Wonjung Shin',
     keyword: [
-      'Abject',
-      'Dialog',
-      'Gesture',
-      'Network',
-      'Non-Verbal',
-      'Noting',
-      'Stress',
-      'Thing-In-Itself',
+      'gesture',
+      'sounda',
+      'network',
+      'abject',
+      'non-verbal',
+      'dialog',
+      'stress',
+      'thing-in-itself',
+      'noting',
     ],
-    thumb: '../static/images/example2.png',
+    thumb: '../static/images/wonjung.jpg',
   },
   {
     index: 2,
     flag: 'sabina',
     artist: 'Sabina Hyoju AHN',
     keyword: [
-      'Ai',
-      'Air',
-      'Akademies',
-      'Covid19',
-      'Daily Life',
-      'Digital',
-      'Forest',
-      'Germany',
-      'Learning',
-      'Local',
-      'Lockdown',
-      'Machine',
-      'Residency',
-      'Schloss',
-      'Solitude',
-      'Stuttgart',
-      'Walk',
+      'covid19',
+      'ai',
+      'machine learning',
+      'daily life',
+      'soundb',
+      'local',
+      'digital',
+      'artist',
+      'residency',
+      'air',
+      'germany',
+      'stuttgart',
+      'akademies',
+      'schloss',
+      'solitude',
+      'forest',
+      'walk',
+      'lockdown',
     ],
-    thumb: '../static/images/example3.png',
+    thumb: '../static/images/sabina.png',
   },
   {
     index: 3,
     flag: 'aamp',
     artist: 'AAMP',
     keyword: [
-      'Badvibes',
-      'Denvicky',
-      'Findings',
-      'Intro2barter',
-      'Narratives',
-      'Patkay',
-      'Shady',
-      'Waiting',
+      'onta',
+      'caring',
+      'ergliffenheit',
+      'minority language',
+      'xeo',
+      'mountain',
+      'foresta',
+      'entanglement',
+      'touch the ground',
     ],
-    thumb: '../static/images/example4.png',
+    thumb: '../static/images/aamp.png',
   },
   {
     index: 4,
     flag: 'minjung',
     artist: 'Minjung Kim',
     keyword: [
-      'Afforest',
-      'Becalm',
-      'Blithesome',
-      'Buffoonish',
-      'Causerie',
-      'Chivalrous',
-      'Congratulatory',
-      'Dapper',
-      'Whisper',
+      'connected',
+      'border',
+      'interaction',
+      'settle down',
+      'interlock',
+      'tide',
+      'native',
+      'roam',
     ],
-    thumb: '../static/images/example5.png',
+    thumb: '../static/images/minjung.jpg',
   },
   {
     index: 5,
     flag: 'john',
     artist: 'John Torres',
     keyword: [
-      'Apple',
-      'Extremum',
-      'Featherbrained',
-      'Felicity',
-      'Ism',
-      'Indefinite',
-      'Nuance',
-      'Majestic',
-      'Sappy',
-      'Spiffy',
-      'Timbre',
-      'Zippy',
+      'intro2barter',
+      'denvicky',
+      'findings',
+      'felicity',
+      'patkay',
+      'shady',
+      'waiting',
+      'badvibes',
+      'narratives',
     ],
-    thumb: '../static/images/example2.png',
+    thumb: '../static/images/john.png',
   },
 ];
 
@@ -133,11 +132,6 @@ const Index = () => {
     setTimeout(() => {
       setLoading(true);
     }, 500);
-
-    // console.log(`IsItalic: ${isItalic}`);
-    // console.log(`keyword: ${keyword}`);
-    // console.log(`thumbUrl: ${thumbUrl}`);
-    // console.log(`flag: ${flag}`);
 
     const spanTarget = [...document.getElementsByClassName('keyword')];
 
@@ -186,31 +180,41 @@ const Index = () => {
                     .slice(0, 15)
                     .map((item, index) => {
                       return (
-                        <span
-                          className={`${dataSet
+                        <Link
+                          href={`/${dataSet
                             .map((el) => {
                               if (el.keyword.includes(item)) return el.flag;
                             })
                             .filter((el) => {
                               if (el != ',') return el;
-                            })} keyword`}
-                          key={item}
-                          onMouseOver={() => {
-                            if (!isKeyClicked) {
-                              setTimeout(() => setIsItalic(true), 100);
-                              setKeyword(item);
-                            }
-                          }}
-                          onMouseOut={() => {
-                            setIsItalic(false);
-                            setIsKeyClicked(false);
-                          }}
-                          onClick={() => {
-                            setIsKeyClicked(true);
-                          }}
+                            })}`}
                         >
-                          {item}
-                        </span>
+                          <span
+                            className={`${dataSet
+                              .map((el) => {
+                                if (el.keyword.includes(item)) return el.flag;
+                              })
+                              .filter((el) => {
+                                if (el != ',') return el;
+                              })} keyword`}
+                            key={item}
+                            onMouseOver={() => {
+                              if (!isKeyClicked) {
+                                setTimeout(() => setIsItalic(true), 100);
+                                setKeyword(item);
+                              }
+                            }}
+                            onMouseOut={() => {
+                              setIsItalic(false);
+                              setIsKeyClicked(false);
+                            }}
+                            onClick={() => {
+                              setIsKeyClicked(true);
+                            }}
+                          >
+                            {item}
+                          </span>
+                        </Link>
                       );
                     })}
               </div>
@@ -286,6 +290,32 @@ const Index = () => {
                     .sort()
                     .slice(47, 65)
                     .map((item, index) => {
+                      if (item === 'sounda' || item === 'soundb')
+                        return (
+                          <span
+                            key={item}
+                            className={`${dataSet
+                              .map((el) => {
+                                if (el.keyword.includes(item)) return el.flag;
+                              })
+                              .filter((el) => {
+                                if (el != ',') return el;
+                              })} keyword`}
+                            onMouseOver={() => {
+                              setTimeout(() => setIsItalic(true), 100);
+                              setKeyword(item);
+                            }}
+                            onMouseOut={() => {
+                              setIsItalic(false);
+                              setIsKeyClicked(false);
+                            }}
+                            onClick={() => {
+                              setIsKeyClicked(true);
+                            }}
+                          >
+                            {item.slice(0, 5)}
+                          </span>
+                        );
                       return (
                         <span
                           key={item}
