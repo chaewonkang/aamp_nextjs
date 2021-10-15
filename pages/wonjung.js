@@ -10,11 +10,11 @@ const dataSet = [
     flag: 'taiki',
     artist: 'Taiki Sakpisit',
     keyword: [
-      'alchemical Transmutation',
+      'alchemical transmutation',
       'mysticism',
       'phantasmagoria',
       'disembodiment',
-      'sensory Stimulus',
+      'sensory stimulus',
       'eschatology',
       'spectrality',
     ],
@@ -141,8 +141,8 @@ const Index = () => {
       })
       .map((item) => (item.style.opacity = '0'));
 
-    // const italicTarget = [...document.getElementsByClassName('wonjung')];
-    // italicTarget.map((item) => (item.style.fontStyle = 'italic'));
+    const italicTarget = [...document.getElementsByClassName('wonjung')];
+    italicTarget.map((item) => (item.style.fontFamily = 'Signifier Italic'));
   }, [keyword, thumbUrl, flag, isItalic, loading, isKeyClicked]);
 
   return (
@@ -155,111 +155,346 @@ const Index = () => {
                 <img id='thumbnail' src={thumbUrl}></img>
               </div>
             )}
-            <div
-              className='keyword_container'
-              onMouseOut={() => {
-                setIsItalic(false);
-              }}
-            >
-              <div>
-                {keywordArr &&
-                  keywordArr
-                    .sort()
-                    .slice(0, 15)
-                    .map((item, index) => {
-                      return (
-                        <span
-                          className={`${dataSet
-                            .map((el) => {
-                              if (el.keyword.includes(item)) return el.flag;
-                            })
-                            .filter((el) => {
-                              if (el != ',') return el;
-                            })} keyword`}
-                          key={item}
-                          onMouseOver={() => {
-                            if (!isKeyClicked) {
+            <div className='keyword_container_wrapper'>
+              <div
+                className='keyword_container'
+                onMouseOut={() => {
+                  setIsItalic(false);
+                }}
+              >
+                <div>
+                  {keywordArr &&
+                    keywordArr
+                      .sort()
+                      .slice(0, 15)
+                      .map((item, index) => {
+                        if (item.includes(' ') && item.length > 5) {
+                          const idx = item.indexOf(' ');
+                          return (
+                            <>
+                              <span
+                                className={`${dataSet
+                                  .map((el) => {
+                                    if (el.keyword.includes(item))
+                                      return el.flag;
+                                  })
+                                  .filter((el) => {
+                                    if (el != ',') return el;
+                                  })} keyword`}
+                                key={item}
+                                onMouseOver={() => {
+                                  if (!isKeyClicked) {
+                                    setTimeout(() => setIsItalic(true), 100);
+                                    setKeyword(item);
+                                  }
+                                }}
+                                onMouseOut={() => {
+                                  setIsItalic(false);
+                                  setIsKeyClicked(false);
+                                }}
+                              >
+                                {item.slice(0, idx)}
+                              </span>
+                              <span
+                                className={`${dataSet
+                                  .map((el) => {
+                                    if (el.keyword.includes(item))
+                                      return el.flag;
+                                  })
+                                  .filter((el) => {
+                                    if (el != ',') return el;
+                                  })} keyword`}
+                                onMouseOver={() => {
+                                  if (!isKeyClicked) {
+                                    setTimeout(() => setIsItalic(true), 100);
+                                    setKeyword(item);
+                                  }
+                                }}
+                                onMouseOut={() => {
+                                  setIsItalic(false);
+                                  setIsKeyClicked(false);
+                                }}
+                                style={{ paddingLeft: 30 }}
+                              >
+                                {item.slice(idx, item.length)}
+                              </span>
+                            </>
+                          );
+                        }
+                        return (
+                          <span
+                            className={`${dataSet
+                              .map((el) => {
+                                if (el.keyword.includes(item)) return el.flag;
+                              })
+                              .filter((el) => {
+                                if (el != ',') return el;
+                              })} keyword`}
+                            key={item}
+                            onMouseOver={() => {
+                              if (!isKeyClicked) {
+                                setTimeout(() => setIsItalic(true), 100);
+                                setKeyword(item);
+                              }
+                            }}
+                            onMouseOut={() => {
+                              setIsItalic(false);
+                              setIsKeyClicked(false);
+                            }}
+                          >
+                            {item}
+                          </span>
+                        );
+                      })}
+                </div>
+                <div>
+                  {keywordArr &&
+                    keywordArr
+                      .sort()
+                      .slice(15, 31)
+                      .map((item, index) => {
+                        if (item.includes(' ') && item.length > 5) {
+                          const idx = item.indexOf(' ');
+                          return (
+                            <>
+                              <span
+                                className={`${dataSet
+                                  .map((el) => {
+                                    if (el.keyword.includes(item))
+                                      return el.flag;
+                                  })
+                                  .filter((el) => {
+                                    if (el != ',') return el;
+                                  })} keyword`}
+                                key={item}
+                                onMouseOver={() => {
+                                  if (!isKeyClicked) {
+                                    setTimeout(() => setIsItalic(true), 100);
+                                    setKeyword(item);
+                                  }
+                                }}
+                                onMouseOut={() => {
+                                  setIsItalic(false);
+                                  setIsKeyClicked(false);
+                                }}
+                              >
+                                {item.slice(0, idx)}
+                              </span>
+                              <span
+                                className={`${dataSet
+                                  .map((el) => {
+                                    if (el.keyword.includes(item))
+                                      return el.flag;
+                                  })
+                                  .filter((el) => {
+                                    if (el != ',') return el;
+                                  })} keyword`}
+                                onMouseOver={() => {
+                                  if (!isKeyClicked) {
+                                    setTimeout(() => setIsItalic(true), 100);
+                                    setKeyword(item);
+                                  }
+                                }}
+                                onMouseOut={() => {
+                                  setIsItalic(false);
+                                  setIsKeyClicked(false);
+                                }}
+                                style={{ paddingLeft: 30 }}
+                              >
+                                {item.slice(idx, item.length)}
+                              </span>
+                            </>
+                          );
+                        }
+                        return (
+                          <span
+                            className={`${dataSet
+                              .map((el) => {
+                                if (el.keyword.includes(item)) return el.flag;
+                              })
+                              .filter((el) => {
+                                if (el != ',') return el;
+                              })} keyword`}
+                            key={item}
+                            onMouseOver={() => {
                               setTimeout(() => setIsItalic(true), 100);
                               setKeyword(item);
-                            }
-                          }}
-                          onMouseOut={() => {
-                            setIsItalic(false);
-                            setIsKeyClicked(false);
-                          }}
-                        >
-                          {item}
-                        </span>
-                      );
-                    })}
-              </div>
-              <div>
-                {keywordArr &&
-                  keywordArr
-                    .sort()
-                    .slice(15, 31)
-                    .map((item, index) => {
-                      return (
-                        <span
-                          className={`${dataSet
-                            .map((el) => {
-                              if (el.keyword.includes(item)) return el.flag;
-                            })
-                            .filter((el) => {
-                              if (el != ',') return el;
-                            })} keyword`}
-                          key={item}
-                          onMouseOver={() => {
-                            setTimeout(() => setIsItalic(true), 100);
-                            setKeyword(item);
-                          }}
-                          onMouseOut={() => {
-                            setIsItalic(false);
-                            setIsKeyClicked(false);
-                          }}
-                        >
-                          {item}
-                        </span>
-                      );
-                    })}
-              </div>
-              <div>
-                {keywordArr &&
-                  keywordArr
-                    .sort()
-                    .slice(31, 47)
-                    .map((item, index) => {
-                      return (
-                        <span
-                          className={`${dataSet
-                            .map((el) => {
-                              if (el.keyword.includes(item)) return el.flag;
-                            })
-                            .filter((el) => {
-                              if (el != ',') return el;
-                            })} keyword`}
-                          key={item}
-                          onMouseOver={() => {
-                            setTimeout(() => setIsItalic(true), 100);
-                            setKeyword(item);
-                          }}
-                          onMouseOut={() => {
-                            setIsItalic(false);
-                            setIsKeyClicked(false);
-                          }}
-                        >
-                          {item}
-                        </span>
-                      );
-                    })}
-              </div>
-              <div>
-                {keywordArr &&
-                  keywordArr
-                    .sort()
-                    .slice(47, 65)
-                    .map((item, index) => {
-                      if (item === 'sounda' || item === 'soundb')
+                            }}
+                            onMouseOut={() => {
+                              setIsItalic(false);
+                              setIsKeyClicked(false);
+                            }}
+                          >
+                            {item}
+                          </span>
+                        );
+                      })}
+                </div>
+                <div>
+                  {keywordArr &&
+                    keywordArr
+                      .sort()
+                      .slice(31, 47)
+                      .map((item, index) => {
+                        if (item.includes(' ') && item.length > 5) {
+                          const idx = item.indexOf(' ');
+                          return (
+                            <>
+                              <span
+                                className={`${dataSet
+                                  .map((el) => {
+                                    if (el.keyword.includes(item))
+                                      return el.flag;
+                                  })
+                                  .filter((el) => {
+                                    if (el != ',') return el;
+                                  })} keyword`}
+                                key={item}
+                                onMouseOver={() => {
+                                  if (!isKeyClicked) {
+                                    setTimeout(() => setIsItalic(true), 100);
+                                    setKeyword(item);
+                                  }
+                                }}
+                                onMouseOut={() => {
+                                  setIsItalic(false);
+                                  setIsKeyClicked(false);
+                                }}
+                              >
+                                {item.slice(0, idx)}
+                              </span>
+                              <span
+                                className={`${dataSet
+                                  .map((el) => {
+                                    if (el.keyword.includes(item))
+                                      return el.flag;
+                                  })
+                                  .filter((el) => {
+                                    if (el != ',') return el;
+                                  })} keyword`}
+                                onMouseOver={() => {
+                                  if (!isKeyClicked) {
+                                    setTimeout(() => setIsItalic(true), 100);
+                                    setKeyword(item);
+                                  }
+                                }}
+                                onMouseOut={() => {
+                                  setIsItalic(false);
+                                  setIsKeyClicked(false);
+                                }}
+                                style={{ paddingLeft: 30 }}
+                              >
+                                {item.slice(idx, item.length)}
+                              </span>
+                            </>
+                          );
+                        }
+                        return (
+                          <span
+                            className={`${dataSet
+                              .map((el) => {
+                                if (el.keyword.includes(item)) return el.flag;
+                              })
+                              .filter((el) => {
+                                if (el != ',') return el;
+                              })} keyword`}
+                            key={item}
+                            onMouseOver={() => {
+                              setTimeout(() => setIsItalic(true), 100);
+                              setKeyword(item);
+                            }}
+                            onMouseOut={() => {
+                              setIsItalic(false);
+                              setIsKeyClicked(false);
+                            }}
+                          >
+                            {item}
+                          </span>
+                        );
+                      })}
+                </div>
+                <div>
+                  {keywordArr &&
+                    keywordArr
+                      .sort()
+                      .slice(47, 65)
+                      .map((item, index) => {
+                        if (item.includes(' ') && item.length > 5) {
+                          const idx = item.indexOf(' ');
+                          return (
+                            <>
+                              <span
+                                className={`${dataSet
+                                  .map((el) => {
+                                    if (el.keyword.includes(item))
+                                      return el.flag;
+                                  })
+                                  .filter((el) => {
+                                    if (el != ',') return el;
+                                  })} keyword`}
+                                key={item}
+                                onMouseOver={() => {
+                                  if (!isKeyClicked) {
+                                    setTimeout(() => setIsItalic(true), 100);
+                                    setKeyword(item);
+                                  }
+                                }}
+                                onMouseOut={() => {
+                                  setIsItalic(false);
+                                  setIsKeyClicked(false);
+                                }}
+                              >
+                                {item.slice(0, idx)}
+                              </span>
+                              <span
+                                className={`${dataSet
+                                  .map((el) => {
+                                    if (el.keyword.includes(item))
+                                      return el.flag;
+                                  })
+                                  .filter((el) => {
+                                    if (el != ',') return el;
+                                  })} keyword`}
+                                onMouseOver={() => {
+                                  if (!isKeyClicked) {
+                                    setTimeout(() => setIsItalic(true), 100);
+                                    setKeyword(item);
+                                  }
+                                }}
+                                onMouseOut={() => {
+                                  setIsItalic(false);
+                                  setIsKeyClicked(false);
+                                }}
+                                style={{ paddingLeft: 30 }}
+                              >
+                                {item.slice(idx, item.length)}
+                              </span>
+                            </>
+                          );
+                        }
+                        if (item === 'sounda' || item === 'soundb')
+                          return (
+                            <span
+                              key={item}
+                              className={`${dataSet
+                                .map((el) => {
+                                  if (el.keyword.includes(item)) return el.flag;
+                                })
+                                .filter((el) => {
+                                  if (el != ',') return el;
+                                })} keyword`}
+                              onMouseOver={() => {
+                                setTimeout(() => setIsItalic(true), 100);
+                                setKeyword(item);
+                              }}
+                              onMouseOut={() => {
+                                setIsItalic(false);
+                                setIsKeyClicked(false);
+                              }}
+                            >
+                              {item.slice(0, 5)}
+                            </span>
+                          );
                         return (
                           <span
                             key={item}
@@ -279,32 +514,11 @@ const Index = () => {
                               setIsKeyClicked(false);
                             }}
                           >
-                            {item.slice(0, 5)}
+                            {item}
                           </span>
                         );
-                      return (
-                        <span
-                          key={item}
-                          className={`${dataSet
-                            .map((el) => {
-                              if (el.keyword.includes(item)) return el.flag;
-                            })
-                            .filter((el) => {
-                              if (el != ',') return el;
-                            })} keyword`}
-                          onMouseOver={() => {
-                            setTimeout(() => setIsItalic(true), 100);
-                            setKeyword(item);
-                          }}
-                          onMouseOut={() => {
-                            setIsItalic(false);
-                            setIsKeyClicked(false);
-                          }}
-                        >
-                          {item}
-                        </span>
-                      );
-                    })}
+                      })}
+                </div>
               </div>
             </div>
             <div className='content_container'>
@@ -359,7 +573,102 @@ const Index = () => {
                   around his beloved creation.
                 </p>
               </div>
+              <div className='video_container'>
+                <img src={dataSet[3].thumb} />
+              </div>
+              <div className='module_container'>
+                <div className='module_row'>
+                  <div className='module'>
+                    <div className='image_row'>
+                      <span>Index 1</span>
+                      <img src={dataSet[4].thumb}></img>
+                    </div>
+                    <div>
+                      <div>
+                        <span>►</span>expression 1
+                      </div>
+                      <div>
+                        <span>►</span>expression 1
+                      </div>
+                      <div>
+                        <span>►</span>expression 1
+                      </div>
+                      <div>
+                        <span>►</span>expression 1
+                      </div>
+                    </div>
+                  </div>
+                  <div className='module'>
+                    <div className='image_row'>
+                      <span>Index 1</span>
+                      <img src={dataSet[0].thumb}></img>
+                    </div>
+                    <div>
+                      <div>
+                        <span>►</span>expression 1
+                      </div>
+                      <div>
+                        <span>►</span>expression 1
+                      </div>
+                      <div>
+                        <span>►</span>expression 1
+                      </div>
+                      <div>
+                        <span>►</span>expression 1
+                      </div>
+                    </div>
+                  </div>
+                  <div className='module'>
+                    <div className='image_row'>
+                      <span>Index 1</span>
+                      <img src={dataSet[3].thumb}></img>
+                    </div>
+                    <div>
+                      <div>
+                        <span>►</span>expression 1
+                      </div>
+                      <div>
+                        <span>►</span>expression 1
+                      </div>
+                      <div>
+                        <span>►</span>expression 1
+                      </div>
+                      <div>
+                        <span>►</span>expression 1
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className='artist_info_container'>
+                <div>Wonjung Shin</div>
+                <div>
+                  <p>
+                    Wonjung Shin is an artist engaging with various media
+                    represented through auditory perception, tactile sense,
+                    visual elements and a mixture of digital and analog
+                    technology. Her research seeks to find hidden rules and
+                    patterns in natural elements and multi-layered relationships
+                    between human and non-human sentient beings by translating
+                    imperceptible data in natural elements into different
+                    perceptual experiences. In her work, biological materials
+                    are often used, combined or connected to machines, and
+                    transformed. Her recent research focuses on the physical
+                    nature of the human perceptional system driven by a
+                    post-digital media concept and applying a contemporary
+                    scientific and artistic research method. Her works have been
+                    shown in various places including Piksel Festival (NO),
+                    Transmediale Vorspiel (DE), Mediamatic (NL), Athens Digital
+                    Arts Festival (GR), AMRO (AT), Lab 30 (DE), Art Center Nabi
+                    (KR), ACT Festival (KR), Daechung Chungjoo City Museum of
+                    Art (KR), V2 (NL), TADAEX festival (IR), WRO Media Art
+                    Biennale (PL) and she has been awarded NIME (New Interface
+                    for Musical Expression (2017) Best Sound Performance.
+                  </p>
+                </div>
+              </div>
             </div>
+
             <div className='keyword_span'>
               <Link href='/'>
                 <span>Keywords</span>

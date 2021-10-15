@@ -63,6 +63,7 @@ h4 {
 #thumbnail {
 	width:				auto;
 	height:				100%;
+	max-height:			800px;
 	object-fit:			contain;
 	margin:				0 auto;
 }
@@ -83,13 +84,21 @@ h4 {
 
 /* TOPOF main */
 
-.keyword_container {
+.keyword_container_wrapper {
 	display: 			flex;
 	width:				100%;
-	height:				auto;
+	min-height:			calc(100vh - 122px);
+	height:				calc(100vh - 122px);
 	padding-top:		92px;
 	padding-bottom:		30px;
-	margin:				0 auto;
+	align-items: 		center;
+}
+
+.keyword_container {
+	display: flex;
+    width: 100%;
+    height: auto;
+    align-items: flex-start;
 }
 
 .keyword_container div {
@@ -101,14 +110,11 @@ h4 {
 
 .keyword_container div span {
 
-	font-size: 			36px;
+	font-size: 			30px;
 	text-transform: 	capitalize;
 	cursor:				pointer;
 }
 
-.keyword_container div span:hover {
-	font-style: 		italic;
-}
 
 .footer_container {
 	width:				100%;
@@ -120,7 +126,7 @@ h4 {
 }
 
 .footer_container span {
-	font-size: 			25px;
+	font-size: 			20px;
 	font-family:		'Signifier Italic';
 }
 
@@ -159,7 +165,7 @@ div:first-child h1
 {
 	width:				100%;
 	cursor:				pointer;
-	font-size: 			25px;
+	font-size: 			20px;
 	font-weight: 		normal;
 	font-stretch: 		normal;
 	font-style: 		normal;
@@ -176,7 +182,7 @@ div:first-child h1
 }
 
 .header_container .header_inner div:last-child span {
-	font-size:			25px;
+	font-size:			20px;
 	margin-right:		5px;
 }
 
@@ -193,7 +199,7 @@ div:first-child h1
 
 .about_container {
 	width: 				100%;
-	font-size:			36px;
+	font-size:			30px;
 }
 
 .about_container .about_nav,
@@ -223,7 +229,7 @@ div:first-child h1
 }
 
 .about_container .about_nav div h2 {
-	font-size: 			25px;
+	font-size: 			20px;
 	font-weight: 		normal;
 	margin-top:			10px;
 	margin-bottom:		6px;
@@ -268,7 +274,7 @@ div:first-child h1
 }
 
 .about_container .about_content .about_content_2 div {
-	margin-bottom:		25px;
+	margin-bottom:		20px;
 }
 
 .about_container .about_content .about_content_2 span {
@@ -294,7 +300,7 @@ div:first-child h1
 
 .about_container .about_content_3 div {
 	text-align:			center;
-	margin-bottom:		25px;
+	margin-bottom:		20px;
 }
 
 /* ENDOF About */
@@ -304,8 +310,8 @@ div:first-child h1
 
 .keyword_span {
 	width:				100%;
-	font-size:			25px;
-	font-style:			italic;
+	font-size:			20px;
+	font-Family:		'Signifier Italic';
 	height:				40px;
 	margin-top: 		50px;
 	margin-bottom:		50px;
@@ -316,9 +322,13 @@ div:first-child h1
 	width:				100%;
 }
 
+.keyword_span span:hover {
+	cursor:				pointer;
+}
+
 .content_container {
 	border-top:			1px solid #000;
-	font-size:			36px;
+	font-size:			30px;
 }
 
 .content_container .title_container {
@@ -351,10 +361,63 @@ div:first-child h1
 	text-align:			center;
 }
 
-.content_container .description_container {
+.content_container .artist_info_container,
+.content_container .description_container,
+.content_container .module_container,
+.content_container .video_container {
 	width:				calc((100% / 8) * 6);
 	margin:				0 auto;
 	padding-top:		40px;
+}
+
+.content_container .artist_info_container {
+	display:			flex;
+	flex-direction:		row;
+	font-size:			20px;
+}
+
+.content_container .artist_info_container div:first-child {
+	width:				calc((100% / 6) * 2);
+}
+
+.content_container .artist_info_container div:last-child {
+	width:				calc((100% / 6 * 4));
+	padding-right:		20px;
+}
+
+.content_container .module_container {
+	display:			flex;
+	flex-direction:		column;
+	font-size: 			20px;
+}
+
+.content_container .module_row {
+	display:			flex;
+	flex-direction:		row;
+	width:				100%;
+}
+
+.content_container .module_row .module {
+	width:				33%;
+	padding-right:		20px;
+}
+
+.content_container .module_row .image_row img {
+	object-fit:			cover;
+	width:				100%;
+	height:				230px;
+	margin-top:			10px;
+	margin-bottom:		10px;
+
+}
+
+.content_container .description_container p,
+.about_content p {
+	text-indent:		85px;
+}
+
+.content_container .description_container p:first-child {
+	text-indent:		0;
 }
 
 /* ENDOF Artist */
