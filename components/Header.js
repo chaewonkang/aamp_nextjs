@@ -7,7 +7,7 @@ function Header() {
   return (
     <div className='header_container'>
       <div className='header_inner'>
-        <div>
+        <div id='desktopOnly'>
           {router.asPath.includes('about') ? (
             <Link href='/'>
               <h1 style={{ fontFamily: 'Signifier Italic' }}>
@@ -17,6 +17,17 @@ function Header() {
           ) : (
             <Link href='/about'>
               <h1>About Artist Workshop, Becoming-Local</h1>
+            </Link>
+          )}
+        </div>
+        <div id='mobileOnly'>
+          {router.asPath.includes('about') ? (
+            <Link href='/'>
+              <h1 style={{ fontFamily: 'Signifier Italic' }}>About</h1>
+            </Link>
+          ) : (
+            <Link href='/about'>
+              <h1>About</h1>
             </Link>
           )}
         </div>

@@ -155,6 +155,13 @@ const Index = () => {
                 <img id='thumbnail' src={thumbUrl}></img>
               </div>
             )}
+            <div id='mobileOnly' className='mobile_keyword_container'>
+              <div>
+                {dataSet[1].keyword.map((item) => {
+                  return <span>{item}</span>;
+                })}
+              </div>
+            </div>
             <div className='keyword_container_wrapper'>
               <div
                 className='keyword_container'
@@ -334,7 +341,7 @@ const Index = () => {
                   {keywordArr &&
                     keywordArr
                       .sort()
-                      .slice(31, 47)
+                      .slice(31, 46)
                       .map((item, index) => {
                         if (item.includes(' ') && item.length > 5) {
                           const idx = item.indexOf(' ');
@@ -417,7 +424,7 @@ const Index = () => {
                   {keywordArr &&
                     keywordArr
                       .sort()
-                      .slice(47, 65)
+                      .slice(46, 61)
                       .map((item, index) => {
                         if (item.includes(' ') && item.length > 5) {
                           const idx = item.indexOf(' ');

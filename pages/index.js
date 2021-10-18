@@ -4,6 +4,8 @@ import theme from '../styles/theme';
 import PageLayout from '../components/PageLayout';
 import Link from 'next/link';
 
+const delay = 5000;
+
 const dataSet = [
   {
     index: 0,
@@ -121,7 +123,31 @@ const Index = () => {
   const [isItalic, setIsItalic] = useState(false);
   const [thumbUrl, setThumbUrl] = useState('');
   const [flag, setFlag] = useState('');
+  const [curIdx, setCurIdx] = useState(0);
   const [isKeyClicked, setIsKeyClicked] = useState(false);
+  const [index, setIndex] = useState(0);
+  const timeoutRef = useRef(null);
+
+  function resetTimeout() {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+  }
+
+  useEffect(() => {
+    resetTimeout();
+    timeoutRef.current = setTimeout(
+      () =>
+        setIndex((prevIndex) =>
+          prevIndex === dataSet.length - 1 ? 0 : prevIndex + 1
+        ),
+      delay
+    );
+
+    return () => {
+      resetTimeout();
+    };
+  }, [index]);
 
   let keywordArr = [].concat.apply(
     [],
@@ -157,7 +183,7 @@ const Index = () => {
       : italicTarget.map(
           (item) => (item.style.fontFamily = 'Signifier Regular')
         );
-  }, [keyword, thumbUrl, flag, isItalic, loading, isKeyClicked]);
+  }, [keyword, thumbUrl, flag, isItalic, loading, isKeyClicked, curIdx]);
 
   return (
     <ThemeProvider theme={theme}>
@@ -169,6 +195,24 @@ const Index = () => {
                 <img id='thumbnail' src={thumbUrl}></img>
               </div>
             )}
+            <div className='mobile_thumbnail_container'>
+              <div className='slideshow'>
+                <div
+                  className='slideshowSlider'
+                  style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
+                >
+                  {dataSet.map((item, index) => {
+                    return (
+                      <Link href={`/${item.flag}`}>
+                        <div className='slide' key={index}>
+                          <img src={item.thumb}></img>
+                        </div>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
             <div className='keyword_container_wrapper'>
               <div
                 className='keyword_container'
@@ -180,7 +224,7 @@ const Index = () => {
                   {keywordArr &&
                     keywordArr
                       .sort()
-                      .slice(0, 16)
+                      .slice(0, 15)
                       .map((item, index) => {
                         if (item.includes(' ') && item.length > 5) {
                           const idx = item.indexOf(' ');
@@ -278,7 +322,7 @@ const Index = () => {
                   {keywordArr &&
                     keywordArr
                       .sort()
-                      .slice(16, 32)
+                      .slice(15, 31)
                       .map((item, index) => {
                         if (item.includes(' ') && item.length > 5) {
                           const idx = item.indexOf(' ');
@@ -364,7 +408,7 @@ const Index = () => {
                   {keywordArr &&
                     keywordArr
                       .sort()
-                      .slice(32, 48)
+                      .slice(31, 46)
                       .map((item, index) => {
                         if (item.includes(' ') && item.length > 5) {
                           const idx = item.indexOf(' ');
@@ -450,7 +494,7 @@ const Index = () => {
                   {keywordArr &&
                     keywordArr
                       .sort()
-                      .slice(48, 60)
+                      .slice(46, 61)
                       .map((item, index) => {
                         if (item === 'sounda' || item === 'soundb')
                           return (
