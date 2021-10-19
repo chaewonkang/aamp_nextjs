@@ -88,9 +88,8 @@ h4 {
 	display: 			flex;
 	width:				100%;
 	min-height:			calc(100vh - 122px);
-	height:				calc(100vh - 122px);
 	padding-top:		92px;
-	padding-bottom:		30px;
+	padding-bottom:		26px;
 	align-items: 		center;
 }
 
@@ -98,7 +97,7 @@ h4 {
 	display: flex;
     width: 100%;
     height: auto;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .keyword_container div {
@@ -110,7 +109,7 @@ h4 {
 
 .keyword_container div span {
 
-	font-size: 			30px;
+	font-size: 			26px;
 	text-transform: 	capitalize;
 	cursor:				pointer;
 }
@@ -122,7 +121,7 @@ h4 {
 	justify-content: 	center;
 	align-items: 		center;
 	position:			absolute;
-	bottom:				30px;
+	bottom:				26px;
 }
 
 .footer_container span {
@@ -139,7 +138,7 @@ h4 {
 	width: 				calc(100vw - 180px);
 	height:				fit-content;
 	position:			fixed;
-	top:				30px;
+	top:				26px;
 }
 
 .header_container
@@ -200,7 +199,7 @@ div h1
 
 .about_container {
 	width: 				100%;
-	font-size:			30px;
+	font-size:			26px;
 }
 
 .about_container .about_nav,
@@ -329,7 +328,7 @@ div h1
 
 .content_container {
 	border-top:			1px solid #000;
-	font-size:			30px;
+	font-size:			26px;
 }
 
 .content_container .title_container {
@@ -406,7 +405,7 @@ div h1
 .content_container .module_row .image_row img {
 	object-fit:			cover;
 	width:				100%;
-	height:				230px;
+	height:				226px;
 	margin-top:			10px;
 	margin-bottom:		10px;
 
@@ -424,20 +423,20 @@ div h1
 /* ENDOF Artist */
 
 .mobile_thumbnail_container {
-	display: none;
+	display: 			none;
 }
 
 #mobileOnly {
-	display: none;
+	display: 			none;
 }
 
 @media screen and (max-width: 780px) {
 	#mobileOnly {
-		display: flex;
+		display: 		flex;
 	}
 
 	#desktopOnly {
-		display: none;
+		display: 		none;
 	}
 
 	#body
@@ -461,8 +460,9 @@ div h1
 
 	.mobile_keyword_container {
 		width:				100%;
-		font-size:			30px;
-		height: 			80vh;
+		font-size:			26px;
+		margin-top: 		120px;
+		margin-bottom:		50px;
 		display: 			flex;
 		flex-direction:		column;
 		align-items: 		center;
@@ -479,60 +479,99 @@ div h1
 		display:			block;
 		text-align:			center;
 		font-family: 		'Signifier Italic';
+		font-size:			20px;
+	}
+
+	.content_container .module_container {
+		overflow: scroll;
+	}
+
+	.content_container .module_row {
+		width:				300%;
+		overflow-x:			scroll;
+		display: 			inline-block;
+		display: 			flex;
+		flex-direction:		row;
+	}
+
+	.content_container .module_row .module
+	{
+		width:				calc(100vw - 80px);
+		padding-right:		0px;
+		margin-right:		20px;
+	}
+
+	.content_container .title_container div:nth-child(2) {
+		font-size: 			20px;
+		width: 				50%;
+	}
+
+	.content_container .artist_info_container div:first-child {
+		display:			none;
+	}
+
+	.content_container .artist_info_container div:last-child {
+		width:				100%;
 	}
 
 	.header_container {
-		width: calc(100vw - 40px);
-		z-index: 9999;
+		width: 				calc(100vw - 40px);
+		z-index: 			9999;
 	}
 
 	.thumbnail_container {
-		display: none;
+		display: 			none;
 	}
 
 	.mobile_thumbnail_container {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		width: 100vw;
-		height: 100vh;
+		display: 			flex;
+		justify-content: 	center;
+		align-items: 		center;
+		width: 				100vw;
+		height: 			100vh;
 	}
 
 	.footer_container {
-		position: fixed;
-		left: -20px;
-		z-index: 10;
+		position:			 fixed;
+		left: 				0px;
+		z-index: 			10;
 	}
 
 	.slideshow {
-		z-index: 1000;
-		overflow: hidden;
-		width: 100%;
-		height: 100%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		z-index: 			1000;
+		overflow: 			hidden;
+		width: 				100%;
+		height: 			100%;
+		display: 			flex;
+		justify-content: 	center;
+		align-items: 		center;
 	  }
 
 	  .slideshowSlider {
-		white-space: nowrap;
-		transition: ease 1000ms;
-		width: 100%;
-		height: 80vh;
+		white-space: 		nowrap;
+		transition: 		ease 1000ms;
+		width: 				100%;
+		height: 			80vh;
 	  }
 
 	  .slide {
-		display: inline-block;
-		width: 100%;
-		height: 100%;
+		display: 			inline-block;
+		width: 				100%;
+		height: 			100%;
 	  }
 
 	  .slide img {
-		object-fit: contain;
-		max-width: calc(100% - 40px);
-		height: 80vh;
-		margin: 0 auto;
+		object-fit: 		contain;
+		max-width: 			calc(100% - 40px);
+		height: 			80vh;
+		margin: 			0 auto;
 	  }
 
+	.content_container .artist_info_container, .content_container .description_container, .content_container .module_container, .content_container .video_container {
+		width: 				100%;
+		margin: 			0 auto;
+		padding-top: 		40px;
+		font-size: 			20px;
+	}
 }
 
