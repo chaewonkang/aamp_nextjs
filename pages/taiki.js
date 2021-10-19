@@ -17,6 +17,7 @@ const dataSet = [
       'sensory stimulus',
       'eschatology',
       'spectrality',
+      'Zet',
     ],
     thumb: '../static/images/taiki.jpg',
   },
