@@ -17,7 +17,6 @@ const dataSet = [
       'sensory stimulus',
       'eschatology',
       'spectrality',
-      'Zet',
     ],
     thumb: '../static/images/taiki.jpg',
   },
@@ -138,11 +137,11 @@ const Index = () => {
 
     spanTarget
       .filter((item) => {
-        if (!item.className.includes('wonjung')) return item;
+        if (!item.className.includes('taiki')) return item;
       })
       .map((item) => (item.style.opacity = '0'));
 
-    const italicTarget = [...document.getElementsByClassName('wonjung')];
+    const italicTarget = [...document.getElementsByClassName('taiki')];
     italicTarget.map((item) => (item.style.fontFamily = 'Signifier Italic'));
   }, [keyword, thumbUrl, flag, isItalic, loading, isKeyClicked]);
 
@@ -535,12 +534,15 @@ const Index = () => {
                   <span>◀︎</span>
                 </div>
                 <div>
-                  <span>Untitled</span>
-                  <span>Wonjung Shin</span>
+                  <span>Dawn Vision</span>
+                  <span>Taiki Sakpisit</span>
                 </div>
                 <div className='right_arrow'>
                   <span>▶︎</span>
                 </div>
+              </div>
+              <div className='video_container'>
+                <img src={dataSet[3].thumb} />
               </div>
               <div className='description_container'>
                 <p>
@@ -581,102 +583,28 @@ const Index = () => {
                   around his beloved creation.
                 </p>
               </div>
-              <div className='video_container'>
-                <img src={dataSet[3].thumb} />
-              </div>
-              <div className='module_container'>
-                <div className='module_row'>
-                  <div className='module'>
-                    <div className='image_row'>
-                      <span>Index 1</span>
-                      <img src={dataSet[4].thumb}></img>
-                    </div>
-                    <div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                    </div>
-                  </div>
-                  <div className='module'>
-                    <div className='image_row'>
-                      <span>Index 1</span>
-                      <img src={dataSet[0].thumb}></img>
-                    </div>
-                    <div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                    </div>
-                  </div>
-                  <div className='module'>
-                    <div className='image_row'>
-                      <span>Index 1</span>
-                      <img src={dataSet[3].thumb}></img>
-                    </div>
-                    <div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+
               <div className='artist_info_container'>
-                <div>Wonjung Shin</div>
+                <div>Taiki Sakpisit</div>
                 <div>
                   <p>
-                    Wonjung Shin is an artist engaging with various media
-                    represented through auditory perception, tactile sense,
-                    visual elements and a mixture of digital and analog
-                    technology. Her research seeks to find hidden rules and
-                    patterns in natural elements and multi-layered relationships
-                    between human and non-human sentient beings by translating
-                    imperceptible data in natural elements into different
-                    perceptual experiences. In her work, biological materials
-                    are often used, combined or connected to machines, and
-                    transformed. Her recent research focuses on the physical
-                    nature of the human perceptional system driven by a
-                    post-digital media concept and applying a contemporary
-                    scientific and artistic research method. Her works have been
-                    shown in various places including Piksel Festival (NO),
-                    Transmediale Vorspiel (DE), Mediamatic (NL), Athens Digital
-                    Arts Festival (GR), AMRO (AT), Lab 30 (DE), Art Center Nabi
-                    (KR), ACT Festival (KR), Daechung Chungjoo City Museum of
-                    Art (KR), V2 (NL), TADAEX festival (IR), WRO Media Art
-                    Biennale (PL) and she has been awarded NIME (New Interface
-                    for Musical Expression (2017) Best Sound Performance.
+                    Taiki Sakpisit is a visual artist and filmmaker working in
+                    Bangkok. His works explore the underlying tensions and
+                    conflicts, and the sense of anticipation in contemporary
+                    Thailand, through precise and sensorially overwhelming
+                    audio-visual assemblage using a wide range of sounds and
+                    images. His films produce heightened and uneasy modes of
+                    spectatorship that often relate to the tumultuous
+                    socio-political climate in Thailand. He won the ACC Cinema
+                    Fund for his works Shadow and Act (2019) and Seeing in the
+                    Dark (2020). His previous work A Ripe Volcano (2011) has
+                    been screened internationally at more than 50 film festivals
+                    and museums. His first feature film The Edge of Daybreak is
+                    currently in post-production.
                   </p>
                 </div>
               </div>
             </div>
-
             <div className='keyword_span'>
               <Link href='/'>
                 <span>Keywords</span>

@@ -137,11 +137,11 @@ const Index = () => {
 
     spanTarget
       .filter((item) => {
-        if (!item.className.includes('wonjung')) return item;
+        if (!item.className.includes('aamp')) return item;
       })
       .map((item) => (item.style.opacity = '0'));
 
-    const italicTarget = [...document.getElementsByClassName('wonjung')];
+    const italicTarget = [...document.getElementsByClassName('aamp')];
     italicTarget.map((item) => (item.style.fontFamily = 'Signifier Italic'));
   }, [keyword, thumbUrl, flag, isItalic, loading, isKeyClicked]);
 

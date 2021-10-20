@@ -137,11 +137,11 @@ const Index = () => {
 
     spanTarget
       .filter((item) => {
-        if (!item.className.includes('wonjung')) return item;
+        if (!item.className.includes('sabina')) return item;
       })
       .map((item) => (item.style.opacity = '0'));
 
-    const italicTarget = [...document.getElementsByClassName('wonjung')];
+    const italicTarget = [...document.getElementsByClassName('sabina')];
     italicTarget.map((item) => (item.style.fontFamily = 'Signifier Italic'));
   }, [keyword, thumbUrl, flag, isItalic, loading, isKeyClicked]);
 
@@ -535,7 +535,7 @@ const Index = () => {
                 </div>
                 <div>
                   <span>Untitled</span>
-                  <span>Wonjung Shin</span>
+                  <span>Sabina Hyoju AHN</span>
                 </div>
                 <div className='right_arrow'>
                   <span>▶︎</span>
@@ -581,77 +581,38 @@ const Index = () => {
                 </p>
               </div>
               <div className='video_container'>
-                <img src={dataSet[3].thumb} />
-              </div>
-              <div className='module_container'>
-                <div className='module_row'>
-                  <div className='module'>
-                    <div className='image_row'>
-                      <span>Index 1</span>
-                      <img src={dataSet[4].thumb}></img>
-                    </div>
-                    <div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                    </div>
+                <img src='../static/images/example1.png' />
+                <div className='video_function'>
+                  <div className='video_desc'>
+                    <span>Fog, cloudy. </span>
+                    <span>
+                      It was thickly foggy. A walk in the woods behind Schloss
+                      Solitude.
+                    </span>
                   </div>
-                  <div className='module'>
-                    <div className='image_row'>
-                      <span>Index 1</span>
-                      <img src={dataSet[0].thumb}></img>
-                    </div>
-                    <div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                    </div>
-                  </div>
-                  <div className='module'>
-                    <div className='image_row'>
-                      <span>Index 1</span>
-                      <img src={dataSet[3].thumb}></img>
-                    </div>
-                    <div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                    </div>
+                  <div className='refresh'>
+                    <span>Refresh</span>
                   </div>
                 </div>
               </div>
+              <div className='spectrum_container'>
+                <img src='../static/images/example2.png'></img>
+                <div className='spectrum_desc'>
+                  <span>Original</span>
+                </div>
+              </div>
+              <div className='spectrum_container'>
+                <img src='../static/images/example2.png'></img>
+                <div className='spectrum_desc'>
+                  <span>Machine Learning</span>
+                </div>
+              </div>
+
               <div className='artist_info_container'>
-                <div>Wonjung Shin</div>
+                <div>Sabina Hyoju AHN</div>
                 <div>
                   <p>
-                    Wonjung Shin is an artist engaging with various media
+                    Sabina Hyoju Ahn is an artist engaging with various media
                     represented through auditory perception, tactile sense,
                     visual elements and a mixture of digital and analog
                     technology. Her research seeks to find hidden rules and
@@ -675,7 +636,6 @@ const Index = () => {
                 </div>
               </div>
             </div>
-
             <div className='keyword_span'>
               <Link href='/'>
                 <span>Keywords</span>

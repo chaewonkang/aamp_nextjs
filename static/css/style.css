@@ -68,6 +68,7 @@ h4 {
 	margin:				0 auto;
 }
 
+
 .text-style-2 {
 	font-family:			'Signifier Italic';
 }
@@ -96,6 +97,11 @@ h4 {
     width: 100%;
 	align-items: center;
 	min-height:			calc(100vh - 104px);
+
+}
+
+#thumbnail {
+	mix-blend-mode: difference;
 }
 
 .keyword_container div {
@@ -111,8 +117,8 @@ h4 {
 	font-size: 			26px;
 	text-transform: 	capitalize;
 	cursor:				pointer;
-}
 
+}
 
 
 .footer_container {
@@ -364,7 +370,8 @@ div h1
 .content_container .artist_info_container,
 .content_container .description_container,
 .content_container .module_container,
-.content_container .video_container {
+.content_container .video_container,
+.content_container .spectrum_container {
 	width:				calc((100% / 8) * 6);
 	margin:				0 auto;
 	padding-top:		40px;
@@ -428,6 +435,43 @@ div h1
 
 #mobileOnly {
 	display: 			none;
+}
+
+.video_function {
+	display: 			flex;
+	margin-top:			10px;
+}
+
+.video_function div:first-child {
+	width:				80%;
+	display:			flex;
+	flex-direction:		column;
+}
+
+.video_function div:first-child span {
+	display:			block;
+}
+
+.video_function div:last-child {
+	width:				20%;
+	display:			flex;
+	justify-content: 		flex-end;
+}
+
+.refresh span {
+	font-family:		'Signifier Italic';
+	cursor:				pointer;
+}
+
+
+.spectrum_container img {
+	width:				100%;
+}
+
+.spectrum_desc {
+	width: 				100%;
+	display:			flex;
+	justify-content:	flex-end;
 }
 
 @media screen and (max-width: 780px) {
@@ -576,16 +620,16 @@ div h1
 
 	.about_container .about_nav,
 	.title_bar {
-	width: 				auto;
-	margin-top: 		92px;
-	border-top: 		1px solid #979797;
-	border-bottom: 		1px solid #979797;
-	display: 			flex;
-	flex-direction: 	column;
-	align-items: 		center;
-	justify-content:	center;
-	padding-top:		10px;
-	padding-bottom:		10px;
+		width: 				auto;
+		margin-top: 		92px;
+		border-top: 		1px solid #979797;
+		border-bottom: 		1px solid #979797;
+		display: 			flex;
+		flex-direction: 	column;
+		align-items: 		center;
+		justify-content:	center;
+		padding-top:		10px;
+		padding-bottom:		10px;
 	}
 
 	.about_container .about_nav div h2 {
