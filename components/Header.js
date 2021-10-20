@@ -32,9 +32,13 @@ function Header() {
           )}
         </div>
         <div>
-          <span>EN</span>
-          <span>|</span>
-          <span>KO</span>
+          <Link href='/' locale='en'>
+            <span>EN</span>
+          </Link>
+          <span>/</span>
+          <Link href='/' locale='ko'>
+            <span>KO</span>
+          </Link>
         </div>
       </div>
     </div>
