@@ -534,8 +534,8 @@ const Index = () => {
                   <span>◀︎</span>
                 </div>
                 <div>
-                  <span>Untitled</span>
-                  <span>Wonjung Shin</span>
+                  <span>Intro2barter</span>
+                  <span>John Torres</span>
                 </div>
                 <div className='right_arrow'>
                   <span>▶︎</span>

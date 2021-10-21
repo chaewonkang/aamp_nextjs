@@ -97,7 +97,10 @@ h4 {
     width: 100%;
 	align-items: center;
 	min-height:			calc(100vh - 104px);
+}
 
+.keyword {
+	transition: ease-in 1000ms;
 }
 
 #thumbnail {
@@ -164,9 +167,7 @@ div
 	margin: 			0;
 }
 
-.header_container
-.header_inner
-div h1
+.header_container .header_inner div h1
 {
 	z-index:			9999 !important;
 	width:				100%;
@@ -178,7 +179,7 @@ div h1
 	line-height: 		normal;
 	letter-spacing: 	normal;
 	color: 				#1a1919;
-	margin:					0;
+	margin:				0;
 }
 
 .header_container .header_inner div:last-child {
@@ -187,13 +188,19 @@ div h1
 	text-align:			right;
 }
 
-.header_container .header_inner div:last-child span {
-	font-size:			20px;
-	margin-right:		5px;
-}
 
 .header_container .header_inner div:last-child span:last-child {
 	margin:				0;
+}
+
+.global span {
+	cursor: pointer;
+	font-size:			20px;
+	margin-right:		2px;
+}
+
+.global span:hover {
+	font-family: 'Signifier Italic';
 }
 
 
@@ -385,6 +392,7 @@ div h1
 	margin:				0 auto;
 	padding-top:		40px;
 }
+
 
 .content_container .artist_info_container {
 	display:			flex;

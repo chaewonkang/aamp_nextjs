@@ -31,13 +31,33 @@ function Header() {
             </Link>
           )}
         </div>
-        <div>
-          <Link href='/' locale='en'>
-            <span>EN</span>
+        <div className='global'>
+          <Link href='' locale='en'>
+            <span
+              style={
+                router.locale === 'en'
+                  ? {
+                      borderBottom: '1px solid #000',
+                    }
+                  : null
+              }
+            >
+              EN
+            </span>
           </Link>
           <span>/</span>
-          <Link href='/' locale='ko'>
-            <span>KO</span>
+          <Link href='' locale='ko'>
+            <span
+              style={
+                router.locale === 'ko'
+                  ? {
+                      borderBottom: '1px solid #000',
+                    }
+                  : null
+              }
+            >
+              KO
+            </span>
           </Link>
         </div>
       </div>
