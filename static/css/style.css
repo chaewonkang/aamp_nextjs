@@ -297,11 +297,20 @@ div h1
 	width: 				100%;
 }
 
-.about_container .about_content_3 {
+.center p {
+	text-align:			center !important;
 }
 
-.center p {
-	text-align:			center;
+.sponsor {
+	display:			flex;
+	flex-direction:		row;
+	justify-content: 		center;
+	align-items: 		center;
+	margin-bottom: 		100px;
+}
+
+.sponsor img {
+	width:				196px;
 }
 
 .about_container .about_content_3 div {
@@ -423,8 +432,26 @@ div h1
 	text-indent:		85px;
 }
 
+.content_container .description_container p:first-child,
+.about_content p:first-child {
+	text-indent:		0px;
+}
+
 .content_container .description_container p:first-child {
 	text-indent:		0;
+}
+
+.title p {
+	text-align:			center;
+}
+
+.plants_container {
+	padding-top:		30px;
+	padding-bottom:		30px;
+	display:			flex;
+	flex-direction:		column;
+	justify-content: 	center;
+	align-items: 		center;
 }
 
 /* ENDOF Artist */
