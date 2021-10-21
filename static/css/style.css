@@ -17,7 +17,11 @@
 
 *
 {
-	font-family: 		'Signifier Regular', serif;
+	font-family: 		'Signifier Regular', 'Noto Serif KR', serif;
+}
+
+.kor {
+	font-family: 'Noto Serif KR', serif;
 }
 
 p,
