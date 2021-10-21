@@ -117,6 +117,9 @@ const About = () => {
               </div>
             </div>
           </div>
+          <div className='sponsor'>
+            <img src='../../static/images/sponsor.png'></img>
+          </div>
         </div>
       </PageLayout>
     </ThemeProvider>

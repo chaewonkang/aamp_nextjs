@@ -534,18 +534,27 @@ const Index = () => {
                   <span>◀︎</span>
                 </div>
                 <div>
-                  <span>Untitled</span>
-                  <span>Wonjung Shin</span>
+                  <span>
+                    You are welcome <br />
+                    when you are welcomed.
+                  </span>
+                  <span>Minjung Kim</span>
                 </div>
                 <div className='right_arrow'>
                   <span>▶︎</span>
                 </div>
               </div>
+              <div className='description_container title'>
+                <p>Ch1. At the edge of the water</p>
+              </div>
+              <div className='video_container'>
+                <img src='../static/images/minjung_1.png' />
+              </div>
               <div className='description_container'>
                 <p>
                   Dawn Vision meditates on the religious theme park Keoku
                   Pavilion and its mythic creator Luang Pu Bunleua Sulilat
-                  (1932-1996) who led a mysterious and perplexing life.{' '}
+                  (1932-1996) who led a mysterious and perplexing life.
                 </p>
                 <p>
                   Bunleua’s beginning reads like Joseph Campbell’s The Hero With
@@ -580,75 +589,76 @@ const Index = () => {
                   around his beloved creation.
                 </p>
               </div>
+              <div className='description_container title'>
+                <p>Ch2. The movement of the water</p>
+              </div>
               <div className='video_container'>
                 <img src={dataSet[3].thumb} />
               </div>
-              <div className='module_container'>
-                <div className='module_row'>
-                  <div className='module'>
-                    <div className='image_row'>
-                      <span>Index 1</span>
-                      <img src={dataSet[4].thumb}></img>
-                    </div>
-                    <div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                    </div>
-                  </div>
-                  <div className='module'>
-                    <div className='image_row'>
-                      <span>Index 1</span>
-                      <img src={dataSet[0].thumb}></img>
-                    </div>
-                    <div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                    </div>
-                  </div>
-                  <div className='module'>
-                    <div className='image_row'>
-                      <span>Index 1</span>
-                      <img src={dataSet[3].thumb}></img>
-                    </div>
-                    <div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div className='description_container title'>
+                <p>Ch3. The journey of the cactus</p>
+              </div>
+              <div className='video_container'>
+                <img src={dataSet[3].thumb} />
+              </div>
+              <div className='description_container title'>
+                <p>Ch4. Plants</p>
+              </div>
+              <div className='plants_container'>
+                <span>native plants</span>
+                <span>indigenous plants</span>
+                <span>naturalized plants</span>
+                <span>exotic/alien plants</span>
+                <span>introduced plants</span>
+                <span>invasive plants</span>
+              </div>
+              <div className='description_container title'>
+                <p>Ch5. You are welcome when you are welcomed.</p>
+              </div>
+              <div className='video_container'>
+                <img src={dataSet[3].thumb} />
+              </div>
+              <div className='description_container'>
+                <p>
+                  Dawn Vision meditates on the religious theme park Keoku
+                  Pavilion and its mythic creator Luang Pu Bunleua Sulilat
+                  (1932-1996) who led a mysterious and perplexing life.
+                </p>
+                <p>
+                  Bunleua’s beginning reads like Joseph Campbell’s The Hero With
+                  a Thousand Faces. At a young age, Bunleua ran away from his
+                  home in Nong Khai, Thailand. He then fell into a cave and met
+                  the hermit, master Keoku, who became his spiritual mentor.
+                  Having great reverence for his teacher, Bunleua named his
+                  life’s work, Keoku Pavilion, after his master. It is believed
+                  that Bunleua was the reincarnation of Naga, who forbade him
+                  from becoming a monk, which led him on other spiritual paths.
+                  Bunleua later moved to Vientiane, Laos, and became a secular
+                  man. In 1958 he started the construction of Buddha Park (also
+                  known as Xiong Khuan). He was incarcerated in Vientiane for
+                  unspecified reasons and fled back to Nong Khai after the city
+                  fell to the Pathet Lao—a communist political movement—in 1975.
+                </p>
+                <p>
+                  Bunleua began construction of Sala Keoku in 1978 with the help
+                  of devoted followers. All of the hundred large-scale, complex
+                  and elaborate sculptures came purely from Bunleua’s dreams and
+                  visions. Bunleua himself has never been trained in art,
+                  engineering and architecture, and yet, he played an integral
+                  role in guiding his followers in the construction and
+                  completion of Sala Keoku.
+                </p>
+                <p>
+                  As many considered him to be insane, Bunleua was often
+                  troubled by the authorities and was incarcerated again for
+                  reasons unknown. He died in 1996 from a strange illness.
+                  Following his wishes, his embalmed body rests inside a glass
+                  hemisphere. It is alleged that his spirit is still wandering
+                  around his beloved creation.
+                </p>
               </div>
               <div className='artist_info_container'>
-                <div>Wonjung Shin</div>
+                <div>Minjung Kim</div>
                 <div>
                   <p>
                     Wonjung Shin is an artist engaging with various media
