@@ -4,6 +4,15 @@ import theme from '../styles/theme';
 import PageLayout from '../components/PageLayout';
 import Link from 'next/link';
 
+const wonjung = [
+  {
+	img: '../static/images/wonjung/aluminum_tunnel01-min.jpg',
+	sound: [
+		'../static/images/wonjung/'
+	]
+  },
+];
+
 const dataSet = [
   {
     index: 0,
