@@ -3,6 +3,7 @@ import { useEffect, useState, useRef } from 'react';
 import theme from '../styles/theme';
 import PageLayout from '../components/PageLayout';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
@@ -64,7 +65,7 @@ const dataSet = [
       'walk',
       'lockdown',
     ],
-    thumb: '../static/images/sabina.png',
+    thumb: '../static/images/sabina.jpg',
   },
   {
     index: 3,
@@ -81,7 +82,7 @@ const dataSet = [
       'entanglement',
       'touch the ground',
     ],
-    thumb: '../static/images/aamp.png',
+    thumb: '../static/images/aamp.jpg',
   },
   {
     index: 4,
@@ -114,7 +115,7 @@ const dataSet = [
       'badvibes',
       'narratives',
     ],
-    thumb: '../static/images/john.png',
+    thumb: '../static/images/john.jpg',
   },
 ];
 
@@ -125,8 +126,9 @@ const Index = () => {
   const [thumbUrl, setThumbUrl] = useState(false);
   const [flag, setFlag] = useState('');
   const [isKeyClicked, setIsKeyClicked] = useState(false);
-
+  const router = useRouter();
   const { t } = useTranslation('taiki');
+  const locale = router.locale;
 
   let keywordArr = [].concat.apply(
     [],
@@ -533,7 +535,13 @@ const Index = () => {
                 </div>
               </div>
             </div>
-            <div className='content_container'>
+            <div
+              className={
+                locale === 'en'
+                  ? 'content_container'
+                  : 'ko_type content_container'
+              }
+            >
               <div className='title_container'>
                 <div className='left_arrow'>
                   <span>◀︎</span>
