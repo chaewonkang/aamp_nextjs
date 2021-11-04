@@ -4,6 +4,7 @@ import theme from '../styles/theme';
 import PageLayout from '../components/PageLayout';
 import Link from 'next/link';
 import playBtn from '../static/images/playbutton.png';
+import { useRouter } from 'next/router';
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
@@ -151,8 +152,9 @@ const Index = () => {
   const [thumbUrl, setThumbUrl] = useState(false);
   const [flag, setFlag] = useState('');
   const [isKeyClicked, setIsKeyClicked] = useState(false);
-
+  const router = useRouter();
   const { t } = useTranslation('john');
+  const locale = router.locale;
 
   let keywordArr = [].concat.apply(
     [],
@@ -559,7 +561,13 @@ const Index = () => {
                 </div>
               </div>
             </div>
-            <div className='content_container'>
+            <div
+              className={
+                locale === 'en'
+                  ? 'content_container'
+                  : 'ko_type content_container'
+              }
+            >
               <div className='title_container'>
                 <div className='left_arrow'>
                   <span>◀︎</span>
@@ -664,12 +672,8 @@ const Index = () => {
                 <p>{t('findings6')}</p>
               </div>
               <div className='description_container'>
-                <p className='center'>Unexpected things I did</p>
-                <p style={{ textIndent: 0 }}>
-                  I did count how long Den waited and gave up on a reply from
-                  someone. It was amusing to feel more of her world just by
-                  waiting with her for a reply.
-                </p>
+                <p className='center'>{t('findings7')}</p>
+                <p style={{ textIndent: 0 }}>{t('findings8')}</p>
               </div>
               <div className='audio_player'>
                 <div className='player'>
@@ -677,16 +681,16 @@ const Index = () => {
                 </div>
               </div>
               <div className='description_container'>
-                <p>Unexpectedly, I saw I was on mute. Ouch!</p>
+                <p>{t('findings9')}</p>
               </div>
               <div className='video_container'>
                 <img src={johnImgArr[10]} />
               </div>
               <div className='description_container title'>
-                <p>4 PATKAY</p>
+                <p>4 {t('patkay')}</p>
               </div>
               <div className='description_container'>
-                <p>Here's a Pat Kay.</p>
+                <p>{t('patkay0')}</p>
               </div>
               <div className='audio_player'>
                 <div className='player'>
@@ -697,27 +701,7 @@ const Index = () => {
                 <img src={johnImgArr[11]} />
               </div>
               <div className='description_container'>
-                <p>
-                  “This collection is more on my former interests fromhigh
-                  school. I used to be really into classic rocklike Queen,
-                  LedZeppelin, Bob Dylan, that kinda stuff. But I’ve outgrowna
-                  lot of it because of the values that the bandshold and
-                  thecontent of their music doesn’t really resonate withme as
-                  much anymore. This was a huge part of my identitybackthen in
-                  high school but not anymore!"
-                </p>
-                <p>
-                  Pat Kaymakes me feel old. She was my student yearsback, and
-                  she was a brilliant artist even then.Pat Kay, whose character
-                  and heart shone unmistakablyin the classroom. Which was, for
-                  me, a spacethat I remember filled with students who conform,in
-                  uniform, and are pressured to fit in. Pat Kay
-                  wasunapologetically Pat Kay. And I wish I was Pat Kaywhen I
-                  was in school. But I was a spoiled, shelteredteenager who
-                  wanted to play games all the time. Imissed out on a lot of
-                  things, and Pat Kay would havebeen a role model for me if we
-                  were in school together.
-                </p>
+                <p>{t('patkay1')}</p>
               </div>
               <div className='video_container'>
                 <img src={johnImgArr[12]} />
@@ -732,55 +716,30 @@ const Index = () => {
                 <img src={johnImgArr[15]} />
               </div>
               <div className='description_container'>
-                <p className='center'>Useful shit</p>
-                <p style={{ textIndent: 0 }}>
-                  Pat Kay found it hard to exchange her Led Zeppelinalbum for
-                  Mariah Carey merch, which was all shereally wanted. “I don’t
-                  know, I don’t want random shit in my house.” She thinks older
-                  people don’t use Facebook, whereshe posts her barter items.
-                  And in barter groupsthere, she sees that people want useful
-                  things. Householditems, grocery, food. And for a time, Pat Kay
-                  tried that out.
+                <p>{t('patkay2')}</p>
+                <p className='center' style={{ textIndent: 0 }}>
+                  {t('patkay3')}
                 </p>
               </div>
               <div className='video_container'>
                 <img src={johnImgArr[16]} />
               </div>
               <div className='description_container'>
-                <p>
-                  She said there were specific groups for barteringitems. Barter
-                  for Music items, CDs, for example. Still,noone wanted her
-                  shit, she said.
-                </p>
+                <p>{t('patkay4')}</p>
               </div>
               <div className='description_container title'>
-                <p>5 SHADY</p>
+                <p>5 {t('shady')}</p>
               </div>
               <div className='description_container'>
-                <p className='center'>Shady Meet-ups</p>
-                <p style={{ textIndent: 0 }}>
-                  Against my instructions, Pat Kay did meet-ups insteadof
-                  deliveries via riders to do the negotiation andexchange. She
-                  said they wanted to save on shippingfee, especially if they
-                  both lived close to eachother.“I also don’t want to get
-                  scammed.”
-                </p>
+                <p className='center'>{t('shady0')}</p>
+                <p style={{ textIndent: 0 }}>{t('shady1')}</p>
               </div>
               <div className='video_container'>
                 <img src={johnImgArr[17]} />
               </div>
               <div className='description_container'>
-                <p>
-                  To which, Den added that sometimes things are already too
-                  digital that you crave for human presence.
-                </p>
-                <p>
-                  Pat Kay recalled dealing with onetito, slang foruncle, who
-                  wanted to meet up for the Beatles CD barter.He sent her a
-                  selfie wearing a Pink Floyd shirt, andshe didn’t know why. She
-                  went in on the details,herhaving to lie about her age, him
-                  telling her he’sgoing to the cemetery to visit family.
-                </p>
+                <p>{t('shady2')}</p>
+                <p>{t('shady3')}</p>
               </div>
               <div className='audio_player'>
                 <div className='player'>
@@ -788,18 +747,13 @@ const Index = () => {
                 </div>
               </div>
               <div className='description_container'>
-                <p>
-                  I had to soft scold Pat Kay. The man proposed to meether at
-                  her place because she was nearby.Thankfully, nothing happened.
-                </p>
+                <p>{t('shady4')}</p>
               </div>
               <div className='video_container'>
                 <img src={johnImgArr[18]} />
               </div>
               <div className='description_container'>
-                <p>
-                  Image sent to Pat Kay after making the handshake deal.Rock on?
-                </p>
+                <p>{t('shady5')}</p>
               </div>
               <div className='audio_player'>
                 <div className='player'>
@@ -807,25 +761,12 @@ const Index = () => {
                 </div>
               </div>
               <div className='description_container'>
-                <p>
-                  “Where’s Pink Floyd?” “It’s there.” “Okay, check it.” “It’s
-                  good.” (inaudible) “Okay? Take care. Happy weekend.” Siren of
-                  a police car passing by. “Thank God, it was such a short
-                  interaction. I thoughthe was still gonna try andtalk to me.”
-                </p>
+                <p>{t('shady6')}</p>
               </div>
               <div className='description_container'>
-                <p className='center'>Riders</p>
-                <p style={{ textIndent: 0 }}>
-                  For much of the pandemic, we could sometimes onlyhear
-                  motorcycles passing by. During the strictlockdowns, no one was
-                  allowed to roam except for ridersdelivering goods to
-                  households.
-                </p>
-                <p>
-                  Here, Den exchanges the bird for a turtle via Grab,a logistics
-                  carrier.
-                </p>
+                <p className='center'> {t('shady7')}</p>
+                <p style={{ textIndent: 0 }}>{t('shady8')}</p>
+                <p>{t('shady9')}</p>
               </div>
               <div className='audio_player'>
                 <div className='player'>
@@ -833,17 +774,11 @@ const Index = () => {
                 </div>
               </div>
               <div className='description_container title'>
-                <p>6 WAITING</p>
+                <p>6 {t('waiting')}</p>
               </div>
               <div className='description_container'>
-                <p className='center'>Waiting</p>
-                <p style={{ textIndent: 0 }}>
-                  While waiting for her next exchange, for the turtlethis time,
-                  Den turned to her space and found thingstodo. Not only did the
-                  space change (nesting?), shehad quite a transformation, Den.
-                  Den was always veryshy to document herself in front of the
-                  camera, soto do this was quite a surprise.
-                </p>
+                <p className='center'>{t('waiting0')}</p>
+                <p style={{ textIndent: 0 }}>{t('waiting1')}</p>
               </div>
               <div className='audio_player'>
                 <div className='player'>
@@ -851,39 +786,12 @@ const Index = () => {
                 </div>
               </div>
               <div className='description_container'>
-                <p className='center'>Better Place</p>
-                <p style={{ textIndent: 0 }}>
-                  In doing the exchange, Den really just wanted to helpthe
-                  object find a better place. According to her,shewanted the
-                  person to treasure it. In giving the firstobject she bartered,
-                  the bird, to Kat, an artistsheknows, she wanted to sense that
-                  the bird found a goodhome.
-                </p>
-                <p>
-                  She is still in touch with Kat, and she still wants to, in a
-                  way, still, look out for the bird she let go. Shechecks her IG
-                  to see how the bird is doing. She, too,posts things about the
-                  turtle, which is the barteritem she got from Kat, who got it
-                  from a past relationship.
-                </p>
-                <p>
-                  Den looked up the spiritual symbolism of the turtleonline and
-                  found this: a turtle is something you“carry true home with
-                  you”. She had told Kat thatshe wished for her “to see new
-                  places, for new thingsto come to her”.
-                </p>
-                <p>
-                  As I wrote, I see myself in Den. How she senses theinvisible
-                  narratives and storylines of objects. Istilloften rely a lot
-                  on sign posts and other text, numbersthat surround me to guide
-                  me through decisionsand paths in life. Like Den, I see myself
-                  facilitatingexchanges to continue these felt stories around
-                  me.
-                </p>
-                <p>
-                  I asked Den, “Do you think you’re a halfway housefor objects
-                  to find their better place?” “Yes.”
-                </p>
+                <p className='center'> {t('waiting2')}</p>
+                <p style={{ textIndent: 0 }}>{t('waiting3')}</p>
+                <p>{t('waiting4')}</p>
+                <p>{t('waiting5')}</p>
+                <p>{t('waiting6')}</p>
+                <p>{t('waiting7')}</p>
               </div>
               <div className='audio_player'>
                 <div className='player'>
@@ -891,53 +799,23 @@ const Index = () => {
                 </div>
               </div>
               <div className='description_container'>
-                <p>
-                  Turtle - Rock from the Dead Sea - Plant called “Kilala” (“To
-                  know”)
-                </p>
+                <p>{t('waiting8')}</p>
               </div>
               <div className='description_container title'>
-                <p>7 BADVIBES</p>
+                <p>7 {t('badvibes')}</p>
               </div>
               <div className='description_container'>
-                <p className='center'>Bad Energy</p>
-                <p style={{ textIndent: 0 }}>
-                  Pat Kay thinks of the bad energy during an exchange. When
-                  asked, she didn’t want to give away her Ifugaowooden carvings.
-                  These are indigenous woodcarvings, stylized representations of
-                  people guardingrice crops in the Northern Philippines, thought
-                  tocarry ancestral spirits. Although people might wantthe item,
-                  Pat Kay didn’t want to do any harm bypassing on the bad energy
-                  to them. So she threw thecarvings away.
-                </p>
+                <p className='center'>{t('badvibes0')}</p>
+                <p style={{ textIndent: 0 }}>{t('badvibes1')}</p>
               </div>
               <div className='description_container'>
-                <p className='center'>Knowing yourself through rejections</p>
-                <p style={{ textIndent: 0 }}>
-                  “(The item you barter) It reflects your personality,right?” “I
-                  didn’t realize my personality is hard to market.”
-                </p>
-                <p>
-                  Pat Kay and D Jay laugh.“What do people want?” “A mirror.”
-                  “Okay, I have to find more basic shit.” Pat Kay thinks she
-                  doesn’t know how to market her items, and her personality.
-                  But, it’s okay, she believesshe will get to know more of
-                  herself in the process,just the same --“I’ll find out through
-                  rejections.”
-                </p>
+                <p className='center'>{t('badvibes2')}</p>
+                <p style={{ textIndent: 0 }}>{t('badvibes3')}</p>
+                <p>{t('badvibes4')}</p>
               </div>
               <div className='description_container'>
-                <p className='center'>Getting rid of former identity</p>
-                <p style={{ textIndent: 0 }}>
-                  D Jay asks her if she’s merely bartering useless thingsto get
-                  something valuable in return. Pat Kay says it’s weird for her
-                  to be getting itemsthat her “former identity” consumes. She
-                  just wantstoget something new, something her present self
-                  likes. “Den was telling me about her exchanges, and I
-                  don’tknow, but her exchanges areso poetic, versus mine.
-                  (laughs)... But it’s okay. Ithink the comparison can showthat
-                  I’m trash, and she’s an artist.”
-                </p>
+                <p className='center'>{t('badvibes5')}</p>
+                <p style={{ textIndent: 0 }}>{t('badvibes6')}</p>
               </div>
               <div className='audio_player'>
                 <div className='player'>
@@ -945,42 +823,21 @@ const Index = () => {
                 </div>
               </div>
               <div className='description_container'>
-                <p className='center'>No local interest</p>
-                <p style={{ textIndent: 0 }}>
-                  Den was a bit sad that no one wanted to barter fora work she
-                  did, a print. She felt there was no interestin her projects
-                  locally. Which is probably why, shethought, no one wanted it.
-                </p>
+                <p className='center'>{t('badvibes7')}</p>
+                <p style={{ textIndent: 0 }}>{t('badvibes8')}</p>
               </div>
               <div className='video_container'>
                 <img src={johnImgArr[19]} />
               </div>
               <div className='description_container'>
-                <p>
-                  She realized later on, talking to someone, that peoplemight
-                  have had interest in her work but justcouldn’t find a thing of
-                  equal value to it. I think she felt a bit better since then.
-                </p>
+                <p>{t('badvibes9')}</p>
               </div>
               <div className='description_container title'>
-                <p>8 NARRATIVES</p>
+                <p>8 {t('narratives')}</p>
               </div>
               <div className='description_container'>
-                <p className='center'>Jueteng Lords</p>
-                <p style={{ textIndent: 0 }}>
-                  While Pat Kay and D Jay talked about a proposed exchangefor
-                  the Beyonce CD,juetengwas discussedbecause of the
-                  filmKubrador(Bet Collector), a filmby Jeffrey
-                  Jeturian.Juetengis an illegal numbersgame, a lotto-type game
-                  where bet collectors go door-to-doorto take bets from the
-                  community. It is asource of corruption. Jueteng has caused the
-                  downfallof many politicians. Former President JosephEstrada
-                  got in trouble because of it; he was forcedout of office. It
-                  was big news during “my time”,and Iwrite this only because I
-                  saw D Jay and Pat Kay talkingaboutjuetengto themselves, and it
-                  was amusingthat they had to Google it. This was the talk of
-                  thenation then.
-                </p>
+                <p className='center'>{t('narratives0')}</p>
+                <p style={{ textIndent: 0 }}>{t('narratives1')}</p>
               </div>
               <div className='audio_player'>
                 <div className='player'>
@@ -988,40 +845,16 @@ const Index = () => {
                 </div>
               </div>
               <div className='description_container'>
-                <p className='center'>Continuing narratives</p>
-                <p style={{ textIndent: 0 }}>
-                  From the turtle that came from a past relationship,Den passed
-                  the turtle on to Jas in Berlin. Jas hadaturtle from her own
-                  childhood that her mother gaveaway without her permission. And
-                  which she neversaw again. When she saw the turtle from Den’s
-                  feed,she wanted to barter with her.
-                </p>
+                <p className='center'>{t('narratives2')}</p>
+                <p style={{ textIndent: 0 }}>{t('narratives3')}</p>
               </div>
               <div className='video_container'>
                 <img src={johnImgArr[20]} />
               </div>
               <div className='description_container'>
-                <p>
-                  In doing the exchange, Jas and Den agreed to document things
-                  for me, including the path-to-home ofobjects. Interestingly,
-                  the package that came fromBerlin was a collection of goodies
-                  to send to herfriends and family in the Philippines.
-                </p>
-                <p>
-                  Den was getting a rock from the Dead Sea. But
-                  becauseinternational shipping is expensive, Jas thoughtof
-                  sending a box to fill to accompany the rock, away to maximize
-                  shipping fee so more people benefit.
-                </p>
-                <p>
-                  This term “pasabuy”, a word play on “passing on” and“buy” --
-                  groups of people send items they buyoverseas to a single
-                  address, to be packed and consolidatedin a single box, for
-                  them to split shippingfees. It is anotherbalikbayanbox, a box
-                  full ofsouvenirs orpasalubongto families in the
-                  Philippines.Overseas Filipino workers come home carrying
-                  thesebig cargo boxes all the time.
-                </p>
+                <p>{t('narratives4')}</p>
+                <p>{t('narratives5')}</p>
+                <p>{t('narratives6')}</p>
               </div>
               <div className='audio_player'>
                 <div className='player'>
@@ -1029,19 +862,15 @@ const Index = () => {
                 </div>
               </div>
               <div className='description_container'>
-                <p className='center'>Plant and Cookies</p>
-                <p style={{ textIndent: 0 }}>
-                  In their last barters, Den got a plant in exchangefor a rock
-                  from the Dead Sea. Pat Kay got cookiesinexchange for some
-                  graduation photos.
-                </p>
+                <p className='center'>{t('plantandcookies')}</p>
+                <p style={{ textIndent: 0 }}>{t('plantandcookies0')}</p>
               </div>
               <div className='video_container'>
                 <img src={johnImgArr[21]} />
               </div>
 
               <div className='description_container'>
-                <p>Pat Kay ate the cookie. And, last I heard, the plantdied.</p>
+                <p>{t('plantandcookies1')}</p>
               </div>
               <div className='audio_player'>
                 <div className='player'>
@@ -1049,14 +878,8 @@ const Index = () => {
                 </div>
               </div>
               <div className='description_container'>
-                <p>
-                  In the meantime, I’m editing the piece as a proposalfor a
-                  documentary project: Local things exchangedthrough bartering
-                  during a pandemic. The show, madein the Philippines, hopes to
-                  be sold to an onlinechannel “near you” as online content to be
-                  consumedinternationally.
-                </p>
-                <p>What does that tell you about me?</p>
+                <p>{t('plantandcookies2')}</p>
+                <p>{t('plantandcookies3')}</p>
               </div>
               {/* Artist Info */}
               {/* Artist Info */}
@@ -1064,30 +887,9 @@ const Index = () => {
               {/* Artist Info */}
               {/* Artist Info */}
               <div className='artist_info_container'>
-                <div>John Torres</div>
+                <div> {t('artist')}</div>
                 <div>
-                  <p>
-                    Wonjung Shin is an artist engaging with various media
-                    represented through auditory perception, tactile sense,
-                    visual elements and a mixture of digital and analog
-                    technology. Her research seeks to find hidden rules and
-                    patterns in natural elements and multi-layered relationships
-                    between human and non-human sentient beings by translating
-                    imperceptible data in natural elements into different
-                    perceptual experiences. In her work, biological materials
-                    are often used, combined or connected to machines, and
-                    transformed. Her recent research focuses on the physical
-                    nature of the human perceptional system driven by a
-                    post-digital media concept and applying a contemporary
-                    scientific and artistic research method. Her works have been
-                    shown in various places including Piksel Festival (NO),
-                    Transmediale Vorspiel (DE), Mediamatic (NL), Athens Digital
-                    Arts Festival (GR), AMRO (AT), Lab 30 (DE), Art Center Nabi
-                    (KR), ACT Festival (KR), Daechung Chungjoo City Museum of
-                    Art (KR), V2 (NL), TADAEX festival (IR), WRO Media Art
-                    Biennale (PL) and she has been awarded NIME (New Interface
-                    for Musical Expression (2017) Best Sound Performance.
-                  </p>
+                  <p>{t('artistInfo')}</p>
                 </div>
               </div>
             </div>
