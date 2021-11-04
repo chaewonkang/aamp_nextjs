@@ -65,7 +65,7 @@ const dataSet = [
       'walk',
       'lockdown',
     ],
-    thumb: '../static/images/sabina.png',
+    thumb: '../static/images/sabina.jpg',
   },
   {
     index: 3,
@@ -82,7 +82,7 @@ const dataSet = [
       'entanglement',
       'touch the ground',
     ],
-    thumb: '../static/images/aamp.png',
+    thumb: '../static/images/aamp.jpg',
   },
   {
     index: 4,
@@ -115,7 +115,7 @@ const dataSet = [
       'badvibes',
       'narratives',
     ],
-    thumb: '../static/images/john.png',
+    thumb: '../static/images/john.jpg',
   },
 ];
 
