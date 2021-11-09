@@ -3,6 +3,7 @@ import Document, { Html, Main, NextScript, Head } from 'next/document';
 import Helmet from 'react-helmet';
 import { ServerStyleSheet, createGlobalStyle } from 'styled-components';
 
+
 const GlobalStyles = createGlobalStyle`
 	   html,
 	   body {

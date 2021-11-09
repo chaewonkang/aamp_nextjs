@@ -4,6 +4,7 @@ import theme from '../styles/theme';
 import PageLayout from '../components/PageLayout';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import ReactPlayer from 'react-player';
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
@@ -555,7 +556,17 @@ const Index = () => {
                 </div>
               </div>
               <div className='video_container'>
-                <img src={dataSet[3].thumb} />
+                <iframe
+                  src='https://player.vimeo.com/video/572089964?h=aeb9b48254&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
+                  frameborder='0'
+                  allow='autoplay; fullscreen;'
+                  allowfullscreen
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                  }}
+                  title='2021_Dawn_Vision_Taiki_Sakpisit_AAMP.mp4'
+                ></iframe>
               </div>
               <div className='description_container'>
                 <p>{t('desc1')}</p>

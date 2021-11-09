@@ -406,9 +406,14 @@ p {
 .content_container .video_container,
 .content_container .spectrum_container,
 .content_container .audio_player {
-  width: calc((100% / 8) * 6);
+  width: calc((100vw / 8) * 6);
+
   margin: 0 auto;
   padding-top: 40px;
+}
+
+.content_container .video_container {
+  height: calc((100vw / 8) * 3.5);
 }
 
 .content_container .artist_info_container {
