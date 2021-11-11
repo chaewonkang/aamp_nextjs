@@ -15,17 +15,19 @@
   "title4": "주관",
   "p7": "아시아 아티스트 무빙이미지 플랫폼",
   "title5": "참여작가",
-  "participants": [
-    "김민정",
-    "안효주",
-    "신원정(다이애나 밴드)",
-    "존 토레스",
-    "타이키 삿피식",
-    "AAMP(조인한, 이헌, 김은정)",
-    "루카스 브라시스키스",
-    "셀리나 보넬리",
-    "박소현",
-    "정지돈"
-  ],
-  "title6": "Programms"
+  "participant1": "김민정",
+  "participant2": "안효주,",
+  "participant3": "신원정(다이애나 밴드),",
+  "participant4": "존 토레스,",
+  "participant5": "타이키 삿피식,",
+  "participant6": "AAMP(조인한, 이헌, 김은정),",
+  "participant7": "루카스 브라시스키스,",
+  "participant8": "셀리나 보넬리,",
+  "participant9": "박소현,",
+  "participant10": "정지돈",
+  "title6": "Programms",
+  "programme1": "아티스트 워크숍 프로젝트",
+  "programme2": "온라인 아카이브 전시",
+  "programme3": "온라인 저널 출간",
+  "programme4": "온라인 아카이브 전시 웹사이트"
 }

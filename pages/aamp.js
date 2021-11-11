@@ -531,14 +531,18 @@ const Index = () => {
             <div className='content_container'>
               <div className='title_container'>
                 <div className='left_arrow'>
-                  <span>◀︎</span>
+                  <Link href='/minjung'>
+                    <span>◀︎</span>
+                  </Link>
                 </div>
                 <div>
                   <span>Untitled</span>
                   <span>Wonjung Shin</span>
                 </div>
                 <div className='right_arrow'>
-                  <span>▶︎</span>
+                  <Link href='/john'>
+                    <span>▶︎</span>
+                  </Link>
                 </div>
               </div>
               <div className='description_container'>

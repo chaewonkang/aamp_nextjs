@@ -15,17 +15,19 @@
   "title4": "Curated by",
   "p7": "Asian Artist Moving Image Platform",
   "title5": "Participating Artists and Writers",
-  "participants": [
-    "KIM Minjung,",
-    "Sabina Hyoju AHN,",
-    "SHIN Wonjung(Diana Band),",
-    "John TORRES,",
-    "Taiki SAKPISIT,",
-    "AAMP(KIM Eunjung, PHEE Hun, CHO Inhan),",
-    "Lukas BRASISKIS,",
-    "Selina BONELLI,",
-    "PARK Sohyun,",
-    "JEONG Jidon"
-  ],
-  "title6": "Programms"
+  "participant1": "KIM Minjung,",
+  "participant2": "Sabina Hyoju AHN,",
+  "participant3": "SHIN Wonjung(Diana Band),",
+  "participant4": "John TORRES,",
+  "participant5": "Taiki SAKPISIT,",
+  "participant6": "AAMP(KIM Eunjung, PHEE Hun, CHO Inhan),",
+  "participant7": "Lukas BRASISKIS,",
+  "participant8": "Selina BONELLI,",
+  "participant9": "PARK Sohyun,",
+  "participant10": "JEONG Jidon",
+  "title6": "Programms",
+  "programme1": "Artist Workshop Project ",
+  "programme2": "Online Archival Exhibition",
+  "programme3": "e-journal Publication",
+  "programme4": "Online Archival Exhibition Website"
 }

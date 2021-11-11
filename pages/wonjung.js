@@ -707,14 +707,18 @@ const Index = () => {
             >
               <div className='title_container'>
                 <div className='left_arrow'>
-                  <span>◀︎</span>
+                  <Link href='/sabina'>
+                    <span>◀︎</span>
+                  </Link>
                 </div>
                 <div>
                   <span>{t('title')}</span>
                   <span>{t('artist')}</span>
                 </div>
                 <div className='right_arrow'>
-                  <span>▶︎</span>
+                  <Link href='/minjung'>
+                    <span>▶︎</span>
+                  </Link>
                 </div>
               </div>
               <div className='description_container'>
