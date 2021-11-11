@@ -3,14 +3,165 @@ import { useEffect, useState, useRef } from 'react';
 import theme from '../styles/theme';
 import PageLayout from '../components/PageLayout';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
-const wonjung = [
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
+
+const soundObj = [
   {
-	img: '../static/images/wonjung/aluminum_tunnel01-min.jpg',
-	sound: [
-		'../static/images/wonjung/'
-	]
+    title: 'aluminum_tunnel01',
+    img: '../static/images/wonjung/aluminum_tunnel01-min.jpg',
+    sound: [
+      '../static/images/wonjung/aluminum_tunner01_01.mp3',
+      '../static/images/wonjung/aluminum_tunner01_02.mp3',
+      '../static/images/wonjung/aluminum_tunner01_03.mp3',
+      '../static/images/wonjung/aluminum_tunner01_04.mp3',
+    ],
+    soundName: [
+      'aluminum_tunner01_01',
+      'aluminum_tunner01_02',
+      'aluminum_tunner01_03',
+      'aluminum_tunner01_04',
+    ],
   },
+  {
+    title: 'aluminum_tunnel02',
+    img: '../static/images/wonjung/aluminum_tunnel02-min.jpg',
+    sound: [
+      '../static/images/wonjung/aluminum_tunner02_01.mp3',
+      '../static/images/wonjung/aluminum_tunner02_02.mp3',
+      '../static/images/wonjung/aluminum_tunner02_03.mp3',
+      '../static/images/wonjung/aluminum_tunner02_04.mp3',
+    ],
+    soundName: [
+      'aluminum_tunner02_01',
+      'aluminum_tunner02_02',
+      'aluminum_tunner02_03',
+      'aluminum_tunner02_04',
+    ],
+  },
+  {
+    title: 'barrel',
+    img: '../static/images/wonjung/barrel-min.jpg',
+    sound: [
+      '../static/images/wonjung/barrel01.mp3',
+      '../static/images/wonjung/barrel02.mp3',
+      '../static/images/wonjung/barrel03.mp3',
+      '../static/images/wonjung/barrel04.mp3',
+    ],
+    soundName: ['barrel01', 'barrel02', 'barrel03', 'barrel04'],
+  },
+  {
+    title: 'bongbong',
+    img: '../static/images/wonjung/bongbong-min.jpg',
+    sound: [
+      '../static/images/wonjung/bongbong01.mp3',
+      '../static/images/wonjung/bongbong02.mp3',
+      '../static/images/wonjung/bongbong03.mp3',
+      '../static/images/wonjung/bongbong04.mp3',
+    ],
+    soundName: ['bongbong01', 'bongbong02', 'bongbong03', 'bongbong04'],
+  },
+  {
+    title: 'copper',
+    img: '../static/images/wonjung/copper-min.jpg',
+    sound: [
+      '../static/images/wonjung/copper01.mp3',
+      '../static/images/wonjung/copper02.mp3',
+      '../static/images/wonjung/copper03.mp3',
+      '../static/images/wonjung/copper04.mp3',
+    ],
+    soundName: ['copper01', 'copper02', 'copper03', 'copper04'],
+  },
+  {
+    title: 'drawer',
+    img: '../static/images/wonjung/drawer-min.jpg',
+    sound: [
+      '../static/images/wonjung/drawer01.mp3',
+      '../static/images/wonjung/drawer02.mp3',
+      '../static/images/wonjung/drawer03.mp3',
+      '../static/images/wonjung/drawer04.mp3',
+    ],
+    soundName: ['drawer01', 'drawer02', 'drawer03', 'drawer04'],
+  },
+  {
+    title: 'funnel',
+    img: '../static/images/wonjung/funnel-min.jpg',
+    sound: [
+      '../static/images/wonjung/funnel01.mp3',
+      '../static/images/wonjung/funnel02.mp3',
+      '../static/images/wonjung/funnel03.mp3',
+      '../static/images/wonjung/funnel04.mp3',
+    ],
+    soundName: ['funnel01', 'funnel02', 'funnel03', 'funnel04'],
+  },
+  {
+    title: 'gas_cylinder',
+    img: '../static/images/wonjung/gas_cylinder-min.jpg',
+    sound: [
+      '../static/images/wonjung/gas_cylinder01.mp3',
+      '../static/images/wonjung/gas_cylinder02.mp3',
+      '../static/images/wonjung/gas_cylinder03.mp3',
+      '../static/images/wonjung/gas_cylinder04.mp3',
+    ],
+    soundName: [
+      'gas_cylinder01',
+      'gas_cylinder02',
+      'gas_cylinder03',
+      'gas_cylinder04',
+    ],
+  },
+  {
+    title: 'hose',
+    img: '../static/images/wonjung/hose-min.jpg',
+    sound: [
+      '../static/images/wonjung/hose01.mp3',
+      '../static/images/wonjung/hose02.mp3',
+      '../static/images/wonjung/hose03.mp3',
+      '../static/images/wonjung/hose04.mp3',
+    ],
+    soundName: ['hose01', 'hose02', 'hose03', 'hose04'],
+  },
+  {
+    title: 'suitcase',
+    img: '../static/images/wonjung/suitcase-min.jpg',
+    sound: [
+      '../static/images/wonjung/suitcase01.mp3',
+      '../static/images/wonjung/suitcase02.mp3',
+      '../static/images/wonjung/suitcase03.mp3',
+      '../static/images/wonjung/suitcase04.mp3',
+    ],
+    soundName: ['suitcase01', 'suitcase02', 'suitcase03', 'suitcase04'],
+  },
+  {
+    title: 'tissue',
+    img: '../static/images/wonjung/tissue-min.jpg',
+    sound: [
+      '../static/images/wonjung/tissue01.mp3',
+      '../static/images/wonjung/tissue02.mp3',
+      '../static/images/wonjung/tissue03.mp3',
+      '../static/images/wonjung/tissue04.mp3',
+    ],
+    soundName: ['tissue01', 'tissue02', 'tissue03', 'tissue04'],
+  },
+  {
+    title: 'yellow',
+    img: '../static/images/wonjung/yellow-min.jpg',
+    sound: [
+      '../static/images/wonjung/yellow01.mp3',
+      '../static/images/wonjung/yellow02.mp3',
+      '../static/images/wonjung/yellow03.mp3',
+      '../static/images/wonjung/yellow04.mp3',
+    ],
+    soundName: ['yellow01', 'yellow02', 'yellow03', 'yellow04'],
+  },
+];
+
+const slides = [
+  '../static/images/wonjung/slide1.jpg',
+  '../static/images/wonjung/slide2.jpg',
+  '../static/images/wonjung/slide3.jpg',
 ];
 
 const dataSet = [
@@ -131,6 +282,9 @@ const Index = () => {
   const [thumbUrl, setThumbUrl] = useState(false);
   const [flag, setFlag] = useState('');
   const [isKeyClicked, setIsKeyClicked] = useState(false);
+  const router = useRouter();
+  const { t } = useTranslation('wonjung');
+  const locale = router.locale;
 
   let keywordArr = [].concat.apply(
     [],
@@ -537,150 +691,84 @@ const Index = () => {
                 </div>
               </div>
             </div>
-            <div className='content_container'>
+            <div
+              className={
+                locale === 'en'
+                  ? 'content_container'
+                  : 'ko_type content_container'
+              }
+            >
               <div className='title_container'>
                 <div className='left_arrow'>
                   <span>◀︎</span>
                 </div>
                 <div>
-                  <span>Untitled</span>
-                  <span>Wonjung Shin</span>
+                  <span>{t('title')}</span>
+                  <span>{t('artist')}</span>
                 </div>
                 <div className='right_arrow'>
                   <span>▶︎</span>
                 </div>
               </div>
               <div className='description_container'>
-                <p>
-                  Dawn Vision meditates on the religious theme park Keoku
-                  Pavilion and its mythic creator Luang Pu Bunleua Sulilat
-                  (1932-1996) who led a mysterious and perplexing life.{' '}
-                </p>
-                <p>
-                  Bunleua’s beginning reads like Joseph Campbell’s The Hero With
-                  a Thousand Faces. At a young age, Bunleua ran away from his
-                  home in Nong Khai, Thailand. He then fell into a cave and met
-                  the hermit, master Keoku, who became his spiritual mentor.
-                  Having great reverence for his teacher, Bunleua named his
-                  life’s work, Keoku Pavilion, after his master. It is believed
-                  that Bunleua was the reincarnation of Naga, who forbade him
-                  from becoming a monk, which led him on other spiritual paths.
-                  Bunleua later moved to Vientiane, Laos, and became a secular
-                  man. In 1958 he started the construction of Buddha Park (also
-                  known as Xiong Khuan). He was incarcerated in Vientiane for
-                  unspecified reasons and fled back to Nong Khai after the city
-                  fell to the Pathet Lao—a communist political movement—in 1975.
-                </p>
-                <p>
-                  Bunleua began construction of Sala Keoku in 1978 with the help
-                  of devoted followers. All of the hundred large-scale, complex
-                  and elaborate sculptures came purely from Bunleua’s dreams and
-                  visions. Bunleua himself has never been trained in art,
-                  engineering and architecture, and yet, he played an integral
-                  role in guiding his followers in the construction and
-                  completion of Sala Keoku.
-                </p>
-                <p>
-                  As many considered him to be insane, Bunleua was often
-                  troubled by the authorities and was incarcerated again for
-                  reasons unknown. He died in 1996 from a strange illness.
-                  Following his wishes, his embalmed body rests inside a glass
-                  hemisphere. It is alleged that his spirit is still wandering
-                  around his beloved creation.
-                </p>
+                <p>{t('p1')}</p>
+                <p>{t('p2')}</p>
+                <p>{t('p3')}</p>
+                <p>{t('p4')}</p>
+                <p>{t('p5')}</p>
               </div>
               <div className='video_container'>
-                <img src={dataSet[3].thumb} />
-              </div>
-              <div className='module_container'>
-                <div className='module_row'>
-                  <div className='module'>
-                    <div className='image_row'>
-                      <span>Index 1</span>
-                      <img src={dataSet[4].thumb}></img>
+                <div className='slide_container'>
+                  <div className='arrow_wrapper'>
+                    <div>
+                      <span>◀︎</span>
                     </div>
                     <div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
+                      <span>▶︎</span>
                     </div>
                   </div>
-                  <div className='module'>
-                    <div className='image_row'>
-                      <span>Index 1</span>
-                      <img src={dataSet[0].thumb}></img>
-                    </div>
-                    <div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                    </div>
-                  </div>
-                  <div className='module'>
-                    <div className='image_row'>
-                      <span>Index 1</span>
-                      <img src={dataSet[3].thumb}></img>
-                    </div>
-                    <div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                      <div>
-                        <span>►</span>expression 1
-                      </div>
-                    </div>
+                  <div className='slide_wrapper'>
+                    <img src={slides[0]}></img>
                   </div>
                 </div>
               </div>
+              <div className='module_container'>
+                <div className='module_row'>
+                  {soundObj &&
+                    soundObj.map((sound) => {
+                      return (
+                        <div className='module'>
+                          <div className='image_row'>
+                            <span>{sound.title}</span>
+                            <img src={sound.img}></img>
+                          </div>
+                          <div className='sound_row'>
+                            <div>
+                              <span>►</span>
+                              {sound.soundName[0]}
+                            </div>
+                            <div>
+                              <span>►</span>
+                              {sound.soundName[1]}
+                            </div>
+                            <div>
+                              <span>►</span>
+                              {sound.soundName[2]}
+                            </div>
+                            <div>
+                              <span>►</span>
+                              {sound.soundName[3]}
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                </div>
+              </div>
               <div className='artist_info_container'>
-                <div>Wonjung Shin</div>
+                <div>{t('artist')}</div>
                 <div>
-                  <p>
-                    Wonjung Shin is an artist engaging with various media
-                    represented through auditory perception, tactile sense,
-                    visual elements and a mixture of digital and analog
-                    technology. Her research seeks to find hidden rules and
-                    patterns in natural elements and multi-layered relationships
-                    between human and non-human sentient beings by translating
-                    imperceptible data in natural elements into different
-                    perceptual experiences. In her work, biological materials
-                    are often used, combined or connected to machines, and
-                    transformed. Her recent research focuses on the physical
-                    nature of the human perceptional system driven by a
-                    post-digital media concept and applying a contemporary
-                    scientific and artistic research method. Her works have been
-                    shown in various places including Piksel Festival (NO),
-                    Transmediale Vorspiel (DE), Mediamatic (NL), Athens Digital
-                    Arts Festival (GR), AMRO (AT), Lab 30 (DE), Art Center Nabi
-                    (KR), ACT Festival (KR), Daechung Chungjoo City Museum of
-                    Art (KR), V2 (NL), TADAEX festival (IR), WRO Media Art
-                    Biennale (PL) and she has been awarded NIME (New Interface
-                    for Musical Expression (2017) Best Sound Performance.
-                  </p>
+                  <p>{t('artistInfo')}</p>
                 </div>
               </div>
             </div>
@@ -698,3 +786,12 @@ const Index = () => {
 };
 
 export default Index;
+
+export const getStaticProps = async ({ locale }) => {
+  console.log('locale of getStaticProps', locale);
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['wonjung'])),
+    },
+  };
+};
