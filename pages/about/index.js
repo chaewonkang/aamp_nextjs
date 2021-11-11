@@ -60,33 +60,36 @@ const About = ({ locale }) => {
                 <span>{t('p5')}</span>
               </div>
               <div>
-                <span>{t('title6')}</span>
+                <span>{t('title3')}</span>
                 <span>{t('p6')}</span>
               </div>
               <div>
-                <span>{t('title7')}</span>
+                <span>{t('title4')}</span>
                 <span>{t('p7')}</span>
               </div>
               <div>
-                <span>Participating Artists and Writers</span>
+                <span>{t('title5')}</span>
                 <span>
-                  KIM Minjung, Sabina Hyoju AHN,<br></br>
-                  SHIN Wonjung(Diana Band),<br></br>
-                  John TORRES,<br></br>
-                  Taiki SAKPISIT,<br></br>
-                  AAMP(KIM Eunjung, PHEE Hun, CHO Inhan),<br></br>
-                  Lukas BRASISKIS,<br></br>
-                  Selina BONELLI,<br></br>
-                  PARK Sohyun,<br></br>
-                  JEONG Jidon<br></br>
+                  {t('participant1')}, {t('participant2')}
+                  <br></br>
+                  {t('participant3')} <br></br>
+                  {t('participant4')} <br></br>
+                  {t('participant5')} <br></br>
+                  {t('participant6')} <br></br>
+                  {t('participant7')} <br></br>
+                  {t('participant8')} <br></br>
+                  {t('participant9')}
+                  <br></br>
+                  {t('participant10')}
+                  <br></br>
                 </span>
               </div>
               <div>
-                <span>Programmers</span>
+                <span>{t('title6')}</span>
                 <span>
-                  Artist Workshop Project Online Archival Exhibition e-journal
+                  {t('programme1')} {t('programme2')} {t('programme3')}
                   <br></br>
-                  Online Archival Exhibition
+                  {t('programme4')}
                 </span>
               </div>
               <div className='center'>

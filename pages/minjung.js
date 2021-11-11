@@ -7,6 +7,12 @@ import Link from 'next/link';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
+const imgArr = [
+  '../static/images/minjung/minjung1.png',
+  '../static/images/minjung/minjung2.png',
+  '../static/images/minjung/minjung3.png',
+];
+
 const dataSet = [
   {
     index: 0,
@@ -536,121 +542,50 @@ const Index = () => {
             <div className='content_container'>
               <div className='title_container'>
                 <div className='left_arrow'>
-                  <span>◀︎</span>
+                  <Link href='/wonjung'>
+                    <span>◀︎</span>
+                  </Link>
                 </div>
                 <div>
-                  <span>
-                    You are welcome <br />
-                    when you are welcomed.
-                  </span>
-                  <span>Minjung Kim</span>
+                  <span>{t('title')}</span>
+                  <span>{t('artist')}</span>
                 </div>
                 <div className='right_arrow'>
-                  <span>▶︎</span>
+                  <Link href='/aamp'>
+                    <span>▶︎</span>
+                  </Link>
                 </div>
               </div>
               <div className='description_container title'>
                 <p>{t('ch1')}</p>
               </div>
               <div className='video_container'>
-                <img src='../static/images/minjung_1.png' />
+                <img src={imgArr && imgArr[0]} />
               </div>
               <div className='description_container'>
-                <p>{t('ch1_text')}</p>
-              </div>
-              <div className='description_container title'>
-                <p>{t('ch2')}</p>
+                <p>{t('p1')}</p>
               </div>
               <div className='video_container'>
-                <img src={dataSet[3].thumb} />
+                <img src={imgArr && imgArr[1]} />
               </div>
-              <div className='description_container title'>
-                <p>Ch3. The journey of the cactus</p>
-              </div>
+
               <div className='video_container'>
-                <img src={dataSet[3].thumb} />
+                <img src={imgArr && imgArr[2]} />
               </div>
-              <div className='description_container title'>
-                <p>Ch4. Plants</p>
-              </div>
-              <div className='plants_container'>
-                <span>native plants</span>
-                <span>indigenous plants</span>
-                <span>naturalized plants</span>
-                <span>exotic/alien plants</span>
-                <span>introduced plants</span>
-                <span>invasive plants</span>
-              </div>
-              <div className='description_container title'>
-                <p>Ch5. You are welcome when you are welcomed.</p>
-              </div>
-              <div className='video_container'>
-                <img src={dataSet[3].thumb} />
-              </div>
+
               <div className='description_container'>
-                <p>
-                  Dawn Vision meditates on the religious theme park Keoku
-                  Pavilion and its mythic creator Luang Pu Bunleua Sulilat
-                  (1932-1996) who led a mysterious and perplexing life.
-                </p>
-                <p>
-                  Bunleua’s beginning reads like Joseph Campbell’s The Hero With
-                  a Thousand Faces. At a young age, Bunleua ran away from his
-                  home in Nong Khai, Thailand. He then fell into a cave and met
-                  the hermit, master Keoku, who became his spiritual mentor.
-                  Having great reverence for his teacher, Bunleua named his
-                  life’s work, Keoku Pavilion, after his master. It is believed
-                  that Bunleua was the reincarnation of Naga, who forbade him
-                  from becoming a monk, which led him on other spiritual paths.
-                  Bunleua later moved to Vientiane, Laos, and became a secular
-                  man. In 1958 he started the construction of Buddha Park (also
-                  known as Xiong Khuan). He was incarcerated in Vientiane for
-                  unspecified reasons and fled back to Nong Khai after the city
-                  fell to the Pathet Lao—a communist political movement—in 1975.
-                </p>
-                <p>
-                  Bunleua began construction of Sala Keoku in 1978 with the help
-                  of devoted followers. All of the hundred large-scale, complex
-                  and elaborate sculptures came purely from Bunleua’s dreams and
-                  visions. Bunleua himself has never been trained in art,
-                  engineering and architecture, and yet, he played an integral
-                  role in guiding his followers in the construction and
-                  completion of Sala Keoku.
-                </p>
-                <p>
-                  As many considered him to be insane, Bunleua was often
-                  troubled by the authorities and was incarcerated again for
-                  reasons unknown. He died in 1996 from a strange illness.
-                  Following his wishes, his embalmed body rests inside a glass
-                  hemisphere. It is alleged that his spirit is still wandering
-                  around his beloved creation.
-                </p>
+                <p>{t('p2')}</p>
+                <p>{t('p3')}</p>
+                <p>{t('p4')}</p>
+                <p>{t('p5')}</p>
+                <p>{t('p6')}</p>
+                <p>{t('p7')}</p>
+                <p>{t('p8')}</p>
               </div>
               <div className='artist_info_container'>
-                <div>Minjung Kim</div>
+                <div>{t('artist')}</div>
                 <div>
-                  <p>
-                    Wonjung Shin is an artist engaging with various media
-                    represented through auditory perception, tactile sense,
-                    visual elements and a mixture of digital and analog
-                    technology. Her research seeks to find hidden rules and
-                    patterns in natural elements and multi-layered relationships
-                    between human and non-human sentient beings by translating
-                    imperceptible data in natural elements into different
-                    perceptual experiences. In her work, biological materials
-                    are often used, combined or connected to machines, and
-                    transformed. Her recent research focuses on the physical
-                    nature of the human perceptional system driven by a
-                    post-digital media concept and applying a contemporary
-                    scientific and artistic research method. Her works have been
-                    shown in various places including Piksel Festival (NO),
-                    Transmediale Vorspiel (DE), Mediamatic (NL), Athens Digital
-                    Arts Festival (GR), AMRO (AT), Lab 30 (DE), Art Center Nabi
-                    (KR), ACT Festival (KR), Daechung Chungjoo City Museum of
-                    Art (KR), V2 (NL), TADAEX festival (IR), WRO Media Art
-                    Biennale (PL) and she has been awarded NIME (New Interface
-                    for Musical Expression (2017) Best Sound Performance.
-                  </p>
+                  <p>{t('artistInfo')}</p>
                 </div>
               </div>
             </div>
