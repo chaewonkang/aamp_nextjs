@@ -5,8 +5,18 @@ import PageLayout from '../components/PageLayout';
 import Link from 'next/link';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
+import SlideShow from '../components/SlideShow';
 
 const delay = 5000;
+
+const thumbArr = [
+  { img: '../static/images/taiki.jpg', artist: 'taiki' },
+  { img: '../static/images/wonjung.jpg', artist: 'wonjung' },
+  { img: '../static/images/aamp.jpg', artist: 'aamp' },
+  { img: '../static/images/john.jpg', artist: 'john' },
+  { img: '../static/images/sabina.jpg', artist: 'sabina' },
+  { img: '../static/images/minjung.jpg', artist: 'minjung' },
+];
 
 const dataSet = [
   {
@@ -198,22 +208,7 @@ const Index = () => {
               </div>
             )}
             <div className='mobile_thumbnail_container'>
-              <div className='slideshow'>
-                <div
-                  className='slideshowSlider'
-                  style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
-                >
-                  {dataSet.map((item, index) => {
-                    return (
-                      <Link href={`/${item.flag}`}>
-                        <div className='slide' key={index}>
-                          <img src={item.thumb}></img>
-                        </div>
-                      </Link>
-                    );
-                  })}
-                </div>
-              </div>
+              <SlideShow isMobile={true} imgPath={thumbArr}></SlideShow>
             </div>
             <div className='keyword_container_wrapper'>
               <div
