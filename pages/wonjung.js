@@ -4,9 +4,16 @@ import theme from '../styles/theme';
 import PageLayout from '../components/PageLayout';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import SlideShow from '../components/SlideShow';
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
+
+const slideArr = [
+  '../static/images/wonjung/slide1.jpg',
+  '../static/images/wonjung/slide2.jpg',
+  '../static/images/wonjung/slide3.jpg',
+];
 
 const soundObj = [
   {
@@ -718,19 +725,7 @@ const Index = () => {
                 <p>{t('p5')}</p>
               </div>
               <div className='video_container'>
-                <div className='slide_container'>
-                  <div className='arrow_wrapper'>
-                    <div>
-                      <span>◀︎</span>
-                    </div>
-                    <div>
-                      <span>▶︎</span>
-                    </div>
-                  </div>
-                  <div className='slide_wrapper'>
-                    <img src={slides[0]}></img>
-                  </div>
-                </div>
+                <SlideShow imgPath={slideArr}></SlideShow>
               </div>
               <div className='module_container'>
                 <div className='module_row'>
