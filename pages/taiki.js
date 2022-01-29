@@ -559,9 +559,9 @@ const Index = () => {
                   </Link>
                 </div>
               </div>
-              <div className='video_container'>
+              <div className='video_container embed-container'>
                 <iframe
-                  src='https://player.vimeo.com/video/572089964?h=aeb9b48254&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
+                  src='https://player.vimeo.com/video/572089964?h=aeb9b48254&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&byline=0&portrait=0&sidedock=0&autoplay=1&loop=1&controls=0&muted=1&background=1'
                   frameborder='0'
                   allow='autoplay; fullscreen;'
                   allowfullscreen
@@ -578,7 +578,6 @@ const Index = () => {
                 <p>{t('desc3')}</p>
                 <p>{t('desc4')}</p>
               </div>
-
               <div className='artist_info_container'>
                 <div>{t('artist')}</div>
                 <div>
