@@ -667,10 +667,17 @@ const Index = () => {
               <div className='description_container'>
                 <p>{t('findings5')}</p>
               </div>
-              <div className='audio_player'>
-                <div className='player'>
-                  <img src={playBtn} />
-                </div>
+			  <div className='video_container embed-container'>
+                <iframe
+                  src='https://player.vimeo.com/video/572100036?h=d276a18c1b&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0&amp;sidedock=1&amp;autoplay=1&amp;loop=1&amp;controls=0&amp;muted=1&amp;background=1'
+				  frameborder="0"
+				  allow="autoplay;fullscreen;playsinline;"
+				  allowfullscreen
+				  playsinline
+				  webkit-playsinline
+					webkitallowfullscreen
+				mozallowfullscreen
+                ></iframe>
               </div>
               <div className='description_container'>
                 <p>{t('findings6')}</p>
@@ -679,10 +686,17 @@ const Index = () => {
                 <p className='center'>{t('findings7')}</p>
                 <p style={{ textIndent: 0 }}>{t('findings8')}</p>
               </div>
-              <div className='audio_player'>
-                <div className='player'>
-                  <img src={playBtn} />
-                </div>
+			  <div className='video_container embed-container'>
+                <iframe
+                  src='https://player.vimeo.com/video/572097742?h=0b97b892eb&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0&amp;sidedock=1&amp;autoplay=1&amp;loop=1&amp;controls=0&amp;muted=1&amp;background=1'
+				  frameborder="0"
+				  allow="autoplay;fullscreen;playsinline;"
+				  allowfullscreen
+				  playsinline
+				  webkit-playsinline
+					webkitallowfullscreen
+				mozallowfullscreen
+                ></iframe>
               </div>
               <div className='description_container'>
                 <p>{t('findings9')}</p>
@@ -696,10 +710,17 @@ const Index = () => {
               <div className='description_container'>
                 <p>{t('patkay0')}</p>
               </div>
-              <div className='audio_player'>
-                <div className='player'>
-                  <img src={playBtn} />
-                </div>
+			  <div className='video_container embed-container'>
+                <iframe
+                  src='https://player.vimeo.com/video/572100879?h=20f5db5ec5&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0&amp;sidedock=1&amp;autoplay=1&amp;loop=1&amp;controls=0&amp;muted=1&amp;background=1'
+				  frameborder="0"
+				  allow="autoplay;fullscreen;playsinline;"
+				  allowfullscreen
+				  playsinline
+				  webkit-playsinline
+					webkitallowfullscreen
+				mozallowfullscreen
+                ></iframe>
               </div>
               <div className='video_container'>
                 <img src={johnImgArr[11]} />
@@ -745,10 +766,17 @@ const Index = () => {
                 <p>{t('shady2')}</p>
                 <p>{t('shady3')}</p>
               </div>
-              <div className='audio_player'>
-                <div className='player'>
-                  <img src={playBtn} />
-                </div>
+			  <div className='video_container embed-container'>
+                <iframe
+                  src='https://player.vimeo.com/video/572102508?h=f93fd1f806&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0&amp;sidedock=1&amp;autoplay=1&amp;loop=1&amp;controls=0&amp;muted=1&amp;background=1'
+				  frameborder="0"
+				  allow="autoplay;fullscreen;playsinline;"
+				  allowfullscreen
+				  playsinline
+				  webkit-playsinline
+					webkitallowfullscreen
+				mozallowfullscreen
+                ></iframe>
               </div>
               <div className='description_container'>
                 <p>{t('shady4')}</p>
@@ -772,10 +800,17 @@ const Index = () => {
                 <p style={{ textIndent: 0 }}>{t('shady8')}</p>
                 <p>{t('shady9')}</p>
               </div>
-              <div className='audio_player'>
-                <div className='player'>
-                  <img src={playBtn} />
-                </div>
+			  <div className='video_container embed-container'>
+                <iframe
+                  src='https://player.vimeo.com/video/572098721?h=ef265608ae&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0&amp;sidedock=1&amp;autoplay=1&amp;loop=1&amp;controls=0&amp;muted=1&amp;background=1'
+				  frameborder="0"
+				  allow="autoplay;fullscreen;playsinline;"
+				  allowfullscreen
+				  playsinline
+				  webkit-playsinline
+					webkitallowfullscreen
+				mozallowfullscreen
+                ></iframe>
               </div>
               <div className='description_container title'>
                 <p>6 {t('waiting')}</p>
@@ -784,10 +819,17 @@ const Index = () => {
                 <p className='center'>{t('waiting0')}</p>
                 <p style={{ textIndent: 0 }}>{t('waiting1')}</p>
               </div>
-              <div className='audio_player'>
-                <div className='player'>
-                  <img src={playBtn} />
-                </div>
+			  <div className='video_container embed-container'>
+                <iframe
+                  src='https://player.vimeo.com/video/572099318?h=23cc2e5b30&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0&amp;sidedock=1&amp;autoplay=1&amp;loop=1&amp;controls=0&amp;muted=1&amp;background=1'
+				  frameborder="0"
+				  allow="autoplay;fullscreen;playsinline;"
+				  allowfullscreen
+				  playsinline
+				  webkit-playsinline
+					webkitallowfullscreen
+				mozallowfullscreen
+                ></iframe>
               </div>
               <div className='description_container'>
                 <p className='center'> {t('waiting2')}</p>
@@ -797,7 +839,7 @@ const Index = () => {
                 <p>{t('waiting6')}</p>
                 <p>{t('waiting7')}</p>
               </div>
-              <div className='audio_player'>
+			  <div className='audio_player'>
                 <div className='player'>
                   <img src={playBtn} />
                 </div>
@@ -843,10 +885,17 @@ const Index = () => {
                 <p className='center'>{t('narratives0')}</p>
                 <p style={{ textIndent: 0 }}>{t('narratives1')}</p>
               </div>
-              <div className='audio_player'>
-                <div className='player'>
-                  <img src={playBtn} />
-                </div>
+			  <div className='video_container embed-container'>
+                <iframe
+                  src='https://player.vimeo.com/video/572101131?h=99d5d6d523&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0&amp;sidedock=1&amp;autoplay=1&amp;loop=1&amp;controls=0&amp;muted=1&amp;background=1'
+				  frameborder="0"
+				  allow="autoplay;fullscreen;playsinline;"
+				  allowfullscreen
+				  playsinline
+				  webkit-playsinline
+					webkitallowfullscreen
+				mozallowfullscreen
+                ></iframe>
               </div>
               <div className='description_container'>
                 <p className='center'>{t('narratives2')}</p>
@@ -860,10 +909,17 @@ const Index = () => {
                 <p>{t('narratives5')}</p>
                 <p>{t('narratives6')}</p>
               </div>
-              <div className='audio_player'>
-                <div className='player'>
-                  <img src={playBtn} />
-                </div>
+			  <div className='video_container embed-container'>
+                <iframe
+                  src='https://player.vimeo.com/video/572097817?h=76c427a3c1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0&amp;sidedock=1&amp;autoplay=1&amp;loop=1&amp;controls=0&amp;muted=1&amp;background=1'
+				  frameborder="0"
+				  allow="autoplay;fullscreen;playsinline;"
+				  allowfullscreen
+				  playsinline
+				  webkit-playsinline
+					webkitallowfullscreen
+				mozallowfullscreen
+                ></iframe>
               </div>
               <div className='description_container'>
                 <p className='center'>{t('plantandcookies')}</p>
@@ -876,10 +932,17 @@ const Index = () => {
               <div className='description_container'>
                 <p>{t('plantandcookies1')}</p>
               </div>
-              <div className='audio_player'>
-                <div className='player'>
-                  <img src={playBtn} />
-                </div>
+			  <div className='video_container embed-container'>
+                <iframe
+                  src='https://player.vimeo.com/video/572100326?h=c18a74b359&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0&amp;sidedock=1&amp;autoplay=1&amp;loop=1&amp;controls=0&amp;muted=1&amp;background=1'
+				  frameborder="0"
+				  allow="autoplay;fullscreen;playsinline;"
+				  allowfullscreen
+				  playsinline
+				  webkit-playsinline
+					webkitallowfullscreen
+				mozallowfullscreen
+                ></iframe>
               </div>
               <div className='description_container'>
                 <p>{t('plantandcookies2')}</p>

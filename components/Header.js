@@ -1,8 +1,12 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
+
 function Header() {
   const router = useRouter();
+
+  const { pathname } = router;
+  const originPath = pathname.replace('/en', '');
 
   return (
     <div className='header_container'>
@@ -32,7 +36,10 @@ function Header() {
           )}
         </div>
         <div className='global'>
-          <Link href='' locale='en'>
+          <Link scroll={false} href={pathname.startsWith('/ko/') ?
+              originPath
+              : ""} locale='en'>
+			  <a>
             <span
               style={
                 router.locale === 'en'
@@ -44,9 +51,12 @@ function Header() {
             >
               EN
             </span>
+			</a>
           </Link>
           <span>/</span>
-          <Link href='' locale='ko'>
+          <Link scroll={false} href={pathname.startsWith('/en/') ?
+              originPath
+              : ""} locale='ko'>
             <span
               style={
                 router.locale === 'ko'

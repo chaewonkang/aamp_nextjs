@@ -3,6 +3,8 @@ import { useEffect, useState, useRef } from 'react';
 import theme from '../styles/theme';
 import PageLayout from '../components/PageLayout';
 import Link from 'next/link';
+import playBtn from '../static/images/playbutton.png';
+import { useRouter } from 'next/router';
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
@@ -131,8 +133,10 @@ const Index = () => {
   const [thumbUrl, setThumbUrl] = useState(false);
   const [flag, setFlag] = useState('');
   const [isKeyClicked, setIsKeyClicked] = useState(false);
-
+  const router = useRouter();
   const { t } = useTranslation('minjung');
+  const locale = router.locale;
+
 
   let keywordArr = [].concat.apply(
     [],
@@ -539,8 +543,13 @@ const Index = () => {
                 </div>
               </div>
             </div>
-            <div className='content_container'>
-              <div className='title_container'>
+			<div
+              className={
+                locale === 'en'
+                  ? 'content_container'
+                  : 'ko_type content_container'
+              }
+            >              <div className='title_container'>
                 <div className='left_arrow'>
                   <Link href='/wonjung'>
                     <span>◀︎</span>
@@ -559,20 +568,30 @@ const Index = () => {
               <div className='description_container title'>
                 <p>{t('ch1')}</p>
               </div>
-              <div className='video_container'>
+			  <div className='video_container'>
                 <img src={imgArr && imgArr[0]} />
               </div>
               <div className='description_container'>
                 <p>{t('p1')}</p>
               </div>
               <div className='video_container'>
-                <img src={imgArr && imgArr[1]} />
-              </div>
-
-              <div className='video_container'>
                 <img src={imgArr && imgArr[2]} />
               </div>
-
+			  <div className='video_container embed-container'>
+                <iframe
+                  src='https://player.vimeo.com/video/609001790?h=28c83f2c2e&amp;badge=1&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0&amp;sidedock=1&amp;autoplay=1&amp;loop=1&amp;controls=0&amp;muted=1&amp;background=1'
+				  frameborder="0"
+				  allow="autoplay;fullscreen;playsinline;"
+				  allowfullscreen
+				  playsinline
+				  webkit-playsinline
+					webkitallowfullscreen
+				mozallowfullscreen
+                ></iframe>
+              </div>
+              <div className='video_container'>
+                <img src={imgArr && imgArr[1]} />
+              </div>
               <div className='description_container'>
                 <p>{t('p2')}</p>
                 <p>{t('p3')}</p>
@@ -581,6 +600,19 @@ const Index = () => {
                 <p>{t('p6')}</p>
                 <p>{t('p7')}</p>
                 <p>{t('p8')}</p>
+              </div>
+			  <div className='video_container embed-container'>
+                <iframe
+                  src='https://player.vimeo.com/video/609003541?h=71e9647b49&amp;badge=1&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0&amp;sidedock=1&amp;autoplay=1&amp;loop=1&amp;controls=0&amp;muted=1&amp;background=1'
+				  frameborder="0"
+				  allow="autoplay;fullscreen;playsinline;"
+				  allowfullscreen
+				  playsinline
+				  webkit-playsinline
+					webkitallowfullscreen
+				mozallowfullscreen
+                ></iframe>
+
               </div>
               <div className='artist_info_container'>
                 <div>{t('artist')}</div>
