@@ -969,7 +969,7 @@ export const getStaticProps = async ({ locale }) => {
     console.log("locale of getStaticProps", locale);
     return {
         props: {
-            ...(await serverSideTranslations(locale, ["common", "minjung"])),
+            ...(await serverSideTranslations(locale, ["minjung"])),
         },
     };
 };
