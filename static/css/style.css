@@ -33,7 +33,7 @@ p {
 
 .embed-container {
     --video--width: 1740;
-    --video--height: 1080;
+    --video--height: 740;
 
     position: relative;
     padding-bottom: calc(
