@@ -493,7 +493,8 @@ const Index = () => {
                                   }}
                                   onMouseOut={() => {
                                     setIsItalic(false);
-                                    setIsKeyClicked(false);
+									setIsKeyClicked(false);
+
                                   }}
                                 >
                                   {item.slice(0, idx)}

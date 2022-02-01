@@ -80,7 +80,7 @@ p {
     height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;
-    max-width: 2560px;
+    max-width: 1440px;
     margin: 0 auto;
     position: relative;
     -ms-overflow-style: none;
@@ -101,8 +101,8 @@ p {
 .thumbnail_container {
     position: absolute;
     left: 160px;
-    width: calc(100vw - 500px);
-    height: calc(100vh - 26vh);
+    width: calc(100% - 500px);
+    height: calc(100% - 26vh);
     top: 13vh;
     z-index: -1;
     display: flex;
@@ -322,6 +322,8 @@ p {
 
 .header_container {
     width: calc(100vw - 180px);
+    max-width: 1440px;
+    margin: 0 auto;
     height: fit-content;
     position: fixed;
     top: 26px;
@@ -574,7 +576,7 @@ p {
 .content_container .spectrum_container,
 .content_container .audio_player,
 .content_container .video_function_container {
-    width: calc((100vw / 8) * 6);
+    width: calc((100% / 8) * 6);
     margin: 0 auto;
     margin-top: 40px;
 }
