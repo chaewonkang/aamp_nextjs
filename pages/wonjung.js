@@ -293,7 +293,79 @@ const Index = () => {
     const { t } = useTranslation("wonjung");
     const locale = router.locale;
 
-    const audioRef = useRef();
+    const aluminum_tunner01_01 = useRef();
+    const aluminum_tunner01_02 = useRef();
+    const aluminum_tunner01_03 = useRef();
+    const aluminum_tunner01_04 = useRef();
+    const aluminum_tunner02_01 = useRef();
+    const aluminum_tunner02_02 = useRef();
+    const aluminum_tunner02_03 = useRef();
+    const aluminum_tunner02_04 = useRef();
+    const barrel01 = useRef();
+    const barrel02 = useRef();
+    const barrel03 = useRef();
+    const barrel04 = useRef();
+    const bongbong01 = useRef();
+    const bongbong02 = useRef();
+    const bongbong03 = useRef();
+    const bongbong04 = useRef();
+    const copper01 = useRef();
+    const copper02 = useRef();
+    const copper03 = useRef();
+    const copper04 = useRef();
+    const drawer01 = useRef();
+    const drawer02 = useRef();
+    const drawer03 = useRef();
+    const drawer04 = useRef();
+    const funnel01 = useRef();
+    const funnel02 = useRef();
+    const funnel03 = useRef();
+    const funnel04 = useRef();
+    const gas_cylinder01 = useRef();
+    const gas_cylinder02 = useRef();
+    const gas_cylinder03 = useRef();
+    const gas_cylinder04 = useRef();
+    const hose01 = useRef();
+    const hose02 = useRef();
+    const hose03 = useRef();
+    const hose04 = useRef();
+    const suitcase01 = useRef();
+    const suitcase02 = useRef();
+    const suitcase03 = useRef();
+    const suitcase04 = useRef();
+    const tissue01 = useRef();
+    const tissue02 = useRef();
+    const tissue03 = useRef();
+    const tissue04 = useRef();
+    const yellow01 = useRef();
+    const yellow02 = useRef();
+    const yellow03 = useRef();
+    const yellow04 = useRef();
+
+    const refArr = [
+        [
+            aluminum_tunner01_01,
+            aluminum_tunner01_02,
+            aluminum_tunner01_03,
+            aluminum_tunner01_04,
+        ],
+        [
+            aluminum_tunner02_01,
+            aluminum_tunner02_02,
+            aluminum_tunner02_03,
+            aluminum_tunner02_04,
+        ],
+        [barrel01, barrel02, barrel03, barrel04],
+        [bongbong01, bongbong02, bongbong03, bongbong04],
+        [copper01, copper02, copper03, copper04],
+        [drawer01, drawer02, drawer03, drawer04],
+        [funnel01, funnel02, funnel03, funnel04],
+        [gas_cylinder01, gas_cylinder02, gas_cylinder03, gas_cylinder04],
+        [hose01, hose02, hose03, hose04],
+        [suitcase01, suitcase02, suitcase03, suitcase04],
+        [tissue01, tissue02, tissue03, tissue04],
+        [yellow01, yellow02, yellow03, yellow04],
+    ];
 
     let keywordArr = [].concat.apply(
         [],
@@ -1076,7 +1148,11 @@ const Index = () => {
                                                         <div>
                                                             <span
                                                                 onClick={() => {
-                                                                    audioRef.current.play();
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][0].current.play();
                                                                 }}
                                                             >
                                                                 ►
@@ -1086,20 +1162,95 @@ const Index = () => {
                                                                     sound
                                                                         .sound[0]
                                                                 }
-                                                                ref={audioRef}
+                                                                ref={
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][0]
+                                                                }
                                                             />
                                                             {sound.soundName[0]}
                                                         </div>
                                                         <div>
-                                                            <span>►</span>
+                                                            <span
+                                                                onClick={() => {
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][1].current.play();
+                                                                }}
+                                                            >
+                                                                ►
+                                                            </span>
+                                                            <audio
+                                                                src={
+                                                                    sound
+                                                                        .sound[1]
+                                                                }
+                                                                ref={
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][1]
+                                                                }
+                                                            />
                                                             {sound.soundName[1]}
                                                         </div>
                                                         <div>
-                                                            <span>►</span>
+                                                            <span
+                                                                onClick={() => {
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][2].current.play();
+                                                                }}
+                                                            >
+                                                                ►
+                                                            </span>
+                                                            <audio
+                                                                src={
+                                                                    sound
+                                                                        .sound[2]
+                                                                }
+                                                                ref={
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][2]
+                                                                }
+                                                            />
                                                             {sound.soundName[2]}
                                                         </div>
                                                         <div>
-                                                            <span>►</span>
+                                                            <span
+                                                                onClick={() => {
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][3].current.play();
+                                                                }}
+                                                            >
+                                                                ►
+                                                            </span>
+                                                            <audio
+                                                                src={
+                                                                    sound
+                                                                        .sound[3]
+                                                                }
+                                                                ref={
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][3]
+                                                                }
+                                                            />
                                                             {sound.soundName[3]}
                                                         </div>
                                                     </div>
