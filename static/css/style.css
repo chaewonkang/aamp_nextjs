@@ -31,6 +31,27 @@ p {
     word-break: keep-all;
 }
 
+.embed-container-s {
+    --video--width: 1740;
+    --video--height: 250;
+
+    position: relative;
+    padding-bottom: calc(
+        var(--video--height) / var(--video--width) * 100%
+    ); /* 41.66666667% */
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.embed-container-s iframe,
+.embed-container-s object,
+.embed-container-s embed {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
 .embed-container {
     --video--width: 1740;
     --video--height: 740;
