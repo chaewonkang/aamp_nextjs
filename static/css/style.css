@@ -31,10 +31,37 @@ p {
     word-break: keep-all;
 }
 
-.embed-container-s {
-    --video--width: 1740;
-    --video--height: 250;
+.vp-center {
+    align-items: flex-end !important;
+}
 
+.embed-container-xs {
+    --video--width: 349;
+    --video--height: 196;
+
+    position: relative;
+    padding-bottom: calc(
+        var(--video--height) / var(--video--width) * 100%
+    ); /* 41.66666667% */
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.embed-container-xs iframe,
+.embed-container-xs object,
+.embed-container-xs embed {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.embed-container-s {
+    --video--width: 1000;
+    --video--height: 150;
+
+    margin-top: 10px !important;
     position: relative;
     padding-bottom: calc(
         var(--video--height) / var(--video--width) * 100%
@@ -50,6 +77,7 @@ p {
     bottom: 0;
     left: 0;
     width: 100%;
+    height: 100%;
 }
 
 .embed-container {
@@ -348,6 +376,7 @@ p {
     height: fit-content;
     position: fixed;
     top: 26px;
+    z-index: 9999;
 }
 
 .header_container .header_inner {
@@ -766,6 +795,9 @@ p {
 }
 
 @media screen and (max-width: 780px) {
+    .embed-container {
+        --video--height: 900;
+    }
     .arrowbox {
         height: auto;
     }
@@ -954,7 +986,7 @@ p {
     }
 
     .content_container .spectrum_container {
-        height: 100px;
+        height: auto;
     }
 
     .about_container .about_nav,

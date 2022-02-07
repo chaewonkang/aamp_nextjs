@@ -215,9 +215,8 @@ const Index = () => {
                                                     item.includes(" ") &&
                                                     item.length > 5
                                                 ) {
-                                                    const idx = item.indexOf(
-                                                        " ",
-                                                    );
+                                                    const idx =
+                                                        item.indexOf(" ");
                                                     return (
                                                         <>
                                                             <span
@@ -377,9 +376,8 @@ const Index = () => {
                                                     item.includes(" ") &&
                                                     item.length > 5
                                                 ) {
-                                                    const idx = item.indexOf(
-                                                        " ",
-                                                    );
+                                                    const idx =
+                                                        item.indexOf(" ");
                                                     return (
                                                         <>
                                                             <span
@@ -535,9 +533,8 @@ const Index = () => {
                                                     item.includes(" ") &&
                                                     item.length > 5
                                                 ) {
-                                                    const idx = item.indexOf(
-                                                        " ",
-                                                    );
+                                                    const idx =
+                                                        item.indexOf(" ");
                                                     return (
                                                         <>
                                                             <span
@@ -693,9 +690,8 @@ const Index = () => {
                                                     item.includes(" ") &&
                                                     item.length > 5
                                                 ) {
-                                                    const idx = item.indexOf(
-                                                        " ",
-                                                    );
+                                                    const idx =
+                                                        item.indexOf(" ");
                                                     return (
                                                         <>
                                                             <span
@@ -1004,7 +1000,7 @@ const Index = () => {
                             </div>
                             <div className="video_container embed-container">
                                 <iframe
-                                    src="https://player.vimeo.com/video/572100036?h=d276a18c1b&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0&amp;sidedock=1&amp;autoplay=1&amp;loop=1&amp;controls=0&amp;muted=1&amp;background=1"
+                                    src="https://player.vimeo.com/video/572100036?h=d276a18c1b&amp;title=0&amp;byline=0&amp;portrait=0&amp;controls=1&amp;sidedock=0&amp;loop=1&amp;muted=0&amp;"
                                     frameBorder="0"
                                     allow="autoplay;fullscreen;playsinline;"
                                     allowfullscreen
@@ -1025,7 +1021,7 @@ const Index = () => {
                             </div>
                             <div className="video_container embed-container">
                                 <iframe
-                                    src="https://player.vimeo.com/video/572097742?h=0b97b892eb&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0&amp;sidedock=1&amp;autoplay=1&amp;loop=1&amp;controls=0&amp;muted=1&amp;background=1"
+                                    src="https://player.vimeo.com/video/572097742?h=0b97b892eb&amp;title=0&amp;byline=0&amp;portrait=0&amp;controls=1&amp;sidedock=0&amp;loop=1&amp;muted=0&amp;"
                                     frameBorder="0"
                                     allow="autoplay;fullscreen;playsinline;"
                                     allowfullscreen
@@ -1049,7 +1045,7 @@ const Index = () => {
                             </div>
                             <div className="video_container embed-container">
                                 <iframe
-                                    src="https://player.vimeo.com/video/572100879?h=20f5db5ec5&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0&amp;sidedock=1&amp;autoplay=1&amp;loop=1&amp;controls=0&amp;muted=1&amp;background=1"
+                                    src="https://player.vimeo.com/video/572100879?h=20f5db5ec5&amp;title=0&amp;byline=0&amp;portrait=0&amp;controls=1&amp;sidedock=0&amp;loop=1&amp;muted=0&amp;"
                                     frameBorder="0"
                                     allow="autoplay;fullscreen;playsinline;"
                                     allowfullscreen
@@ -1105,7 +1101,7 @@ const Index = () => {
                             </div>
                             <div className="video_container embed-container">
                                 <iframe
-                                    src="https://player.vimeo.com/video/572102508?h=f93fd1f806&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0&amp;sidedock=1&amp;autoplay=1&amp;loop=1&amp;controls=0&amp;muted=1&amp;background=1"
+                                    src="https://player.vimeo.com/video/572102508?h=f93fd1f806&amp;title=0&amp;byline=0&amp;portrait=0&amp;controls=1&amp;sidedock=0&amp;loop=1&amp;muted=0&amp;"
                                     frameBorder="0"
                                     allow="autoplay;fullscreen;playsinline;"
                                     allowfullscreen
@@ -1139,7 +1135,7 @@ const Index = () => {
                             </div>
                             <div className="video_container embed-container">
                                 <iframe
-                                    src="https://player.vimeo.com/video/572098721?h=ef265608ae&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0&amp;sidedock=1&amp;autoplay=1&amp;loop=1&amp;controls=0&amp;muted=1&amp;background=1"
+                                    src="https://player.vimeo.com/video/572098721?h=ef265608ae&amp;title=0&amp;byline=0&amp;portrait=0&amp;controls=1&amp;sidedock=0&amp;loop=1&amp;muted=0&amp;"
                                     frameBorder="0"
                                     allow="autoplay;fullscreen;playsinline;"
                                     allowfullscreen
@@ -1158,7 +1154,7 @@ const Index = () => {
                             </div>
                             <div className="video_container embed-container">
                                 <iframe
-                                    src="https://player.vimeo.com/video/572099318?h=23cc2e5b30&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0&amp;sidedock=1&amp;autoplay=1&amp;loop=1&amp;controls=0&amp;muted=1&amp;background=1"
+                                    src="https://player.vimeo.com/video/572099318?h=23cc2e5b30&amp;title=0&amp;byline=0&amp;portrait=0&amp;controls=1&amp;sidedock=0&amp;loop=1&amp;muted=0&amp;"
                                     frameBorder="0"
                                     allow="autoplay;fullscreen;playsinline;"
                                     allowfullscreen
@@ -1234,7 +1230,7 @@ const Index = () => {
                             </div>
                             <div className="video_container embed-container">
                                 <iframe
-                                    src="https://player.vimeo.com/video/572101131?h=99d5d6d523&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0&amp;sidedock=1&amp;autoplay=1&amp;loop=1&amp;controls=0&amp;muted=1&amp;background=1"
+                                    src="https://player.vimeo.com/video/572101131?h=99d5d6d523&amp;title=0&amp;byline=0&amp;portrait=0&amp;controls=1&amp;sidedock=0&amp;loop=1&amp;muted=0&amp;"
                                     frameBorder="0"
                                     allow="autoplay;fullscreen;playsinline;"
                                     allowfullscreen
@@ -1260,7 +1256,7 @@ const Index = () => {
                             </div>
                             <div className="video_container embed-container">
                                 <iframe
-                                    src="https://player.vimeo.com/video/572097817?h=76c427a3c1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0&amp;sidedock=1&amp;autoplay=1&amp;loop=1&amp;controls=0&amp;muted=1&amp;background=1"
+                                    src="https://player.vimeo.com/video/572097817?h=76c427a3c1&amp;title=0&amp;byline=0&amp;portrait=0&amp;controls=1&amp;sidedock=0&amp;loop=1&amp;muted=0&amp;"
                                     frameBorder="0"
                                     allow="autoplay;fullscreen;playsinline;"
                                     allowfullscreen
@@ -1285,7 +1281,7 @@ const Index = () => {
                             </div>
                             <div className="video_container embed-container">
                                 <iframe
-                                    src="https://player.vimeo.com/video/572100326?h=c18a74b359&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0&amp;sidedock=1&amp;autoplay=1&amp;loop=1&amp;controls=0&amp;muted=1&amp;background=1"
+                                    src="https://player.vimeo.com/video/572100326?h=c18a74b359&amp;title=0&amp;byline=0&amp;portrait=0&amp;controls=1&amp;sidedock=0&amp;loop=1&amp;muted=0&amp;"
                                     frameBorder="0"
                                     allow="autoplay;fullscreen;playsinline;"
                                     allowfullscreen

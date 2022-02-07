@@ -897,7 +897,7 @@ const Index = () => {
                             </div>
                             <div className="video_container embed-container">
                                 <iframe
-                                    src={`${sabinaData[index].video}&amp;title=0&amp;byline=0&amp;portrait=0&amp;sidedock=1&amp;autoplay=0&amp;loop=1&amp;muted=0&amp;`}
+                                    src={`${sabinaData[index].video}&amp;title=0&amp;byline=0&amp;portrait=0&amp;controls=1&amp;sidedock=0&amp;loop=1&amp;muted=0&amp;`}
                                     frameBorder="0"
                                     allow="fullscreen;playsinline;"
                                     allowfullscreen
@@ -936,35 +936,31 @@ const Index = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="spectrum_container embed-container-s">
-                                <iframe
-                                    src={`${sabinaData[index].original}&amp;title=0&amp;byline=0&amp;portrait=0&amp;controls=0&amp;sidedock=0&amp;autoplay=1&amp;loop=1&amp;muted=0&amp;`}
-                                    frameBorder="0"
-                                    allow="autoplay;fullscreen;playsinline;"
-                                    allowfullscreen
-                                    playsinline
-                                    webkit-playsinline
-                                    webkitallowfullscreen
-                                    mozallowfullscreen
-                                ></iframe>
-                                <div className="spectrum_desc">
-                                    <span>Original</span>
-                                </div>
+                            <div className="spectrum_container spectrum_desc">
+                                <span>Original</span>
                             </div>
                             <div className="spectrum_container embed-container-s">
                                 <iframe
-                                    src={`${sabinaData[index].recon}&amp;title=0&amp;byline=0&amp;portrait=0&amp;controls=0&amp;sidedock=0&amp;autoplay=1&amp;loop=1&amp;muted=0&amp;`}
+                                    src={`${sabinaData[index].original}&amp;title=0&amp;byline=0&amp;portrait=0&amp;controls=1&amp;sidedock=0&amp;loop=1&amp;muted=0&amp;`}
                                     frameBorder="0"
-                                    allow="autoplay;fullscreen;playsinline;"
-                                    allowfullscreen
+                                    allow="autoplay;playsinline;"
                                     playsinline
                                     webkit-playsinline
-                                    webkitallowfullscreen
+                                    mozallowfullscreen
+                                ></iframe>
+                            </div>
+                            <div className="spectrum_container spectrum_desc">
+                                <span>Machine Learning</span>
+                            </div>
+                            <div className="spectrum_container embed-container-s">
+                                <iframe
+                                    src={`${sabinaData[index].recon}&amp;title=0&amp;byline=0&amp;portrait=0&amp;controls=1&amp;sidedock=0&amp;loop=1&amp;muted=0&amp;`}
+                                    frameBorder="0"
+                                    allow="autoplay;playsinline;"
+                                    playsinline
+                                    webkit-playsinline
                                     mozallowfullscreen
                                 ></iframe>{" "}
-                                <div className="spectrum_desc">
-                                    <span>Machine Learning</span>
-                                </div>
                             </div>
                             <div className="module_container">
                                 <div className="module_row triple">
@@ -972,7 +968,7 @@ const Index = () => {
                                         sabinaData.map(el => {
                                             return (
                                                 <div className="module">
-                                                    <div className="image_row embed-container">
+                                                    <div className="image_row embed-container-xs">
                                                         <iframe
                                                             src={`${el.video}&amp;title=0&amp;byline=0&amp;portrait=0&amp;controls=0&amp;sidedock=0&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;`}
                                                             frameBorder="0"

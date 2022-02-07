@@ -190,9 +190,8 @@ const Index = () => {
                                                     item.includes(" ") &&
                                                     item.length > 5
                                                 ) {
-                                                    const idx = item.indexOf(
-                                                        " ",
-                                                    );
+                                                    const idx =
+                                                        item.indexOf(" ");
                                                     return (
                                                         <>
                                                             <span
@@ -352,9 +351,8 @@ const Index = () => {
                                                     item.includes(" ") &&
                                                     item.length > 5
                                                 ) {
-                                                    const idx = item.indexOf(
-                                                        " ",
-                                                    );
+                                                    const idx =
+                                                        item.indexOf(" ");
                                                     return (
                                                         <>
                                                             <span
@@ -510,9 +508,8 @@ const Index = () => {
                                                     item.includes(" ") &&
                                                     item.length > 5
                                                 ) {
-                                                    const idx = item.indexOf(
-                                                        " ",
-                                                    );
+                                                    const idx =
+                                                        item.indexOf(" ");
                                                     return (
                                                         <>
                                                             <span
@@ -668,9 +665,8 @@ const Index = () => {
                                                     item.includes(" ") &&
                                                     item.length > 5
                                                 ) {
-                                                    const idx = item.indexOf(
-                                                        " ",
-                                                    );
+                                                    const idx =
+                                                        item.indexOf(" ");
                                                     return (
                                                         <>
                                                             <span
@@ -890,7 +886,7 @@ const Index = () => {
                             </div>
                             <div className="video_container embed-container">
                                 <iframe
-                                    src="https://player.vimeo.com/video/572089964?h=aeb9b48254&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&byline=0&portrait=0&sidedock=0&autoplay=1&loop=1&controls=0&muted=1&background=1"
+                                    src="https://player.vimeo.com/video/572089964?h=aeb9b48254&amp;title=0&amp;byline=0&amp;portrait=0&amp;controls=1&amp;sidedock=0&amp;loop=1&amp;muted=0&amp;"
                                     frameBorder="0"
                                     allow="autoplay; fullscreen;"
                                     allowfullscreen

@@ -196,9 +196,8 @@ const Index = () => {
                                                     item.includes(" ") &&
                                                     item.length > 5
                                                 ) {
-                                                    const idx = item.indexOf(
-                                                        " ",
-                                                    );
+                                                    const idx =
+                                                        item.indexOf(" ");
                                                     return (
                                                         <>
                                                             <span
@@ -358,9 +357,8 @@ const Index = () => {
                                                     item.includes(" ") &&
                                                     item.length > 5
                                                 ) {
-                                                    const idx = item.indexOf(
-                                                        " ",
-                                                    );
+                                                    const idx =
+                                                        item.indexOf(" ");
                                                     return (
                                                         <>
                                                             <span
@@ -516,9 +514,8 @@ const Index = () => {
                                                     item.includes(" ") &&
                                                     item.length > 5
                                                 ) {
-                                                    const idx = item.indexOf(
-                                                        " ",
-                                                    );
+                                                    const idx =
+                                                        item.indexOf(" ");
                                                     return (
                                                         <>
                                                             <span
@@ -674,9 +671,8 @@ const Index = () => {
                                                     item.includes(" ") &&
                                                     item.length > 5
                                                 ) {
-                                                    const idx = item.indexOf(
-                                                        " ",
-                                                    );
+                                                    const idx =
+                                                        item.indexOf(" ");
                                                     return (
                                                         <>
                                                             <span
@@ -909,7 +905,7 @@ const Index = () => {
                             </div>
                             <div className="video_container embed-container">
                                 <iframe
-                                    src="https://player.vimeo.com/video/609001790?h=28c83f2c2e&amp;badge=1&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0&amp;sidedock=1&amp;autoplay=1&amp;loop=1&amp;controls=0&amp;muted=1&amp;background=1"
+                                    src="https://player.vimeo.com/video/609001790?h=28c83f2c2e&amp;title=0&amp;byline=0&amp;portrait=0&amp;controls=1&amp;sidedock=0&amp;loop=1&amp;muted=0&amp;"
                                     frameBorder="0"
                                     allow="autoplay;fullscreen;playsinline;"
                                     allowfullscreen
@@ -933,7 +929,7 @@ const Index = () => {
                             </div>
                             <div className="video_container embed-container">
                                 <iframe
-                                    src="https://player.vimeo.com/video/609003541?h=71e9647b49&amp;badge=1&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0&amp;sidedock=1&amp;autoplay=1&amp;loop=1&amp;controls=0&amp;muted=1&amp;background=1"
+                                    src="https://player.vimeo.com/video/609003541?h=71e9647b49&amp;title=0&amp;byline=0&amp;portrait=0&amp;controls=1&amp;sidedock=0&amp;loop=1&amp;muted=0&amp;"
                                     frameBorder="0"
                                     allow="autoplay;fullscreen;playsinline;"
                                     allowfullscreen
