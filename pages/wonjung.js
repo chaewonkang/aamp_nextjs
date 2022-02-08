@@ -290,6 +290,10 @@ const Index = () => {
     const [flag, setFlag] = useState("");
     const [isKeyClicked, setIsKeyClicked] = useState(false);
     const router = useRouter();
+    const [isPlaying, setIsPlaying] = useState({
+        name: "",
+        bool: false,
+    });
     const { t } = useTranslation("wonjung");
     const locale = router.locale;
 
@@ -1148,11 +1152,43 @@ const Index = () => {
                                                         <div>
                                                             <span
                                                                 onClick={() => {
-                                                                    refArr[
-                                                                        soundObj.indexOf(
-                                                                            sound,
-                                                                        )
-                                                                    ][0].current.play();
+                                                                    if (
+                                                                        isPlaying.bool &&
+                                                                        isPlaying.name ===
+                                                                            sound
+                                                                                .sound[0]
+                                                                    ) {
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][0].current.pause();
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][0].current.currentTime = 0;
+                                                                        setIsPlaying(
+                                                                            {
+                                                                                name: sound
+                                                                                    .sound[0],
+                                                                                bool: false,
+                                                                            },
+                                                                        );
+                                                                    } else {
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][0].current.play();
+                                                                        setIsPlaying(
+                                                                            {
+                                                                                name: sound
+                                                                                    .sound[0],
+                                                                                bool: true,
+                                                                            },
+                                                                        );
+                                                                    }
                                                                 }}
                                                             >
                                                                 ►
@@ -1175,11 +1211,43 @@ const Index = () => {
                                                         <div>
                                                             <span
                                                                 onClick={() => {
-                                                                    refArr[
-                                                                        soundObj.indexOf(
-                                                                            sound,
-                                                                        )
-                                                                    ][1].current.play();
+                                                                    if (
+                                                                        isPlaying.bool &&
+                                                                        isPlaying.name ===
+                                                                            sound
+                                                                                .sound[1]
+                                                                    ) {
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][1].current.pause();
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][1].current.currentTime = 0;
+                                                                        setIsPlaying(
+                                                                            {
+                                                                                name: sound
+                                                                                    .sound[1],
+                                                                                bool: false,
+                                                                            },
+                                                                        );
+                                                                    } else {
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][1].current.play();
+                                                                        setIsPlaying(
+                                                                            {
+                                                                                name: sound
+                                                                                    .sound[1],
+                                                                                bool: true,
+                                                                            },
+                                                                        );
+                                                                    }
                                                                 }}
                                                             >
                                                                 ►
@@ -1202,11 +1270,43 @@ const Index = () => {
                                                         <div>
                                                             <span
                                                                 onClick={() => {
-                                                                    refArr[
-                                                                        soundObj.indexOf(
-                                                                            sound,
-                                                                        )
-                                                                    ][2].current.play();
+                                                                    if (
+                                                                        isPlaying.bool &&
+                                                                        isPlaying.name ===
+                                                                            sound
+                                                                                .sound[2]
+                                                                    ) {
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][2].current.pause();
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][2].current.currentTime = 0;
+                                                                        setIsPlaying(
+                                                                            {
+                                                                                name: sound
+                                                                                    .sound[2],
+                                                                                bool: false,
+                                                                            },
+                                                                        );
+                                                                    } else {
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][2].current.play();
+                                                                        setIsPlaying(
+                                                                            {
+                                                                                name: sound
+                                                                                    .sound[2],
+                                                                                bool: true,
+                                                                            },
+                                                                        );
+                                                                    }
                                                                 }}
                                                             >
                                                                 ►
@@ -1229,11 +1329,43 @@ const Index = () => {
                                                         <div>
                                                             <span
                                                                 onClick={() => {
-                                                                    refArr[
-                                                                        soundObj.indexOf(
-                                                                            sound,
-                                                                        )
-                                                                    ][3].current.play();
+                                                                    if (
+                                                                        isPlaying.bool &&
+                                                                        isPlaying.name ===
+                                                                            sound
+                                                                                .sound[3]
+                                                                    ) {
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][3].current.pause();
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][3].current.currentTime = 0;
+                                                                        setIsPlaying(
+                                                                            {
+                                                                                name: sound
+                                                                                    .sound[3],
+                                                                                bool: false,
+                                                                            },
+                                                                        );
+                                                                    } else {
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][3].current.play();
+                                                                        setIsPlaying(
+                                                                            {
+                                                                                name: sound
+                                                                                    .sound[3],
+                                                                                bool: true,
+                                                                            },
+                                                                        );
+                                                                    }
                                                                 }}
                                                             >
                                                                 ►
