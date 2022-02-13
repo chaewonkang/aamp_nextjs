@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ThemeProvider } from "styled-components";
 import Link from "next/link";
-
+import { useRouter } from "next/router";
 import theme from "../../styles/theme";
 import PageLayout from "../../components/PageLayout";
 
@@ -10,12 +10,19 @@ import { useTranslation } from "next-i18next";
 
 const Program = () => {
     const { t } = useTranslation("program");
-    const [mode, setMode] = useState(t("mode"));
+    const router = useRouter();
+    const locale = router.locale;
 
     return (
         <ThemeProvider theme={theme}>
             <PageLayout>
-                <div className="about_container">
+                <div
+                    className={
+                        locale === "en"
+                            ? "about_container"
+                            : "ko_type about_container"
+                    }
+                >
                     <div className="about_nav">
                         <div>
                             <Link href="/about">

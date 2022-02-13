@@ -156,6 +156,8 @@ const Index = () => {
     const { t } = useTranslation("john");
     const locale = router.locale;
 
+    const soundRef = useRef();
+
     let keywordArr = [].concat.apply(
         [],
         dataSet.map(item => item.keyword),
@@ -915,11 +917,7 @@ const Index = () => {
                             <div className="description_container">
                                 <p>{t("intro2barter0")}</p>
                             </div>
-                            <div className="audio_player">
-                                <div className="player">
-                                    <img src={playBtn} />
-                                </div>
-                            </div>
+
                             <div className="description_container">
                                 <p>{t("intro2barter1")}</p>
                             </div>
@@ -1122,9 +1120,17 @@ const Index = () => {
                             </div>
                             <div className="audio_player">
                                 <div className="player">
-                                    <img src={playBtn} />
+                                    <img
+                                        src={playBtn}
+                                        onClick={() => soundRef.current.play()}
+                                    />
+                                    <audio
+                                        src="/static/sound/john/jojo.wav"
+                                        ref={soundRef}
+                                    />
                                 </div>
                             </div>
+
                             <div className="description_container">
                                 <p>{t("shady6")}</p>
                             </div>
@@ -1172,11 +1178,11 @@ const Index = () => {
                                 <p>{t("waiting6")}</p>
                                 <p>{t("waiting7")}</p>
                             </div>
-                            <div className="audio_player">
+                            {/* <div className="audio_player">
                                 <div className="player">
                                     <img src={playBtn} />
                                 </div>
-                            </div>
+                            </div> */}
                             <div className="description_container">
                                 <p>{t("waiting8")}</p>
                             </div>
@@ -1202,11 +1208,11 @@ const Index = () => {
                                     {t("badvibes6")}
                                 </p>
                             </div>
-                            <div className="audio_player">
+                            {/* <div className="audio_player">
                                 <div className="player">
                                     <img src={playBtn} />
                                 </div>
-                            </div>
+                            </div> */}
                             <div className="description_container">
                                 <p className="center">{t("badvibes7")}</p>
                                 <p style={{ textIndent: 0 }}>

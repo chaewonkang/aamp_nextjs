@@ -165,12 +165,6 @@ const soundObj = [
     },
 ];
 
-const slides = [
-    "../static/images/wonjung/slide1.jpg",
-    "../static/images/wonjung/slide2.jpg",
-    "../static/images/wonjung/slide3.jpg",
-];
-
 const dataSet = [
     {
         index: 0,

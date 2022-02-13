@@ -83,7 +83,6 @@ p {
 .embed-container {
     --video--width: 1740;
     --video--height: 740;
-
     position: relative;
     padding-bottom: calc(
         var(--video--height) / var(--video--width) * 100%
@@ -149,8 +148,8 @@ p {
 
 .thumbnail_container {
     position: absolute;
-    left: 160px;
-    width: calc(100% - 500px);
+
+    width: 100%;
     height: calc(100% - 26vh);
     top: 13vh;
     z-index: -1;
@@ -160,7 +159,7 @@ p {
 }
 
 #thumbnail {
-    width: auto;
+    width: 50vw;
     height: 100%;
     max-height: 800px;
     object-fit: contain;
@@ -219,6 +218,7 @@ p {
     transition: ease 1000ms;
     height: 100%;
     max-height: 100%;
+    width: 100%;
 }
 
 .slide {
@@ -631,6 +631,11 @@ p {
     margin-top: 40px;
 }
 
+.content_container .description_container p.subtext {
+    font-size: 20px;
+    line-height: normal;
+}
+
 .content_container .artist_info_container {
     display: flex;
     flex-direction: row;
@@ -648,9 +653,9 @@ p {
 }
 
 .content_container .module_container {
-    display: flex;
-    flex-direction: column;
     font-size: 20px;
+    overflow: hidden;
+    position: relative;
 }
 
 .content_container .module_row {
@@ -660,7 +665,66 @@ p {
     width: 100%;
 }
 
-.content_container .triple {
+.content_container .triple_row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.triple_container {
+    width: 100%;
+}
+
+.triple_container .arrowbox {
+    position: absolute;
+    width: 100%;
+    height: 35px;
+    top: 28%;
+    z-index: 999;
+    display: flex;
+    flex-direction: row;
+}
+
+.triple_container .arrowbox div {
+    width: auto;
+    height: 100%;
+    display: flex;
+}
+
+.triple_container .arrowbox div:first-child {
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+.triple_container .arrowbox div:last-child {
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 20px;
+    position: absolute;
+    right: 0px;
+    cursor: pointer;
+}
+
+.triple_container .arrowbox div span {
+    height: 35px;
+    cursor: pointer;
+}
+
+.content_container .triple_row .module {
+    width: calc((((100vw - 180px) * 0.75) / 3));
+    display: inline-block;
+    margin-bottom: 30px;
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.content_container .triple_row .module .image_row iframe {
+    cursor: pointer;
+    z-index: 999;
 }
 
 .content_container .module_row .module {
@@ -672,6 +736,15 @@ p {
 .ko_type .module_row .module .sound_row div {
     margin-bottom: 0px;
     margin-top: -10px;
+}
+
+.module .sound_row div:hover,
+.refresh span:hover {
+    text-decoration: underline !important;
+}
+
+.ko_type .module_row .module .sound_row div:hover {
+    text-decoration: underline !important;
 }
 
 .ko_type .module_row .module .sound_row div:first-child {
@@ -746,6 +819,7 @@ p {
 
 .audio_player img {
     width: 30%;
+    cursor: pointer;
 }
 
 /* ENDOF Artist */
@@ -795,6 +869,32 @@ p {
 }
 
 @media screen and (max-width: 780px) {
+    .triple_container .arrowbox {
+        top: 40%;
+    }
+
+    .triple_container .arrowbox div:first-child {
+        padding-left: 10px;
+    }
+
+    .triple_container .arrowbox div:last-child {
+        padding-right: 10px;
+    }
+
+    .content_container .triple_row .module {
+        width: 100%;
+        display: inline-block;
+        margin-bottom: 30px;
+        padding-left: 0px;
+        padding-right: 0px;
+        cursor: pointer;
+        z-index: 100;
+    }
+
+    .content_container .triple_row .module .image_row iframe {
+        cursor: pointer;
+        z-index: 999;
+    }
     .embed-container {
         --video--height: 900;
     }
@@ -844,7 +944,8 @@ p {
     .content_container .module_container,
     .content_container .video_container,
     .content_container .spectrum_container,
-    .content_container .audio_player {
+    .content_container .audio_player,
+    .content_container .module_container {
         width: 100%;
         margin: 0 auto;
         padding-top: 20px;

@@ -5,7 +5,7 @@ import PageLayout from "../components/PageLayout";
 import Link from "next/link";
 import playBtn from "../static/images/playbutton.png";
 import { useRouter } from "next/router";
-
+import parse from "html-react-parser";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 
@@ -190,9 +190,8 @@ const Index = () => {
                                                     item.includes(" ") &&
                                                     item.length > 5
                                                 ) {
-                                                    const idx = item.indexOf(
-                                                        " ",
-                                                    );
+                                                    const idx =
+                                                        item.indexOf(" ");
                                                     return (
                                                         <>
                                                             <span
@@ -352,9 +351,8 @@ const Index = () => {
                                                     item.includes(" ") &&
                                                     item.length > 5
                                                 ) {
-                                                    const idx = item.indexOf(
-                                                        " ",
-                                                    );
+                                                    const idx =
+                                                        item.indexOf(" ");
                                                     return (
                                                         <>
                                                             <span
@@ -510,9 +508,8 @@ const Index = () => {
                                                     item.includes(" ") &&
                                                     item.length > 5
                                                 ) {
-                                                    const idx = item.indexOf(
-                                                        " ",
-                                                    );
+                                                    const idx =
+                                                        item.indexOf(" ");
                                                     return (
                                                         <>
                                                             <span
@@ -668,9 +665,8 @@ const Index = () => {
                                                     item.includes(" ") &&
                                                     item.length > 5
                                                 ) {
-                                                    const idx = item.indexOf(
-                                                        " ",
-                                                    );
+                                                    const idx =
+                                                        item.indexOf(" ");
                                                     return (
                                                         <>
                                                             <span
@@ -896,14 +892,13 @@ const Index = () => {
                             </div>
                             <div className="description_container">
                                 <p>{t("text1")}</p>
-                                <p>{t("text2")}</p>
-                                <p>{t("subtext")}</p>
+                                <p>{parse(t("text2"))}</p>
+                                <p className="subtext">{parse(t("subtext"))}</p>
                             </div>
-
                             <div className="artist_info_container">
                                 <div>{t("artist")}</div>
                                 <div>
-                                    <p>{t("artistInfo")}</p>
+                                    <p>{parse(t("artistInfo"))}</p>
                                 </div>
                             </div>
                         </div>

@@ -6,7 +6,6 @@ import Link from "next/link";
 import playBtn from "../static/images/playbutton.png";
 import { useRouter } from "next/router";
 import parse from "html-react-parser";
-import Clip from "../components/Clip";
 
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
@@ -135,6 +134,9 @@ const Index = () => {
     const { t } = useTranslation("sabina");
     const locale = router.locale;
 
+    const [slideIndex, setSlideIndex] = useState(0);
+    const timeoutRef = useRef(null);
+
     let keywordArr = [].concat.apply(
         [],
         dataSet.map(item => item.keyword),
@@ -158,6 +160,8 @@ const Index = () => {
         const italicTarget = [...document.getElementsByClassName("sabina")];
         italicTarget.map(item => (item.style.fontFamily = "Signifier Italic"));
     }, [keyword, thumbUrl, flag, isItalic, loading, isKeyClicked]);
+
+    useEffect(() => {}, [slideIndex]);
 
     return (
         <ThemeProvider theme={theme}>
@@ -960,32 +964,130 @@ const Index = () => {
                                     playsinline
                                     webkit-playsinline
                                     mozallowfullscreen
-                                ></iframe>{" "}
+                                ></iframe>
                             </div>
-                            <div className="module_container">
-                                <div className="module_row triple">
-                                    {sabinaData &&
-                                        sabinaData.map(el => {
-                                            return (
-                                                <div className="module">
-                                                    <div className="image_row embed-container-xs">
-                                                        <iframe
-                                                            src={`${el.video}&amp;title=0&amp;byline=0&amp;portrait=0&amp;controls=0&amp;sidedock=0&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;`}
-                                                            frameBorder="0"
-                                                            allow="autoplay;fullscreen;playsinline;"
-                                                            allowfullscreen
-                                                            playsinline
-                                                            webkit-playsinline
-                                                            webkitallowfullscreen
-                                                            mozallowfullscreen
-                                                        ></iframe>
+                            <div className="module_container triple_container">
+                                <div className="arrowbox">
+                                    <div>
+                                        <span
+                                            onClick={() => {
+                                                console.log(
+                                                    "left button is clicked!",
+                                                );
+                                                console.log(
+                                                    `slideIndex === ${Math.floor(
+                                                        slideIndex,
+                                                    )}`,
+                                                );
+
+                                                if (
+                                                    slideIndex <
+                                                    Math.floor(
+                                                        sabinaData.length / 3,
+                                                    )
+                                                )
+                                                    setSlideIndex(
+                                                        slideIndex - 1,
+                                                    );
+                                                if (slideIndex == 0) {
+                                                    setSlideIndex(
+                                                        Math.floor(
+                                                            sabinaData.length /
+                                                                3,
+                                                        ) - 1,
+                                                    );
+                                                }
+                                            }}
+                                        >
+                                            ◀︎
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span
+                                            onClick={() => {
+                                                console.log(
+                                                    "right button is clicked!",
+                                                );
+                                                console.log(
+                                                    `slideIndex === ${Math.floor(
+                                                        slideIndex,
+                                                    )}`,
+                                                );
+                                                if (
+                                                    slideIndex <
+                                                    Math.floor(
+                                                        sabinaData.length / 3,
+                                                    ) -
+                                                        1
+                                                )
+                                                    setSlideIndex(
+                                                        slideIndex + 1,
+                                                    );
+
+                                                if (
+                                                    slideIndex ==
+                                                    Math.floor(
+                                                        sabinaData.length / 3,
+                                                    ) -
+                                                        1
+                                                )
+                                                    setSlideIndex(0);
+                                            }}
+                                        >
+                                            ▶︎
+                                        </span>
+                                    </div>
+                                </div>
+                                <div className="triple_row">
+                                    <div
+                                        className="slideshowSlider"
+                                        style={{
+                                            transform: `translate3d(${
+                                                -slideIndex * 100
+                                            }%, 0, 0)`,
+                                        }}
+                                    >
+                                        {sabinaData &&
+                                            sabinaData.map(el => {
+                                                return (
+                                                    <div className="module">
+                                                        <div
+                                                            className="image_row embed-container-xs"
+                                                            onClick={() => {
+                                                                setIndex(el.id);
+                                                            }}
+                                                        >
+                                                            <iframe
+                                                                src={`${el.video}&amp;title=0&amp;byline=0&amp;portrait=0&amp;controls=0&amp;sidedock=0&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;`}
+                                                                frameBorder="0"
+                                                                allow="autoplay;fullscreen;playsinline;"
+                                                                allowfullscreen
+                                                                playsinline
+                                                                webkit-playsinline
+                                                                webkitallowfullscreen
+                                                                mozallowfullscreen
+                                                            ></iframe>
+                                                        </div>
+                                                        <div
+                                                            className="sound_row"
+                                                            onClick={() => {
+                                                                setIndex(el.id);
+                                                            }}
+                                                        >
+                                                            <div
+                                                                onClick={() => {
+                                                                    setIndex(
+                                                                        el.id,
+                                                                    );
+                                                                }}
+                                                            >
+                                                                {el.date}
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <div className="sound_row">
-                                                        <div>{el.date}</div>
-                                                    </div>
-                                                </div>
-                                            );
-                                        })}
+                                                );
+                                            })}
+                                    </div>
                                 </div>
                             </div>
                             <div className="artist_info_container">

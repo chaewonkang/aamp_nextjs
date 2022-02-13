@@ -4,17 +4,25 @@ import Link from "next/link";
 
 import theme from "../../styles/theme";
 import PageLayout from "../../components/PageLayout";
-
+import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 
-const About = ({ locale }) => {
+const About = () => {
     const { t } = useTranslation("about");
+    const router = useRouter();
+    const locale = router.locale;
 
     return (
         <ThemeProvider theme={theme}>
             <PageLayout>
-                <div className="about_container">
+                <div
+                    className={
+                        locale === "en"
+                            ? "about_container"
+                            : "ko_type about_container"
+                    }
+                >
                     <div className="about_nav">
                         <div>
                             <h2 style={{ fontFamily: "Signifier Italic" }}>
