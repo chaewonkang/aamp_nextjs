@@ -949,6 +949,7 @@ p {
         width: 100%;
         margin: 0 auto;
         padding-top: 20px;
+        margin-bottom: 20px !important;
         position: relative;
     }
 
