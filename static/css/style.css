@@ -714,6 +714,7 @@ p {
 
 .content_container .triple_row .module {
     width: calc((((100vw - 180px) * 0.75) / 3));
+    max-width: calc((1440px / 8) * 2);
     display: inline-block;
     margin-bottom: 30px;
     padding-left: 7.5px;
@@ -869,6 +870,11 @@ p {
 }
 
 @media screen and (max-width: 780px) {
+    .content_container .description_container p.subtext {
+        font-size: 16px;
+        line-height: normal;
+    }
+
     .triple_container .arrowbox {
         top: 40%;
     }
@@ -889,6 +895,7 @@ p {
         padding-right: 0px;
         cursor: pointer;
         z-index: 100;
+        max-width: unset;
     }
 
     .content_container .triple_row .module .image_row iframe {
@@ -1009,6 +1016,10 @@ p {
         width: 100%;
         padding-right: 0px;
         margin-right: 0px;
+    }
+
+    .content_container .title_container {
+        margin-bottom: 20px;
     }
 
     .content_container .title_container div:nth-child(2) {
