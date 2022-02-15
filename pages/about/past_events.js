@@ -35,7 +35,15 @@ const PastEvents = () => {
                         </div>
                         <div>
                             <Link href="/about/past_events">
-                                <h2 style={{ fontFamily: "Signifier Italic" }}>
+                                <h2
+                                    style={
+                                        locale === "en"
+                                            ? { fontFamily: "Signifier Italic" }
+                                            : {
+                                                  fontWeight: 900,
+                                              }
+                                    }
+                                >
                                     {t("subject3")}
                                 </h2>
                             </Link>

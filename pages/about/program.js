@@ -31,7 +31,15 @@ const Program = () => {
                         </div>
                         <div>
                             <Link href="/about/program">
-                                <h2 style={{ fontFamily: "Signifier Italic" }}>
+                                <h2
+                                    style={
+                                        locale === "en"
+                                            ? { fontFamily: "Signifier Italic" }
+                                            : {
+                                                  fontWeight: 900,
+                                              }
+                                    }
+                                >
                                     {t("subject2")}
                                 </h2>
                             </Link>

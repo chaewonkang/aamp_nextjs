@@ -25,7 +25,15 @@ const About = () => {
                 >
                     <div className="about_nav">
                         <div>
-                            <h2 style={{ fontFamily: "Signifier Italic" }}>
+                            <h2
+                                style={
+                                    locale === "en"
+                                        ? { fontFamily: "Signifier Italic" }
+                                        : {
+                                              fontWeight: 900,
+                                          }
+                                }
+                            >
                                 {t("subject1")}
                             </h2>
                         </div>
@@ -88,7 +96,7 @@ const About = () => {
                                 </span>
                             </div>
                             <div className="center">
-                                <p>
+                                <p className="eng_info">
                                     3rd Curatorial Forum 2020-2021 is organized
                                     by <br></br>
                                     GyeongGi Cultural Foundation, and developed

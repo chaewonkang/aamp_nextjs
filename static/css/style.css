@@ -434,6 +434,11 @@ p {
     font-size: 26px;
 }
 
+.eng_info {
+    font-size: 26px !important;
+    line-height: normal !important;
+}
+
 .about_container .about_nav,
 .title_bar {
     width: auto;
@@ -458,18 +463,38 @@ p {
 .about_container .about_nav div {
     margin-right: 1em;
     height: fit-content;
+    padding-top: 10px;
+    padding-bottom: 8px;
+}
+
+.ko_type .about_nav div {
+    padding-top: 13px;
+    padding-bottom: 10px;
+}
+
+.ko_type .about_nav div h2 {
+    font-size: 20px;
+    line-height: 20px;
 }
 
 .about_container .about_nav div h2 {
     font-size: 20px;
     font-weight: normal;
-    margin-top: 10px;
-    margin-bottom: 6px;
     cursor: pointer;
 }
 
 .about_container .about_nav div h2:hover {
     font-family: "Signifier Italic";
+}
+
+.ko_type .about_nav div h2 {
+    font-family: "Noto Serif KR";
+    font-weight: 500;
+}
+
+.ko_type .about_nav div h2:hover {
+    font-family: "Noto Serif KR";
+    font-weight: 900;
 }
 
 .about_container .about_content {
@@ -501,7 +526,6 @@ p {
 }
 
 .about_container .about_content .about_content_2 {
-    margin-top: 40px;
     text-align: center;
 }
 
@@ -634,6 +658,7 @@ p {
 .content_container .description_container p.subtext {
     font-size: 20px;
     line-height: normal;
+    margin-top: 20px;
 }
 
 .content_container .artist_info_container {
@@ -735,8 +760,7 @@ p {
 }
 
 .ko_type .module_row .module .sound_row div {
-    margin-bottom: 0px;
-    margin-top: -10px;
+    line-height: normal;
 }
 
 .module .sound_row div:hover,
@@ -870,6 +894,20 @@ p {
 }
 
 @media screen and (max-width: 780px) {
+    .content_container .description_container p,
+    .about_content p {
+        text-indent: 35px;
+    }
+
+    .content_container .description_container p:first-child,
+    .about_content p:first-child {
+        text-indent: 0px;
+    }
+
+    .content_container .description_container p:first-child {
+        text-indent: 0;
+    }
+
     .content_container .description_container p.subtext {
         font-size: 16px;
         line-height: normal;
@@ -918,8 +956,8 @@ p {
     }
 
     .ko_type {
-        font-size: 24px;
-        line-height: 31px;
+        font-size: 18px;
+        line-height: 31px !important;
         font-family: "Noto Serif KR", serif;
     }
 
@@ -1116,12 +1154,22 @@ p {
         padding-bottom: 10px;
     }
 
-    .about_container .about_nav div h2 {
-        margin-top: 0px;
-        margin-bottom: 0px;
+    .about_container .about_nav div {
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+    }
+
+    .ko_type .about_nav div {
+        padding-top: 3px !important;
+        padding-bottom: 5px !important;
     }
 
     .about_container .about_content {
         font-size: 20px;
+    }
+
+    .eng_info {
+        font-size: 20px !important;
+        line-height: normal !important;
     }
 }
