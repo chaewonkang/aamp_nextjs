@@ -200,7 +200,7 @@ p {
 }
 
 .arrowbox div span {
-    height: 35px;
+    height: 45px;
     cursor: pointer;
 }
 
@@ -704,7 +704,7 @@ p {
     position: absolute;
     width: 100%;
     height: 35px;
-    top: 28%;
+    top: 25%;
     z-index: 999;
     display: flex;
     flex-direction: row;
@@ -894,6 +894,11 @@ p {
 }
 
 @media screen and (max-width: 780px) {
+    .about_container {
+        width: 100%;
+        font-size: 20px;
+        line-height: 28px;
+    }
     .content_container .description_container p,
     .about_content p {
         text-indent: 35px;
@@ -956,9 +961,13 @@ p {
     }
 
     .ko_type {
-        font-size: 18px;
+        font-size: 18px !important;
         line-height: 31px !important;
         font-family: "Noto Serif KR", serif;
+    }
+
+    .ko_type .about_nav div h2 {
+        font-size: 18px !important;
     }
 
     #body {
@@ -1009,6 +1018,7 @@ p {
 
     .content_container .artist_info_container p {
         font-size: 16px;
+        line-height: normal;
     }
 
     .keyword_container_wrapper {
@@ -1134,6 +1144,19 @@ p {
         width: 100%;
         margin: 0 auto;
         font-size: 20px;
+        line-height: 27.5px;
+    }
+
+    .ko_type .artist_info_container,
+    .ko_type .description_container,
+    .ko_type .module_container,
+    .ko_type .video_container,
+    .ko_type .video_function_container,
+    .ko_type .spectrum_container {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 18px;
+        line-height: 31px;
     }
 
     .content_container .spectrum_container {
@@ -1164,12 +1187,8 @@ p {
         padding-bottom: 5px !important;
     }
 
-    .about_container .about_content {
-        font-size: 20px;
-    }
-
     .eng_info {
-        font-size: 20px !important;
+        font-size: 18px !important;
         line-height: normal !important;
     }
 }
