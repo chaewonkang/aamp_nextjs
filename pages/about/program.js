@@ -53,14 +53,18 @@ const Program = () => {
                     <div className="about_content">
                         <div className="about_content_1">
                             <span> {t("title1")}</span>
-                            <p>{t("p1")}</p>
+                            <p style={{ textIndent: 0 }}>{t("p1")}</p>
                             <p>
                                 {t("p2")}
-                                <span class="text-style-2">{t("italic1")}</span>
+                                <span className="text-style-2">
+                                    {t("italic1")}
+                                </span>
                                 {t("p3")}
                             </p>
                             <p>
-                                <span class="text-style-3">{t("italic1")}</span>
+                                <span className="text-style-3">
+                                    {t("italic1")}
+                                </span>
                                 {t("p4")}
                             </p>
                             <p>{t("p5")}</p>
@@ -68,12 +72,18 @@ const Program = () => {
                         <br />
                         <div className="about_content_2">
                             <div>
-                                <span class="text-style-4"> {t("title2")}</span>
+                                <span className="text-style-4">
+                                    {" "}
+                                    {t("title2")}
+                                </span>
                                 <p>{t("p6")}</p>
                             </div>
                             <br />
                             <div>
-                                <span class="text-style-7"> {t("title3")}</span>
+                                <span className="text-style-7">
+                                    {" "}
+                                    {t("title3")}
+                                </span>
                                 <p>
                                     {t("p7")}
                                     <br /> {t("p8")}
@@ -96,7 +106,9 @@ const Program = () => {
                             </div>
                             <br />
                             <div>
-                                <span class="text-style-8">{t("title4")}</span>
+                                <span className="text-style-8">
+                                    {t("title4")}
+                                </span>
                                 <p>{t("p17")}</p>
                             </div>
                             <br />

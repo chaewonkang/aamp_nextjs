@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 const delay = 5000;
 
@@ -69,11 +70,11 @@ function Slideshow({ imgPath, isMobile }) {
                     >
                         {imgPath.map(item => {
                             return (
-                                <a href={`/${item.artist}`}>
+                                <Link href={`/${item.artist}`}>
                                     <div className="slide" key={item.artist}>
                                         <img src={item.img}></img>
                                     </div>
-                                </a>
+                                </Link>
                             );
                         })}
                     </div>
@@ -85,7 +86,7 @@ function Slideshow({ imgPath, isMobile }) {
                         }}
                     >
                         {imgPath.map((image, index) => (
-                            <div className="slide" key={index}>
+                            <div className="slide" key={image + index}>
                                 <img src={image}></img>
                             </div>
                         ))}

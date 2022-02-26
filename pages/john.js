@@ -155,6 +155,7 @@ const Index = () => {
     const router = useRouter();
     const { t } = useTranslation("john");
     const locale = router.locale;
+    const [isPlaying, setIsPlaying] = useState(false);
 
     const soundRef = useRef();
 
@@ -885,6 +886,7 @@ const Index = () => {
                                                     </span>
                                                 );
                                             })}
+                                    <span style={{ opacity: "0" }}>none</span>
                                 </div>
                             </div>
                         </div>
@@ -1073,6 +1075,7 @@ const Index = () => {
                             </div>
                             <div className="description_container">
                                 <p>{t("patkay2")}</p>
+                                <br />
                                 <p className="center" style={{ textIndent: 0 }}>
                                     {t("patkay3")}
                                 </p>
@@ -1118,19 +1121,41 @@ const Index = () => {
                             <div className="description_container">
                                 <p>{t("shady5")}</p>
                             </div>
-                            <div className="audio_player">
-                                <div className="player">
-                                    <img
-                                        src={playBtn}
-                                        onClick={() => soundRef.current.play()}
-                                    />
-                                    <audio
-                                        src="/static/sound/john/jojo.wav"
-                                        ref={soundRef}
-                                    />
-                                </div>
-                            </div>
+                            <div className="description_container">
+                                <p
+                                    className="sound_button"
+                                    onClick={() => {
+                                        setIsPlaying(!isPlaying);
 
+                                        if (!isPlaying) {
+                                            soundRef.current.play();
+                                        } else {
+                                            soundRef.current.pause();
+                                            soundRef.current.currentTime = 0;
+                                        }
+                                    }}
+                                >
+                                    ►{" "}
+                                    <span
+                                        className="clcikable"
+                                        style={
+                                            !isPlaying
+                                                ? null
+                                                : {
+                                                      fontFamily:
+                                                          "Signifier Italic",
+                                                  }
+                                        }
+                                    >
+                                        {isPlaying ? "Sound off" : "Sound on"}
+                                        (jojo.wav)
+                                    </span>
+                                </p>
+                                <audio
+                                    src="/static/sound/john/jojo.wav"
+                                    ref={soundRef}
+                                />
+                            </div>
                             <div className="description_container">
                                 <p>{t("shady6")}</p>
                             </div>
@@ -1314,9 +1339,9 @@ const Index = () => {
                             </div>
                         </div>
 
-                        <div className="keyword_span">
+                        <div className="keyword_span clickable">
                             <Link href="/">
-                                <span>Keywords</span>
+                                <span className="clickable">Keywords</span>
                             </Link>
                         </div>
                     </PageLayout>

@@ -1092,6 +1092,7 @@ const Index = () => {
                                                     </span>
                                                 );
                                             })}
+                                    <span style={{ opacity: "0" }}>none</span>
                                 </div>
                             </div>
                         </div>
@@ -1143,50 +1144,60 @@ const Index = () => {
                                                         ></img>
                                                     </div>
                                                     <div className="sound_row">
-                                                        <div>
-                                                            <span
-                                                                onClick={() => {
-                                                                    if (
-                                                                        isPlaying.bool &&
-                                                                        isPlaying.name ===
-                                                                            sound
-                                                                                .sound[0]
-                                                                    ) {
-                                                                        refArr[
-                                                                            soundObj.indexOf(
-                                                                                sound,
-                                                                            )
-                                                                        ][0].current.pause();
-                                                                        refArr[
-                                                                            soundObj.indexOf(
-                                                                                sound,
-                                                                            )
-                                                                        ][0].current.currentTime = 0;
-                                                                        setIsPlaying(
-                                                                            {
-                                                                                name: sound
-                                                                                    .sound[0],
-                                                                                bool: false,
-                                                                            },
-                                                                        );
-                                                                    } else {
-                                                                        refArr[
-                                                                            soundObj.indexOf(
-                                                                                sound,
-                                                                            )
-                                                                        ][0].current.play();
-                                                                        setIsPlaying(
-                                                                            {
-                                                                                name: sound
-                                                                                    .sound[0],
-                                                                                bool: true,
-                                                                            },
-                                                                        );
-                                                                    }
-                                                                }}
-                                                            >
-                                                                ►
-                                                            </span>
+                                                        <div
+                                                            className="clickable"
+                                                            style={
+                                                                isPlaying.bool &&
+                                                                isPlaying.name ===
+                                                                    sound
+                                                                        .sound[0]
+                                                                    ? {
+                                                                          fontFamily:
+                                                                              "Signifier Italic",
+                                                                      }
+                                                                    : null
+                                                            }
+                                                            onClick={() => {
+                                                                if (
+                                                                    isPlaying.bool &&
+                                                                    isPlaying.name ===
+                                                                        sound
+                                                                            .sound[0]
+                                                                ) {
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][0].current.pause();
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][0].current.currentTime = 0;
+                                                                    setIsPlaying(
+                                                                        {
+                                                                            name: sound
+                                                                                .sound[0],
+                                                                            bool: false,
+                                                                        },
+                                                                    );
+                                                                } else {
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][0].current.play();
+                                                                    setIsPlaying(
+                                                                        {
+                                                                            name: sound
+                                                                                .sound[0],
+                                                                            bool: true,
+                                                                        },
+                                                                    );
+                                                                }
+                                                            }}
+                                                        >
+                                                            <span>►</span>
                                                             <audio
                                                                 src={
                                                                     sound
@@ -1202,50 +1213,60 @@ const Index = () => {
                                                             />
                                                             {sound.soundName[0]}
                                                         </div>
-                                                        <div>
-                                                            <span
-                                                                onClick={() => {
-                                                                    if (
-                                                                        isPlaying.bool &&
-                                                                        isPlaying.name ===
-                                                                            sound
-                                                                                .sound[1]
-                                                                    ) {
-                                                                        refArr[
-                                                                            soundObj.indexOf(
-                                                                                sound,
-                                                                            )
-                                                                        ][1].current.pause();
-                                                                        refArr[
-                                                                            soundObj.indexOf(
-                                                                                sound,
-                                                                            )
-                                                                        ][1].current.currentTime = 0;
-                                                                        setIsPlaying(
-                                                                            {
-                                                                                name: sound
-                                                                                    .sound[1],
-                                                                                bool: false,
-                                                                            },
-                                                                        );
-                                                                    } else {
-                                                                        refArr[
-                                                                            soundObj.indexOf(
-                                                                                sound,
-                                                                            )
-                                                                        ][1].current.play();
-                                                                        setIsPlaying(
-                                                                            {
-                                                                                name: sound
-                                                                                    .sound[1],
-                                                                                bool: true,
-                                                                            },
-                                                                        );
-                                                                    }
-                                                                }}
-                                                            >
-                                                                ►
-                                                            </span>
+                                                        <div
+                                                            className="clickable"
+                                                            style={
+                                                                isPlaying.bool &&
+                                                                isPlaying.name ===
+                                                                    sound
+                                                                        .sound[1]
+                                                                    ? {
+                                                                          fontFamily:
+                                                                              "Signifier Italic",
+                                                                      }
+                                                                    : null
+                                                            }
+                                                            onClick={() => {
+                                                                if (
+                                                                    isPlaying.bool &&
+                                                                    isPlaying.name ===
+                                                                        sound
+                                                                            .sound[1]
+                                                                ) {
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][1].current.pause();
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][1].current.currentTime = 0;
+                                                                    setIsPlaying(
+                                                                        {
+                                                                            name: sound
+                                                                                .sound[1],
+                                                                            bool: false,
+                                                                        },
+                                                                    );
+                                                                } else {
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][1].current.play();
+                                                                    setIsPlaying(
+                                                                        {
+                                                                            name: sound
+                                                                                .sound[1],
+                                                                            bool: true,
+                                                                        },
+                                                                    );
+                                                                }
+                                                            }}
+                                                        >
+                                                            <span>►</span>
                                                             <audio
                                                                 src={
                                                                     sound
@@ -1261,50 +1282,60 @@ const Index = () => {
                                                             />
                                                             {sound.soundName[1]}
                                                         </div>
-                                                        <div>
-                                                            <span
-                                                                onClick={() => {
-                                                                    if (
-                                                                        isPlaying.bool &&
-                                                                        isPlaying.name ===
-                                                                            sound
-                                                                                .sound[2]
-                                                                    ) {
-                                                                        refArr[
-                                                                            soundObj.indexOf(
-                                                                                sound,
-                                                                            )
-                                                                        ][2].current.pause();
-                                                                        refArr[
-                                                                            soundObj.indexOf(
-                                                                                sound,
-                                                                            )
-                                                                        ][2].current.currentTime = 0;
-                                                                        setIsPlaying(
-                                                                            {
-                                                                                name: sound
-                                                                                    .sound[2],
-                                                                                bool: false,
-                                                                            },
-                                                                        );
-                                                                    } else {
-                                                                        refArr[
-                                                                            soundObj.indexOf(
-                                                                                sound,
-                                                                            )
-                                                                        ][2].current.play();
-                                                                        setIsPlaying(
-                                                                            {
-                                                                                name: sound
-                                                                                    .sound[2],
-                                                                                bool: true,
-                                                                            },
-                                                                        );
-                                                                    }
-                                                                }}
-                                                            >
-                                                                ►
-                                                            </span>
+                                                        <div
+                                                            className="clickable"
+                                                            style={
+                                                                isPlaying.bool &&
+                                                                isPlaying.name ===
+                                                                    sound
+                                                                        .sound[2]
+                                                                    ? {
+                                                                          fontFamily:
+                                                                              "Signifier Italic",
+                                                                      }
+                                                                    : null
+                                                            }
+                                                            onClick={() => {
+                                                                if (
+                                                                    isPlaying.bool &&
+                                                                    isPlaying.name ===
+                                                                        sound
+                                                                            .sound[2]
+                                                                ) {
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][2].current.pause();
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][2].current.currentTime = 0;
+                                                                    setIsPlaying(
+                                                                        {
+                                                                            name: sound
+                                                                                .sound[2],
+                                                                            bool: false,
+                                                                        },
+                                                                    );
+                                                                } else {
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][2].current.play();
+                                                                    setIsPlaying(
+                                                                        {
+                                                                            name: sound
+                                                                                .sound[2],
+                                                                            bool: true,
+                                                                        },
+                                                                    );
+                                                                }
+                                                            }}
+                                                        >
+                                                            <span>►</span>
                                                             <audio
                                                                 src={
                                                                     sound
@@ -1320,50 +1351,60 @@ const Index = () => {
                                                             />
                                                             {sound.soundName[2]}
                                                         </div>
-                                                        <div>
-                                                            <span
-                                                                onClick={() => {
-                                                                    if (
-                                                                        isPlaying.bool &&
-                                                                        isPlaying.name ===
-                                                                            sound
-                                                                                .sound[3]
-                                                                    ) {
-                                                                        refArr[
-                                                                            soundObj.indexOf(
-                                                                                sound,
-                                                                            )
-                                                                        ][3].current.pause();
-                                                                        refArr[
-                                                                            soundObj.indexOf(
-                                                                                sound,
-                                                                            )
-                                                                        ][3].current.currentTime = 0;
-                                                                        setIsPlaying(
-                                                                            {
-                                                                                name: sound
-                                                                                    .sound[3],
-                                                                                bool: false,
-                                                                            },
-                                                                        );
-                                                                    } else {
-                                                                        refArr[
-                                                                            soundObj.indexOf(
-                                                                                sound,
-                                                                            )
-                                                                        ][3].current.play();
-                                                                        setIsPlaying(
-                                                                            {
-                                                                                name: sound
-                                                                                    .sound[3],
-                                                                                bool: true,
-                                                                            },
-                                                                        );
-                                                                    }
-                                                                }}
-                                                            >
-                                                                ►
-                                                            </span>
+                                                        <div
+                                                            className="clickable"
+                                                            style={
+                                                                isPlaying.bool &&
+                                                                isPlaying.name ===
+                                                                    sound
+                                                                        .sound[3]
+                                                                    ? {
+                                                                          fontFamily:
+                                                                              "Signifier Italic",
+                                                                      }
+                                                                    : null
+                                                            }
+                                                            onClick={() => {
+                                                                if (
+                                                                    isPlaying.bool &&
+                                                                    isPlaying.name ===
+                                                                        sound
+                                                                            .sound[3]
+                                                                ) {
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][3].current.pause();
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][3].current.currentTime = 0;
+                                                                    setIsPlaying(
+                                                                        {
+                                                                            name: sound
+                                                                                .sound[3],
+                                                                            bool: false,
+                                                                        },
+                                                                    );
+                                                                } else {
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][3].current.play();
+                                                                    setIsPlaying(
+                                                                        {
+                                                                            name: sound
+                                                                                .sound[3],
+                                                                            bool: true,
+                                                                        },
+                                                                    );
+                                                                }
+                                                            }}
+                                                        >
+                                                            <span>►</span>
                                                             <audio
                                                                 src={
                                                                     sound
@@ -1393,9 +1434,9 @@ const Index = () => {
                             </div>
                         </div>
 
-                        <div className="keyword_span">
+                        <div className="keyword_span clickable">
                             <Link href="/">
-                                <span>Keywords</span>
+                                <span className="clickable">Keywords</span>
                             </Link>
                         </div>
                     </PageLayout>

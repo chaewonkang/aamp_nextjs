@@ -1,31 +1,31 @@
 *,
- ::before,
- ::after {
-	box-sizing: 		border-box;
+::before,
+::after {
+    box-sizing: border-box;
 }
 
- ::before,
- ::after {
-	text-decoration: 	inherit;
-	vertical-align: 	inherit;
+::before,
+::after {
+    text-decoration: inherit;
+    vertical-align: inherit;
 }
 
 .cf:after {
-	display: 			block;
-	content: 			"";
-	clear: 				both;
+    display: block;
+    content: "";
+    clear: both;
 }
 
 html {
-	width: 				100vw;
-	height: 			100vh;
-	cursor: 			default;
-	-moz-tab-size: 		4;
-	tab-size: 			4;
-	-webkit-tap-highlight-color: transparent;
-	-ms-text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%;
-	word-break: break-word;
+    width: 100vw;
+    height: 100vh;
+    cursor: default;
+    -moz-tab-size: 4;
+    tab-size: 4;
+    -webkit-tap-highlight-color: transparent;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    word-break: break-word;
 }
 
 body,
@@ -52,8 +52,8 @@ td,
 textarea,
 th,
 ul {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 body,
@@ -62,12 +62,13 @@ input,
 select,
 table,
 textarea {
-	font-size: 16px;
-	color: #202020;
-	font-family: "Noto Sans KR", /*나눔바른고딕, NanumBarunGothic, */
-	-apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", helvetica, "Apple SD Gothic Neo", arial, dotum, 돋움, sans-serif;
+    font-size: 16px;
+    color: #202020;
+    font-family: "Noto Sans KR",
+        /*나눔바른고딕, NanumBarunGothic, */ -apple-system, BlinkMacSystemFont,
+        "Malgun Gothic", "맑은 고딕", helvetica, "Apple SD Gothic Neo", arial,
+        dotum, 돋움, sans-serif;
 }
-
 
 h1,
 h2,
@@ -75,79 +76,79 @@ h3,
 h4,
 h5,
 h6 {
-	font-size: inherit;
-	line-height: inherit;
+    font-size: inherit;
+    line-height: inherit;
 }
 
 hr {
-	height: 0;
-	overflow: visible;
+    height: 0;
+    overflow: visible;
 }
 
 main,
 details {
-	display: block;
+    display: block;
 }
 
 dl,
 ol,
 ul,
 menu {
-	list-style: none;
+    list-style: none;
 }
 
 pre,
 code,
 kbd,
 samp {
-	font-family: monospace, monospace;
-	font-size: 1em;
+    font-family: monospace, monospace;
+    font-size: 1em;
 }
 
 address,
 em,
 i {
-	font-style: normal;
+    font-style: normal;
 }
 
 a {
-	background-color: transparent;
-	text-decoration: none;
-	color: inherit;
+    background-color: transparent;
+    text-decoration: none !important;
+    color: inherit;
 }
 
 a:hover {
-	text-decoration: underline;
+    text-decoration: none !important;
 }
 
 abbr[title] {
-	text-decoration: underline;
-	text-decoration: underline dotted;
+    text-decoration: underline;
+    text-decoration: underline dotted;
 }
 
 b,
 strong {
-	font-weight: bolder;
+    font-weight: bolder;
 }
 
 small {
-	font-size: 80%;
+    font-size: 80%;
 }
 
 sub,
 sup {
-	font-size: 75%;
-	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
 }
 
 sub {
-	bottom: -0.25em;
+    bottom: -0.25em;
 }
 
 sup {
-	top: -0.5em;
+    top: -0.5em;
 }
 
 audio,
@@ -156,162 +157,162 @@ iframe,
 img,
 svg,
 video {
-	vertical-align: middle;
+    vertical-align: middle;
 }
 
 audio,
 video {
-	display: inline-block;
+    display: inline-block;
 }
 
 img {
-	vertical-align: top;
+    vertical-align: top;
 }
 
 iframe,
 img,
 fieldset {
-	border-style: none;
+    border-style: none;
 }
 
 img,
 video {
-	max-width: 100%;
+    max-width: 100%;
 }
 
 svg:not([fill]) {
-	fill: currentColor;
+    fill: currentColor;
 }
 
 svg:not(:root) {
-	overflow: hidden;
+    overflow: hidden;
 }
 
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 button {
-	background-color: transparent;
+    background-color: transparent;
 }
 
 button,
 select {
-	text-transform: none;
+    text-transform: none;
 }
 
 button,
 input {
-	border: 0;
-	border-radius: 0;
-	overflow: visible;
+    border: 0;
+    border-radius: 0;
+    overflow: visible;
 }
 
 button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
-	-webkit-appearance: button;
+    -webkit-appearance: button;
 }
 
 fieldset {
-	border: 1px solid #a0a0a0;
-	padding: 0.35em 0.75em 0.625em;
+    border: 1px solid #a0a0a0;
+    padding: 0.35em 0.75em 0.625em;
 }
 
 input {
-	overflow: visible;
+    overflow: visible;
 }
 
 legend {
-	color: inherit;
-	display: table;
-	max-width: 100%;
-	white-space: normal;
+    color: inherit;
+    display: table;
+    max-width: 100%;
+    white-space: normal;
 }
 
 progress {
-	display: inline-block;
-	vertical-align: baseline;
+    display: inline-block;
+    vertical-align: baseline;
 }
 
 select {
-	text-transform: none;
+    text-transform: none;
 }
 
 textarea {
-	overflow: auto;
-	resize: vertical;
+    overflow: auto;
+    resize: vertical;
 }
 
 [type="checkbox"],
 [type="radio"] {
-	padding: 0;
+    padding: 0;
 }
 
 [type="search"] {
-	-webkit-appearance: textfield;
-	outline-offset: -2px;
+    -webkit-appearance: textfield;
+    outline-offset: -2px;
 }
 
- ::-webkit-inner-spin-button,
- ::-webkit-outer-spin-button {
-	height: auto;
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+    height: auto;
 }
 
- ::-webkit-input-placeholder {
-	color: inherit;
-	opacity: 0.54;
+::-webkit-input-placeholder {
+    color: inherit;
+    opacity: 0.54;
 }
 
- ::-webkit-search-decoration {
-	-webkit-appearance: none;
+::-webkit-search-decoration {
+    -webkit-appearance: none;
 }
 
- ::-webkit-file-upload-button {
-	-webkit-appearance: button;
-	font: inherit;
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit;
 }
 
- ::-moz-focus-inner {
-	border-style: none;
-	padding: 0;
+::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
 }
 
- :-moz-focusring {
-	outline: 1px dotted ButtonText;
+:-moz-focusring {
+    outline: 1px dotted ButtonText;
 }
 
- :-moz-ui-invalid {
-	box-shadow: none;
+:-moz-ui-invalid {
+    box-shadow: none;
 }
 
 dialog {
-	background-color: white;
-	border: solid;
-	color: black;
-	display: block;
-	height: -moz-fit-content;
-	height: -webkit-fit-content;
-	height: fit-content;
-	left: 0;
-	margin: auto;
-	padding: 1em;
-	position: absolute;
-	right: 0;
-	width: -moz-fit-content;
-	width: -webkit-fit-content;
-	width: fit-content;
-	/* 61 */
+    background-color: white;
+    border: solid;
+    color: black;
+    display: block;
+    height: -moz-fit-content;
+    height: -webkit-fit-content;
+    height: fit-content;
+    left: 0;
+    margin: auto;
+    padding: 1em;
+    position: absolute;
+    right: 0;
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width: fit-content;
+    /* 61 */
 }
 
 dialog:not([open]) {
-	display: none;
+    display: none;
 }
 
 summary {
-	display: list-item;
+    display: list-item;
 }
 
 a,
@@ -323,32 +324,32 @@ select,
 summary,
 textarea,
 [tabindex] {
-	-ms-touch-action: manipulation;
-	touch-action: manipulation;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
 }
 
 [hidden] {
-	display: none;
+    display: none;
 }
 
 [aria-busy="true"] {
-	cursor: progress;
+    cursor: progress;
 }
 
 [aria-controls] {
-	cursor: pointer;
+    cursor: pointer;
 }
 
 [aria-disabled="true"],
 [disabled] {
-	cursor: not-allowed;
+    cursor: not-allowed;
 }
 
 [aria-hidden="false"][hidden] {
-	display: initial;
+    display: initial;
 }
 
 [aria-hidden="false"][hidden]:not(:focus) {
-	clip: rect(0, 0, 0, 0);
-	position: absolute;
+    clip: rect(0, 0, 0, 0);
+    position: absolute;
 }

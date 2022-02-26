@@ -31,6 +31,10 @@ p {
     word-break: keep-all;
 }
 
+.sound_button {
+    cursor: pointer;
+}
+
 .vp-center {
     align-items: flex-end !important;
 }
@@ -419,10 +423,7 @@ p {
     cursor: pointer;
     font-size: 20px;
     margin-right: 2px;
-}
-
-.global span:hover {
-    font-family: "Signifier Italic";
+    text-decoration: none !important;
 }
 
 /* ENDOF Header */
@@ -668,6 +669,10 @@ p {
     line-height: normal;
 }
 
+.ko_type .artist_info_container {
+    line-height: 32px !important;
+}
+
 .content_container .artist_info_container div:first-child {
     width: calc((100% / 6) * 2);
 }
@@ -761,11 +766,6 @@ p {
 
 .ko_type .module_row .module .sound_row div {
     line-height: normal;
-}
-
-.module .sound_row div:hover,
-.refresh span:hover {
-    text-decoration: underline !important;
 }
 
 .ko_type .module_row .module .sound_row div:hover {
@@ -878,11 +878,6 @@ p {
     justify-content: flex-end;
 }
 
-.refresh span {
-    font-family: "Signifier Italic";
-    cursor: pointer;
-}
-
 .spectrum_container img {
     width: 100%;
 }
@@ -893,7 +888,22 @@ p {
     justify-content: flex-end;
 }
 
+.clickable {
+    cursor: pointer;
+}
+
+.clickable:hover {
+    font-family: "Signifier Italic" !important;
+}
+
+.ko_type .subtext {
+    line-height: 32px !important;
+}
+
 @media screen and (max-width: 780px) {
+    .ko_type .artist_info_container p {
+        line-height: 26px !important;
+    }
     .about_container {
         width: 100%;
         font-size: 20px;

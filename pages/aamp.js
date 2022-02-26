@@ -858,6 +858,7 @@ const Index = () => {
                                                     </span>
                                                 );
                                             })}
+                                    <span style={{ opacity: "0" }}>none</span>
                                 </div>
                             </div>
                         </div>
@@ -893,7 +894,12 @@ const Index = () => {
                             <div className="description_container">
                                 <p>{t("text1")}</p>
                                 <p>{parse(t("text2"))}</p>
-                                <p className="subtext">{parse(t("subtext"))}</p>
+                                <p
+                                    className="subtext"
+                                    style={{ textIndent: "0" }}
+                                >
+                                    {parse(t("subtext"))}
+                                </p>
                             </div>
                             <div className="artist_info_container">
                                 <div>{t("artist")}</div>
@@ -902,9 +908,9 @@ const Index = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="keyword_span">
+                        <div className="keyword_span clickable">
                             <Link href="/">
-                                <span>Keywords</span>
+                                <span className="clickable">Keywords</span>
                             </Link>
                         </div>
                     </PageLayout>

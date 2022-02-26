@@ -864,6 +864,7 @@ const Index = () => {
                                                     </span>
                                                 );
                                             })}
+                                    <span style={{ opacity: "0" }}>none</span>
                                 </div>
                             </div>
                         </div>
@@ -947,9 +948,9 @@ const Index = () => {
                             </div>
                         </div>
 
-                        <div className="keyword_span">
+                        <div className="keyword_span clickable">
                             <Link href="/">
-                                <span>Keywords</span>
+                                <span className="clickable">Keywords</span>
                             </Link>
                         </div>
                     </PageLayout>
