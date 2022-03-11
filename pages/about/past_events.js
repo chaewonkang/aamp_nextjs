@@ -95,7 +95,12 @@ const PastEvents = () => {
                             <div>
                                 <span>{t("date2_7")}</span>
                                 <span>{t("date2_8")}</span>
-                                <p style={{ textIndent: 0 }}>{t("date2_9")}</p>
+                                <p
+                                    style={{ textIndent: 0 }}
+                                    className="exeption"
+                                >
+                                    {parse(t("date2_9"))}
+                                </p>
                             </div>
                             <br />
                             <br />

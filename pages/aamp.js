@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from "react";
 import theme from "../styles/theme";
 import PageLayout from "../components/PageLayout";
 import Link from "next/link";
-import playBtn from "../static/images/playbutton.png";
+
 import { useRouter } from "next/router";
 import parse from "html-react-parser";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -876,8 +876,8 @@ const Index = () => {
                                     </Link>
                                 </div>
                                 <div>
-                                    <span>{t("artist")}</span>
-                                    <span>{t("title")}</span>
+                                    <span>{parse(t("artist"))}</span>
+                                    <span>{parse(t("title"))}</span>
                                 </div>
                                 <div className="right_arrow">
                                     <Link href="/john">
@@ -892,8 +892,16 @@ const Index = () => {
                                 />
                             </div>
                             <div className="description_container">
-                                <p>{t("text1")}</p>
-                                <p>{parse(t("text2"))}</p>
+                                <p style={{ textAlign: "right" }}>
+                                    {parse(t("text1"))}
+                                </p>
+                                <br />
+                                <p
+                                    className="exeption"
+                                    style={{ textIndent: 0 }}
+                                >
+                                    {parse(t("text2"))}
+                                </p>
                                 <p
                                     className="subtext"
                                     style={{ textIndent: "0" }}

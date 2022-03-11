@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from "react";
 import theme from "../styles/theme";
 import PageLayout from "../components/PageLayout";
 import Link from "next/link";
-import playBtn from "../static/images/playbutton.png";
+import parse from "html-react-parser";
 import { useRouter } from "next/router";
 
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -921,7 +921,7 @@ const Index = () => {
                             </div>
                             <div className="description_container">
                                 <p>{t("p2")}</p>
-                                <p>{t("p3")}</p>
+                                <p className="exeption">{parse(t("p3"))}</p>
                                 <p>{t("p4")}</p>
                                 <p>{t("p5")}</p>
                                 <p>{t("p6")}</p>
@@ -943,7 +943,7 @@ const Index = () => {
                             <div className="artist_info_container">
                                 <div>{t("artist")}</div>
                                 <div>
-                                    <p>{t("artistInfo")}</p>
+                                    <p>{parse(t("artistInfo"))}</p>
                                 </div>
                             </div>
                         </div>

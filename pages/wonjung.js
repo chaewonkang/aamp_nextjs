@@ -5,7 +5,7 @@ import PageLayout from "../components/PageLayout";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import SlideShow from "../components/SlideShow";
-
+import parse from "html-react-parser";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 
@@ -1121,10 +1121,10 @@ const Index = () => {
                             </div>
                             <div className="description_container">
                                 <p>{t("p1")}</p>
-                                <p>{t("p2")}</p>
+                                <p className="exeption">{parse(t("p2"))}</p>
                                 <p>{t("p3")}</p>
                                 <p>{t("p4")}</p>
-                                <p>{t("p5")}</p>
+                                <p className="exeption">{parse(t("p5"))}</p>
                             </div>
                             <div className="video_container">
                                 <SlideShow imgPath={slideArr}></SlideShow>
