@@ -55,7 +55,7 @@ const Program = () => {
                             <span> {t("title1")}</span>
                             <p style={{ textIndent: 0 }}>{t("p1")}</p>
                             <p>
-                                {t("p2")}
+                                {t("p2")}{" "}
                                 <span className="text-style-2">
                                     {t("italic1")}
                                 </span>
@@ -64,7 +64,7 @@ const Program = () => {
                             <p>
                                 <span className="text-style-3">
                                     {t("italic1")}
-                                </span>
+                                </span>{" "}
                                 {t("p4")}
                             </p>
                             <p>{t("p5")}</p>
@@ -81,10 +81,9 @@ const Program = () => {
                             <br />
                             <div>
                                 <span className="text-style-7">
-                                    {" "}
                                     {t("title3")}
                                 </span>
-                                <p>
+                                <p style={{ textIndent: 0 }}>
                                     {t("p7")}
                                     <br /> {t("p8")}
                                     <br />

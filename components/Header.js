@@ -17,13 +17,13 @@ function Header() {
                                 style={{ fontFamily: "Signifier Italic" }}
                                 className="clickable"
                             >
-                                About Artist Workshop, Becoming-Local
+                                About Artist Research Workshop, Becoming-Local
                             </h1>
                         </Link>
                     ) : (
                         <Link href="/about">
                             <h1 className="clickable">
-                                About Artist Workshop, Becoming-Local
+                                About Artist Research Workshop, Becoming-Local
                             </h1>
                         </Link>
                     )}

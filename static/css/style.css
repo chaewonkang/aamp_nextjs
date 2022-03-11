@@ -117,6 +117,12 @@ p {
     font-family: "Signifier Italic";
 }
 
+.exeption span {
+    font-family: "Signifier Italic";
+    width: fit-content !important;
+    display: inline !important;
+}
+
 .center {
     text-align: center;
     width: 100% !important;
@@ -172,6 +178,10 @@ p {
 
 .text-style-2 {
     font-family: "Signifier Italic";
+}
+
+.ko_type .text-style-2 {
+    font-family: "Noto Serif KR";
 }
 
 /* TOPOF Slideshow */
