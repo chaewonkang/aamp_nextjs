@@ -935,7 +935,7 @@ p {
 
     .content_container .description_container p.subtext {
         font-size: 16px;
-        line-height: normal;
+        line-height: 26px !important;
     }
 
     .triple_container .arrowbox {
