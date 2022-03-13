@@ -4,7 +4,7 @@ import theme from "../styles/theme";
 import PageLayout from "../components/PageLayout";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import ReactPlayer from "react-player";
+import parse from "html-react-parser";
 
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
@@ -899,7 +899,7 @@ const Index = () => {
                                 ></iframe>
                             </div>
                             <div className="description_container">
-                                <p>{t("desc1")}</p>
+                                <p className="exeption">{parse(t("desc1"))}</p>
                                 <p>{t("desc2")}</p>
                                 <p>{t("desc3")}</p>
                                 <p>{t("desc4")}</p>
@@ -907,7 +907,9 @@ const Index = () => {
                             <div className="artist_info_container">
                                 <div>{t("artist")}</div>
                                 <div>
-                                    <p>{t("artistInfo")}</p>
+                                    <p className="exeption">
+                                        {parse(t("artistInfo"))}
+                                    </p>
                                 </div>
                             </div>
                         </div>

@@ -991,8 +991,8 @@ p {
     }
 
     #body {
-        width: calc(100vw - 30px);
-        height: 100vh;
+        width: calc(100% - 30px);
+        height: 100%;
         overflow-y: auto;
         overflow-x: scroll;
         max-width: 2560px;
@@ -1116,9 +1116,11 @@ p {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 100%;
+        width: calc(100% - 30px);
         height: 80vh;
-        margin-top: 10vh;
+        position: fixed;
+        top: 10vh;
+        left: 15px;
     }
 
     .footer_container {

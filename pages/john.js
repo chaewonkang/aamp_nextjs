@@ -1334,7 +1334,9 @@ const Index = () => {
                             <div className="artist_info_container">
                                 <div> {t("artist")}</div>
                                 <div>
-                                    <p>{t("artistInfo")}</p>
+                                    <p className="exeption">
+                                        {t("artistInfo")}
+                                    </p>
                                 </div>
                             </div>
                         </div>

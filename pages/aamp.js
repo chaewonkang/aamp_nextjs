@@ -903,7 +903,7 @@ const Index = () => {
                                     {parse(t("text2"))}
                                 </p>
                                 <p
-                                    className="subtext"
+                                    className="subtext exeption"
                                     style={{ textIndent: "0" }}
                                 >
                                     {parse(t("subtext"))}
