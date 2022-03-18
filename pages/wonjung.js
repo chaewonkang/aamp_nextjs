@@ -291,6 +291,8 @@ const Index = () => {
     const { t } = useTranslation("wonjung");
     const locale = router.locale;
 
+    console.log(locale);
+
     const aluminum_tunner01_01 = useRef();
     const aluminum_tunner01_02 = useRef();
     const aluminum_tunner01_03 = useRef();
@@ -1132,10 +1134,16 @@ const Index = () => {
                                     style={
                                         isPlaying.bool &&
                                         isPlaying.name === "all"
-                                            ? {
-                                                  fontFamily:
-                                                      "Signifier Italic",
-                                              }
+                                            ? locale === "ko"
+                                                ? {
+                                                      fontFamily:
+                                                          "Noto Serif KR",
+                                                      fontStyle: "italic",
+                                                  }
+                                                : {
+                                                      fontFamily:
+                                                          "Signifier Italic",
+                                                  }
                                             : null
                                     }
                                     onClick={() => {
@@ -1168,10 +1176,16 @@ const Index = () => {
                                     style={
                                         isPlaying.bool &&
                                         isPlaying.name === "all"
-                                            ? {
-                                                  fontFamily:
-                                                      "Signifier Italic",
-                                              }
+                                            ? locale === "ko"
+                                                ? {
+                                                      fontFamily:
+                                                          "Noto Serif KR",
+                                                      fontStyle: "italic",
+                                                  }
+                                                : {
+                                                      fontFamily:
+                                                          "Signifier Italic",
+                                                  }
                                             : null
                                     }
                                 >
