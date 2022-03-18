@@ -12,20 +12,45 @@ function Header() {
             <div className="header_inner">
                 <div id="desktopOnly">
                     {router.asPath.includes("about") ? (
-                        <Link href="/">
-                            <h1
+                        <h1>
+                            <span
+                                onClick={() => {
+                                    router.push({ pathname: "/about" });
+                                }}
+                                className="clickable"
                                 style={{ fontFamily: "Signifier Italic" }}
+                            >
+                                About Artist Research Workshop,{" "}
+                            </span>
+                            <span
+                                onClick={() => {
+                                    router.push({ pathname: "/" });
+                                }}
                                 className="clickable"
                             >
-                                About Artist Research Workshop, Becoming-Local
-                            </h1>
-                        </Link>
+                                Becoming-Local
+                            </span>
+                        </h1>
                     ) : (
-                        <Link href="/about">
-                            <h1 className="clickable">
-                                About Artist Research Workshop, Becoming-Local
-                            </h1>
-                        </Link>
+                        <h1>
+                            <span
+                                onClick={() => {
+                                    router.push({ pathname: "/about" });
+                                }}
+                                className="clickable"
+                            >
+                                About Artist Research Workshop,{" "}
+                            </span>
+                            <span
+                                style={{ fontFamily: "Signifier Italic" }}
+                                onClick={() => {
+                                    router.push({ pathname: "/" });
+                                }}
+                                className="clickable"
+                            >
+                                Becoming-Local
+                            </span>
+                        </h1>
                     )}
                 </div>
                 <div id="mobileOnly">

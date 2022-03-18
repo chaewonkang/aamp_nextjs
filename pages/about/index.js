@@ -48,6 +48,11 @@ const About = () => {
                                 <h2>{t("subject3")}</h2>
                             </Link>
                         </div>
+                        <div>
+                            <Link href="/about/participants">
+                                <h2>{t("subject4")}</h2>
+                            </Link>
+                        </div>
                     </div>
                     <div className="about_content">
                         <h3>{t("title1")}</h3>
@@ -74,11 +79,11 @@ const About = () => {
                             <div>
                                 <span>{parse(t("title5"))}</span>
                                 <span>
-                                    {t("participant1")}
-                                    <br />
                                     {t("participant2")}
                                     <br></br>
                                     {t("participant3")} <br></br>
+                                    {t("participant1")}
+                                    <br />
                                     {t("participant4")} <br></br>
                                     {t("participant5")} <br></br>
                                     {t("participant6")} <br></br>
@@ -98,6 +103,9 @@ const About = () => {
                                     <br />
                                     {t("programme2")}
                                 </span>
+                            </div>
+                            <div>
+                                <span>{parse(t("credit"))}</span>
                             </div>
                             <div className="center">
                                 <p className="eng_info">

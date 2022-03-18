@@ -494,6 +494,7 @@ p {
     cursor: pointer;
 }
 
+.about_content_1 p a:hover,
 .about_container .about_nav div h2:hover {
     font-family: "Signifier Italic";
 }
@@ -503,6 +504,7 @@ p {
     font-weight: 500;
 }
 
+.ko_type .about_content_1 p a:hover,
 .ko_type .about_nav div h2:hover {
     font-family: "Noto Serif KR";
     font-weight: 900;

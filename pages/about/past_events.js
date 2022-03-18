@@ -48,6 +48,11 @@ const PastEvents = () => {
                                 </h2>
                             </Link>
                         </div>
+                        <div>
+                            <Link href="/about/participants">
+                                <h2>{t("subject4")}</h2>
+                            </Link>
+                        </div>
                     </div>
                     <div className="about_content">
                         <div className="about_content_1">

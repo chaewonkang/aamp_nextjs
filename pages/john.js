@@ -919,7 +919,18 @@ const Index = () => {
                             <div className="description_container">
                                 <p>{t("intro2barter0")}</p>
                             </div>
-
+                            <div className="video_container embed-container">
+                                <iframe
+                                    src="https://player.vimeo.com/video/688652963?h=b441808aa9&amp;title=0&amp;byline=0&amp;portrait=0&amp;controls=1&amp;sidedock=0&amp;loop=1&amp;muted=0&amp;"
+                                    frameBorder="0"
+                                    allow="autoplay;fullscreen;playsinline;"
+                                    allowfullscreen
+                                    playsinline
+                                    webkit-playsinline
+                                    webkitallowfullscreen
+                                    mozallowfullscreen
+                                ></iframe>
+                            </div>
                             <div className="description_container">
                                 <p>{t("intro2barter1")}</p>
                             </div>
@@ -1203,11 +1214,18 @@ const Index = () => {
                                 <p>{t("waiting6")}</p>
                                 <p>{t("waiting7")}</p>
                             </div>
-                            {/* <div className="audio_player">
-                                <div className="player">
-                                    <img src={playBtn} />
-                                </div>
-                            </div> */}
+                            <div className="video_container embed-container">
+                                <iframe
+                                    src="https://player.vimeo.com/video/688653592?h=9094a76ca1&amp;title=0&amp;byline=0&amp;portrait=0&amp;controls=1&amp;sidedock=0&amp;loop=1&amp;muted=0&amp;"
+                                    frameBorder="0"
+                                    allow="autoplay;fullscreen;playsinline;"
+                                    allowfullscreen
+                                    playsinline
+                                    webkit-playsinline
+                                    webkitallowfullscreen
+                                    mozallowfullscreen
+                                ></iframe>
+                            </div>
                             <div className="description_container">
                                 <p>{t("waiting8")}</p>
                             </div>

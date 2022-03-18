@@ -339,6 +339,7 @@ const Index = () => {
     const yellow02 = useRef();
     const yellow03 = useRef();
     const yellow04 = useRef();
+    const allRef = useRef();
 
     const refArr = [
         [
@@ -1125,6 +1126,57 @@ const Index = () => {
                                 <p>{t("p3")}</p>
                                 <p>{t("p4")}</p>
                                 <p className="exeption">{parse(t("p5"))}</p>
+                            </div>
+                            <div className="description_container">
+                                <span
+                                    style={
+                                        isPlaying.bool &&
+                                        isPlaying.name === "all"
+                                            ? {
+                                                  fontFamily:
+                                                      "Signifier Italic",
+                                              }
+                                            : null
+                                    }
+                                    onClick={() => {
+                                        if (
+                                            isPlaying.bool &&
+                                            isPlaying.name === "all"
+                                        ) {
+                                            allRef.current.pause();
+                                            allRef.current.currentTime = 0;
+                                            setIsPlaying({
+                                                name: "all",
+                                                bool: false,
+                                            });
+                                        } else {
+                                            allRef.current.play();
+                                            setIsPlaying({
+                                                name: "all",
+                                                bool: true,
+                                            });
+                                        }
+                                    }}
+                                >
+                                    ►
+                                </span>{" "}
+                                <audio
+                                    src="../static/sound/wonjung/all.mp3"
+                                    ref={allRef}
+                                />
+                                <span
+                                    style={
+                                        isPlaying.bool &&
+                                        isPlaying.name === "all"
+                                            ? {
+                                                  fontFamily:
+                                                      "Signifier Italic",
+                                              }
+                                            : null
+                                    }
+                                >
+                                    {t("title")}
+                                </span>
                             </div>
                             <div className="video_container">
                                 <SlideShow imgPath={slideArr}></SlideShow>

@@ -876,7 +876,9 @@ const Index = () => {
                                     </Link>
                                 </div>
                                 <div>
-                                    <span>{parse(t("artist"))}</span>
+                                    <span>{parse(t("subArtist"))}</span>
+                                    <span>{parse(t("aamp"))}</span>
+                                    <br />
                                     <span>{parse(t("title"))}</span>
                                 </div>
                                 <div className="right_arrow">
