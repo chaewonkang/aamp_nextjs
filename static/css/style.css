@@ -937,6 +937,10 @@ p {
 
     .content_container .description_container p.subtext {
         font-size: 16px;
+        line-height: normal;
+    }
+
+    .ko_type .description_container p.subtext {
         line-height: 26px !important;
     }
 
