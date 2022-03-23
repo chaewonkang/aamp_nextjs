@@ -5,7 +5,7 @@ import PageLayout from "../components/PageLayout";
 import Link from "next/link";
 import playBtn from "../static/images/playbutton.png";
 import { useRouter } from "next/router";
-
+import parse from "html-react-parser";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 
@@ -1353,7 +1353,7 @@ const Index = () => {
                                 <div> {t("artist")}</div>
                                 <div>
                                     <p className="exeption">
-                                        {t("artistInfo")}
+                                        {parse(t("artistInfo"))}
                                     </p>
                                 </div>
                             </div>
