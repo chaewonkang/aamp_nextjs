@@ -77,9 +77,10 @@ const Artist = () => {
                                 <br />
                                 {t("artist6")}
                             </p>
-                            <br />
+
                             <p
                                 style={{
+                                    marginTop: 30,
                                     textIndent: 0,
                                     textAlign: "center",
                                 }}
@@ -100,7 +101,6 @@ const Artist = () => {
                                     {t("writer3")}
                                 </a>
                                 <br />
-
                                 <a href={t("link4")} target="_blank">
                                     {t("writer4")}
                                 </a>
