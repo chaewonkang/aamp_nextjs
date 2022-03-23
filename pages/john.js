@@ -196,7 +196,7 @@ const Index = () => {
                             className="mobile_keyword_container"
                         >
                             <div>
-                                {dataSet[1].keyword.map(item => {
+                                {dataSet[5].keyword.map(item => {
                                     return <span>{item}</span>;
                                 })}
                             </div>

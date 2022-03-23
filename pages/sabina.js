@@ -178,7 +178,9 @@ const Index = () => {
                             className="mobile_keyword_container"
                         >
                             <div>
-                                {dataSet[1].keyword.map(item => {
+                                {dataSet[2].keyword.map(item => {
+                                    if (item === "soundb")
+                                        return <span>sound</span>;
                                     return <span>{item}</span>;
                                 })}
                             </div>

@@ -406,6 +406,8 @@ const Index = () => {
                         >
                             <div>
                                 {dataSet[1].keyword.map(item => {
+                                    if (item === "sounda")
+                                        return <span>sound</span>;
                                     return <span>{item}</span>;
                                 })}
                             </div>
