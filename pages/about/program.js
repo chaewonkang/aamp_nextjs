@@ -67,7 +67,7 @@ const Program = () => {
                                 {t("p3")}
                             </p>
                             <p>
-                                <span className="text-style-3">
+                                <span className="text-style-2">
                                     {t("italic1")}
                                 </span>{" "}
                                 {t("p4")}

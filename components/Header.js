@@ -20,7 +20,7 @@ function Header() {
                                 className="clickable"
                                 style={{ fontFamily: "Signifier Italic" }}
                             >
-                                About Artist Research Workshop,{" "}
+                                About Artist Research Workshop{" "}
                             </span>
                             <span
                                 onClick={() => {
@@ -28,7 +28,7 @@ function Header() {
                                 }}
                                 className="clickable"
                             >
-                                Becoming-Local
+                                Becoming Local
                             </span>
                         </h1>
                     ) : (
@@ -39,7 +39,7 @@ function Header() {
                                 }}
                                 className="clickable"
                             >
-                                About Artist Research Workshop,{" "}
+                                About Artist Research Workshop{" "}
                             </span>
                             <span
                                 style={{ fontFamily: "Signifier Italic" }}
@@ -48,7 +48,7 @@ function Header() {
                                 }}
                                 className="clickable"
                             >
-                                Becoming-Local
+                                Becoming Local
                             </span>
                         </h1>
                     )}

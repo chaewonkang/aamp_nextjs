@@ -23,7 +23,7 @@ function MyApp({ Component, pageProps }) {
                     href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap"
                     rel="stylesheet"
                 />
-                <title>AAMP - Becoming-Local</title>
+                <title>AAMP - Becoming Local</title>
             </Head>
             <Component {...pageProps} />
         </>

@@ -1231,7 +1231,7 @@ const Index = () => {
                             </div>
                         </div>
                         <div className="footer_container">
-                            <span>Becoming-Local</span>
+                            <span>Becoming Local</span>
                         </div>
                     </PageLayout>
                 </>

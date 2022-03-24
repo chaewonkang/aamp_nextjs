@@ -76,26 +76,7 @@ const About = () => {
                                 <span>{parse(t("title4"))}</span>
                                 <span>{parse(t("p7"))}</span>
                             </div>
-                            <div>
-                                <span>{parse(t("title5"))}</span>
-                                <span>
-                                    {t("participant2")}
-                                    <br></br>
-                                    {t("participant3")} <br></br>
-                                    {t("participant1")}
-                                    <br />
-                                    {t("participant4")} <br></br>
-                                    {t("participant5")} <br></br>
-                                    {t("participant6")} <br></br>
-                                    <br />
-                                    {parse(t("participant7"))} <br></br>
-                                    {t("participant8")} <br></br>
-                                    {t("participant9")}
-                                    <br></br>
-                                    {t("participant10")}
-                                    <br></br>
-                                </span>
-                            </div>
+
                             <div>
                                 <span>{t("title6")}</span>
                                 <span>
