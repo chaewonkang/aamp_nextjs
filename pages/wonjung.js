@@ -1219,6 +1219,11 @@ const Index = () => {
                                                                     soundObj.indexOf(
                                                                         sound,
                                                                     )
+                                                                ][0].current &&
+                                                                refArr[
+                                                                    soundObj.indexOf(
+                                                                        sound,
+                                                                    )
                                                                 ][0].current
                                                                     .paused
                                                                     ? null
@@ -1286,6 +1291,11 @@ const Index = () => {
                                                         <div
                                                             className="clickable"
                                                             style={
+                                                                refArr[
+                                                                    soundObj.indexOf(
+                                                                        sound,
+                                                                    )
+                                                                ][1].current &&
                                                                 refArr[
                                                                     soundObj.indexOf(
                                                                         sound,
@@ -1361,6 +1371,11 @@ const Index = () => {
                                                                     soundObj.indexOf(
                                                                         sound,
                                                                     )
+                                                                ][2].current &&
+                                                                refArr[
+                                                                    soundObj.indexOf(
+                                                                        sound,
+                                                                    )
                                                                 ][2].current
                                                                     .paused
                                                                     ? null
@@ -1428,6 +1443,11 @@ const Index = () => {
                                                         <div
                                                             className="clickable"
                                                             style={
+                                                                refArr[
+                                                                    soundObj.indexOf(
+                                                                        sound,
+                                                                    )
+                                                                ][3].current &&
                                                                 refArr[
                                                                     soundObj.indexOf(
                                                                         sound,
