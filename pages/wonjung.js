@@ -15,156 +15,6 @@ const slideArr = [
     "../static/images/wonjung/slide3.jpg",
 ];
 
-const soundObj = [
-    {
-        title: "aluminum_tunnel01",
-        img: "../static/images/wonjung/aluminum_tunnel01-min.jpg",
-        sound: [
-            "../static/sound/wonjung/aluminum_tunner01_01.mp3",
-            "../static/sound/wonjung/aluminum_tunner01_02.mp3",
-            "../static/sound/wonjung/aluminum_tunner01_03.mp3",
-            "../static/sound/wonjung/aluminum_tunner01_04.mp3",
-        ],
-        soundName: [
-            "aluminum_tunner01_01",
-            "aluminum_tunner01_02",
-            "aluminum_tunner01_03",
-            "aluminum_tunner01_04",
-        ],
-    },
-    {
-        title: "aluminum_tunnel02",
-        img: "../static/images/wonjung/aluminum_tunnel02-min.jpg",
-        sound: [
-            "../static/sound/wonjung/aluminum_tunner02_01.mp3",
-            "../static/sound/wonjung/aluminum_tunner02_02.mp3",
-            "../static/sound/wonjung/aluminum_tunner02_03.mp3",
-            "../static/sound/wonjung/aluminum_tunner02_04.mp3",
-        ],
-        soundName: [
-            "aluminum_tunner02_01",
-            "aluminum_tunner02_02",
-            "aluminum_tunner02_03",
-            "aluminum_tunner02_04",
-        ],
-    },
-    {
-        title: "barrel",
-        img: "../static/images/wonjung/barrel-min.jpg",
-        sound: [
-            "../static/sound/wonjung/barrel01.mp3",
-            "../static/sound/wonjung/barrel02.mp3",
-            "../static/sound/wonjung/barrel03.mp3",
-            "../static/sound/wonjung/barrel04.mp3",
-        ],
-        soundName: ["barrel01", "barrel02", "barrel03", "barrel04"],
-    },
-    {
-        title: "bongbong",
-        img: "../static/images/wonjung/bongbong-min.jpg",
-        sound: [
-            "../static/sound/wonjung/bongbong01.mp3",
-            "../static/sound/wonjung/bongbong02.mp3",
-            "../static/sound/wonjung/bongbong03.mp3",
-            "../static/sound/wonjung/bongbong04.mp3",
-        ],
-        soundName: ["bongbong01", "bongbong02", "bongbong03", "bongbong04"],
-    },
-    {
-        title: "copper",
-        img: "../static/images/wonjung/copper-min.jpg",
-        sound: [
-            "../static/sound/wonjung/copper01.mp3",
-            "../static/sound/wonjung/copper02.mp3",
-            "../static/sound/wonjung/copper03.mp3",
-            "../static/sound/wonjung/copper04.mp3",
-        ],
-        soundName: ["copper01", "copper02", "copper03", "copper04"],
-    },
-    {
-        title: "drawer",
-        img: "../static/images/wonjung/drawer-min.jpg",
-        sound: [
-            "../static/sound/wonjung/drawer01.mp3",
-            "../static/sound/wonjung/drawer02.mp3",
-            "../static/sound/wonjung/drawer03.mp3",
-            "../static/sound/wonjung/drawer04.mp3",
-        ],
-        soundName: ["drawer01", "drawer02", "drawer03", "drawer04"],
-    },
-    {
-        title: "funnel",
-        img: "../static/images/wonjung/funnel-min.jpg",
-        sound: [
-            "../static/sound/wonjung/funnel01.mp3",
-            "../static/sound/wonjung/funnel02.mp3",
-            "../static/sound/wonjung/funnel03.mp3",
-            "../static/sound/wonjung/funnel04.mp3",
-        ],
-        soundName: ["funnel01", "funnel02", "funnel03", "funnel04"],
-    },
-    {
-        title: "gas_cylinder",
-        img: "../static/images/wonjung/gas_cylinder-min.jpg",
-        sound: [
-            "../static/sound/wonjung/gas_cylinder01.mp3",
-            "../static/sound/wonjung/gas_cylinder02.mp3",
-            "../static/sound/wonjung/gas_cylinder03.mp3",
-            "../static/sound/wonjung/gas_cylinder04.mp3",
-        ],
-        soundName: [
-            "gas_cylinder01",
-            "gas_cylinder02",
-            "gas_cylinder03",
-            "gas_cylinder04",
-        ],
-    },
-    {
-        title: "hose",
-        img: "../static/images/wonjung/hose-min.jpg",
-        sound: [
-            "../static/sound/wonjung/hose01.mp3",
-            "../static/sound/wonjung/hose02.mp3",
-            "../static/sound/wonjung/hose03.mp3",
-            "../static/sound/wonjung/hose04.mp3",
-        ],
-        soundName: ["hose01", "hose02", "hose03", "hose04"],
-    },
-    {
-        title: "suitcase",
-        img: "../static/images/wonjung/suitcase-min.jpg",
-        sound: [
-            "../static/sound/wonjung/suitcase01.mp3",
-            "../static/sound/wonjung/suitcase02.mp3",
-            "../static/sound/wonjung/suitcase03.mp3",
-            "../static/sound/wonjung/suitcase04.mp3",
-        ],
-        soundName: ["suitcase01", "suitcase02", "suitcase03", "suitcase04"],
-    },
-    {
-        title: "tissue",
-        img: "../static/images/wonjung/tissue-min.jpg",
-        sound: [
-            "../static/sound/wonjung/tissue01.mp3",
-            "../static/sound/wonjung/tissue02.mp3",
-            "../static/sound/wonjung/tissue03.mp3",
-            "../static/sound/wonjung/tissue04.mp3",
-        ],
-        soundName: ["tissue01", "tissue02", "tissue03", "tissue04"],
-    },
-    {
-        title: "yellow",
-        img: "../static/images/wonjung/yellow-min.jpg",
-        sound: [
-            "../static/sound/wonjung/yellow01.mp3",
-            "../static/sound/wonjung/yellow02.mp3",
-            "../static/sound/wonjung/yellow03.mp3",
-            "../static/sound/wonjung/yellow04.mp3",
-        ],
-        soundName: ["yellow01", "yellow02", "yellow03", "yellow04"],
-    },
-];
-
 const dataSet = [
     {
         index: 0,
@@ -366,6 +216,156 @@ const Index = () => {
         [suitcase01, suitcase02, suitcase03, suitcase04],
         [tissue01, tissue02, tissue03, tissue04],
         [yellow01, yellow02, yellow03, yellow04],
+    ];
+
+    const soundObj = [
+        {
+            title: "aluminum_tunnel01",
+            img: "../static/images/wonjung/aluminum_tunnel01-min.jpg",
+            sound: [
+                "../static/sound/wonjung/aluminum_tunner01_01.mp3",
+                "../static/sound/wonjung/aluminum_tunner01_02.mp3",
+                "../static/sound/wonjung/aluminum_tunner01_03.mp3",
+                "../static/sound/wonjung/aluminum_tunner01_04.mp3",
+            ],
+            soundName: [
+                "aluminum_tunner01_01",
+                "aluminum_tunner01_02",
+                "aluminum_tunner01_03",
+                "aluminum_tunner01_04",
+            ],
+        },
+        {
+            title: "aluminum_tunnel02",
+            img: "../static/images/wonjung/aluminum_tunnel02-min.jpg",
+            sound: [
+                "../static/sound/wonjung/aluminum_tunner02_01.mp3",
+                "../static/sound/wonjung/aluminum_tunner02_02.mp3",
+                "../static/sound/wonjung/aluminum_tunner02_03.mp3",
+                "../static/sound/wonjung/aluminum_tunner02_04.mp3",
+            ],
+            soundName: [
+                "aluminum_tunner02_01",
+                "aluminum_tunner02_02",
+                "aluminum_tunner02_03",
+                "aluminum_tunner02_04",
+            ],
+        },
+        {
+            title: "barrel",
+            img: "../static/images/wonjung/barrel-min.jpg",
+            sound: [
+                "../static/sound/wonjung/barrel01.mp3",
+                "../static/sound/wonjung/barrel02.mp3",
+                "../static/sound/wonjung/barrel03.mp3",
+                "../static/sound/wonjung/barrel04.mp3",
+            ],
+            soundName: ["barrel01", "barrel02", "barrel03", "barrel04"],
+        },
+        {
+            title: "bongbong",
+            img: "../static/images/wonjung/bongbong-min.jpg",
+            sound: [
+                "../static/sound/wonjung/bongbong01.mp3",
+                "../static/sound/wonjung/bongbong02.mp3",
+                "../static/sound/wonjung/bongbong03.mp3",
+                "../static/sound/wonjung/bongbong04.mp3",
+            ],
+            soundName: ["bongbong01", "bongbong02", "bongbong03", "bongbong04"],
+        },
+        {
+            title: "copper",
+            img: "../static/images/wonjung/copper-min.jpg",
+            sound: [
+                "../static/sound/wonjung/copper01.mp3",
+                "../static/sound/wonjung/copper02.mp3",
+                "../static/sound/wonjung/copper03.mp3",
+                "../static/sound/wonjung/copper04.mp3",
+            ],
+            soundName: ["copper01", "copper02", "copper03", "copper04"],
+        },
+        {
+            title: "drawer",
+            img: "../static/images/wonjung/drawer-min.jpg",
+            sound: [
+                "../static/sound/wonjung/drawer01.mp3",
+                "../static/sound/wonjung/drawer02.mp3",
+                "../static/sound/wonjung/drawer03.mp3",
+                "../static/sound/wonjung/drawer04.mp3",
+            ],
+            soundName: ["drawer01", "drawer02", "drawer03", "drawer04"],
+        },
+        {
+            title: "funnel",
+            img: "../static/images/wonjung/funnel-min.jpg",
+            sound: [
+                "../static/sound/wonjung/funnel01.mp3",
+                "../static/sound/wonjung/funnel02.mp3",
+                "../static/sound/wonjung/funnel03.mp3",
+                "../static/sound/wonjung/funnel04.mp3",
+            ],
+            soundName: ["funnel01", "funnel02", "funnel03", "funnel04"],
+        },
+        {
+            title: "gas_cylinder",
+            img: "../static/images/wonjung/gas_cylinder-min.jpg",
+            sound: [
+                "../static/sound/wonjung/gas_cylinder01.mp3",
+                "../static/sound/wonjung/gas_cylinder02.mp3",
+                "../static/sound/wonjung/gas_cylinder03.mp3",
+                "../static/sound/wonjung/gas_cylinder04.mp3",
+            ],
+            soundName: [
+                "gas_cylinder01",
+                "gas_cylinder02",
+                "gas_cylinder03",
+                "gas_cylinder04",
+            ],
+        },
+        {
+            title: "hose",
+            img: "../static/images/wonjung/hose-min.jpg",
+            sound: [
+                "../static/sound/wonjung/hose01.mp3",
+                "../static/sound/wonjung/hose02.mp3",
+                "../static/sound/wonjung/hose03.mp3",
+                "../static/sound/wonjung/hose04.mp3",
+            ],
+            soundName: ["hose01", "hose02", "hose03", "hose04"],
+        },
+        {
+            title: "suitcase",
+            img: "../static/images/wonjung/suitcase-min.jpg",
+            sound: [
+                "../static/sound/wonjung/suitcase01.mp3",
+                "../static/sound/wonjung/suitcase02.mp3",
+                "../static/sound/wonjung/suitcase03.mp3",
+                "../static/sound/wonjung/suitcase04.mp3",
+            ],
+            soundName: ["suitcase01", "suitcase02", "suitcase03", "suitcase04"],
+        },
+        {
+            title: "tissue",
+            img: "../static/images/wonjung/tissue-min.jpg",
+            sound: [
+                "../static/sound/wonjung/tissue01.mp3",
+                "../static/sound/wonjung/tissue02.mp3",
+                "../static/sound/wonjung/tissue03.mp3",
+                "../static/sound/wonjung/tissue04.mp3",
+            ],
+            soundName: ["tissue01", "tissue02", "tissue03", "tissue04"],
+        },
+        {
+            title: "yellow",
+            img: "../static/images/wonjung/yellow-min.jpg",
+            sound: [
+                "../static/sound/wonjung/yellow01.mp3",
+                "../static/sound/wonjung/yellow02.mp3",
+                "../static/sound/wonjung/yellow03.mp3",
+                "../static/sound/wonjung/yellow04.mp3",
+            ],
+            soundName: ["yellow01", "yellow02", "yellow03", "yellow04"],
+        },
     ];
 
     let keywordArr = [].concat.apply(
@@ -1215,15 +1215,17 @@ const Index = () => {
                                                         <div
                                                             className="clickable"
                                                             style={
-                                                                isPlaying.bool &&
-                                                                isPlaying.name ===
-                                                                    sound
-                                                                        .sound[0]
-                                                                    ? {
+                                                                refArr[
+                                                                    soundObj.indexOf(
+                                                                        sound,
+                                                                    )
+                                                                ][0].current
+                                                                    .paused
+                                                                    ? null
+                                                                    : {
                                                                           fontFamily:
                                                                               "Signifier Italic",
                                                                       }
-                                                                    : null
                                                             }
                                                             onClick={() => {
                                                                 if (
@@ -1284,15 +1286,17 @@ const Index = () => {
                                                         <div
                                                             className="clickable"
                                                             style={
-                                                                isPlaying.bool &&
-                                                                isPlaying.name ===
-                                                                    sound
-                                                                        .sound[1]
-                                                                    ? {
+                                                                refArr[
+                                                                    soundObj.indexOf(
+                                                                        sound,
+                                                                    )
+                                                                ][1].current
+                                                                    .paused
+                                                                    ? null
+                                                                    : {
                                                                           fontFamily:
                                                                               "Signifier Italic",
                                                                       }
-                                                                    : null
                                                             }
                                                             onClick={() => {
                                                                 if (
@@ -1353,15 +1357,17 @@ const Index = () => {
                                                         <div
                                                             className="clickable"
                                                             style={
-                                                                isPlaying.bool &&
-                                                                isPlaying.name ===
-                                                                    sound
-                                                                        .sound[2]
-                                                                    ? {
+                                                                refArr[
+                                                                    soundObj.indexOf(
+                                                                        sound,
+                                                                    )
+                                                                ][2].current
+                                                                    .paused
+                                                                    ? null
+                                                                    : {
                                                                           fontFamily:
                                                                               "Signifier Italic",
                                                                       }
-                                                                    : null
                                                             }
                                                             onClick={() => {
                                                                 if (
@@ -1422,15 +1428,17 @@ const Index = () => {
                                                         <div
                                                             className="clickable"
                                                             style={
-                                                                isPlaying.bool &&
-                                                                isPlaying.name ===
-                                                                    sound
-                                                                        .sound[3]
-                                                                    ? {
+                                                                refArr[
+                                                                    soundObj.indexOf(
+                                                                        sound,
+                                                                    )
+                                                                ][3].current
+                                                                    .paused
+                                                                    ? null
+                                                                    : {
                                                                           fontFamily:
                                                                               "Signifier Italic",
                                                                       }
-                                                                    : null
                                                             }
                                                             onClick={() => {
                                                                 if (
