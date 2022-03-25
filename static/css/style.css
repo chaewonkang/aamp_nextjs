@@ -780,12 +780,13 @@ p {
     line-height: normal;
 }
 
-.ko_type .module_row .module .sound_row div:hover {
-    text-decoration: underline !important;
-}
-
 .ko_type .module_row .module .sound_row div:first-child {
     margin-top: 0px;
+}
+
+.ko_type .description_container .clickable:hover {
+    font-family: "Noto Serif KR", serif !important;
+    font-style: italic;
 }
 
 .content_container .module_row .module:nth-child(3n) {
@@ -904,6 +905,10 @@ p {
     cursor: pointer;
 }
 
+.sound_row .desktopOnly {
+    display: inline;
+}
+
 .clickable:hover {
     font-family: "Signifier Italic" !important;
 }
@@ -912,7 +917,34 @@ p {
     line-height: 32px !important;
 }
 
+.mobileOnly {
+    display: none;
+}
+
+.sound_row .desktopOnly:hover {
+    font-family: "Signifier Italic" !important;
+}
+
 @media screen and (max-width: 780px) {
+    .sound_row .desktopOnly {
+        display: none;
+    }
+
+    .ko_type .sound_row .desktopOnly:hover {
+        text-decoration: none;
+    }
+
+    .mobileOnly {
+        display: unset;
+    }
+    .sound_row {
+        display: flex;
+    }
+
+    .sound_row div {
+        padding-right: 10px;
+    }
+
     .ko_type .artist_info_container p {
         line-height: 26px !important;
     }

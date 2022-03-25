@@ -81,7 +81,7 @@ const Program = () => {
                                     {" "}
                                     {t("title2")}
                                 </span>
-                                <p>{t("p6")}</p>
+                                <p style={{ textIndent: 0 }}>{t("p6")}</p>
                             </div>
                             <br />
                             <div>
@@ -113,7 +113,7 @@ const Program = () => {
                                 <span className="text-style-8">
                                     {t("title4")}
                                 </span>
-                                <p>{t("p17")}</p>
+                                <p style={{ textIndent: 0 }}>{t("p17")}</p>
                             </div>
                             <br />
                             <br />

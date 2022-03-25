@@ -139,6 +139,7 @@ const Index = () => {
         bool: false,
     });
     const { t } = useTranslation("wonjung");
+    const [reload, setReload] = useState("");
     const locale = router.locale;
 
     console.log(locale);
@@ -376,6 +377,7 @@ const Index = () => {
     useEffect(() => {
         setTimeout(() => {
             setLoading(true);
+            setReload(true);
         }, 500);
 
         const spanTarget = [...document.getElementsByClassName("keyword")];
@@ -388,7 +390,7 @@ const Index = () => {
 
         const italicTarget = [...document.getElementsByClassName("wonjung")];
         italicTarget.map(item => (item.style.fontFamily = "Signifier Italic"));
-    }, [keyword, thumbUrl, flag, isItalic, loading, isKeyClicked]);
+    }, [keyword, thumbUrl, flag, isItalic, loading, isKeyClicked, reload]);
 
     return (
         <ThemeProvider theme={theme}>
@@ -1131,57 +1133,40 @@ const Index = () => {
                                 <p>{t("p4")}</p>
                                 <p className="exeption">{parse(t("p5"))}</p>
                             </div>
-                            <div className="description_container">
-                                <span
-                                    style={
+                            <div
+                                className="description_container"
+                                onClick={() => {
+                                    if (
                                         isPlaying.bool &&
                                         isPlaying.name === "all"
-                                            ? locale === "ko"
-                                                ? {
-                                                      fontFamily:
-                                                          "Noto Serif KR",
-                                                      fontStyle: "italic",
-                                                  }
-                                                : {
-                                                      fontFamily:
-                                                          "Signifier Italic",
-                                                  }
-                                            : null
+                                    ) {
+                                        allRef.current.pause();
+                                        allRef.current.currentTime = 0;
+                                        setIsPlaying({
+                                            name: "all",
+                                            bool: false,
+                                        });
+                                    } else {
+                                        allRef.current.play();
+                                        setIsPlaying({
+                                            name: "all",
+                                            bool: true,
+                                        });
                                     }
-                                    onClick={() => {
-                                        if (
-                                            isPlaying.bool &&
-                                            isPlaying.name === "all"
-                                        ) {
-                                            allRef.current.pause();
-                                            allRef.current.currentTime = 0;
-                                            setIsPlaying({
-                                                name: "all",
-                                                bool: false,
-                                            });
-                                        } else {
-                                            allRef.current.play();
-                                            setIsPlaying({
-                                                name: "all",
-                                                bool: true,
-                                            });
-                                        }
-                                    }}
-                                >
-                                    ►
-                                </span>{" "}
+                                }}
+                            >
+                                <span>►</span>{" "}
                                 <audio
                                     src="../static/sound/wonjung/all.mp3"
                                     ref={allRef}
                                 />
                                 <span
+                                    className="clickable"
                                     style={
                                         isPlaying.bool &&
                                         isPlaying.name === "all"
                                             ? locale === "ko"
                                                 ? {
-                                                      fontFamily:
-                                                          "Noto Serif KR",
                                                       fontStyle: "italic",
                                                   }
                                                 : {
@@ -1234,11 +1219,28 @@ const Index = () => {
                                                             }
                                                             onClick={() => {
                                                                 if (
-                                                                    isPlaying.bool &&
-                                                                    isPlaying.name ===
-                                                                        sound
-                                                                            .sound[0]
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][0]
+                                                                        .current &&
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][0].current
+                                                                        .paused
                                                                 ) {
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][0].current.play();
+                                                                    setReload(
+                                                                        sound,
+                                                                    );
+                                                                } else {
                                                                     refArr[
                                                                         soundObj.indexOf(
                                                                             sound,
@@ -1249,25 +1251,8 @@ const Index = () => {
                                                                             sound,
                                                                         )
                                                                     ][0].current.currentTime = 0;
-                                                                    setIsPlaying(
-                                                                        {
-                                                                            name: sound
-                                                                                .sound[0],
-                                                                            bool: false,
-                                                                        },
-                                                                    );
-                                                                } else {
-                                                                    refArr[
-                                                                        soundObj.indexOf(
-                                                                            sound,
-                                                                        )
-                                                                    ][0].current.play();
-                                                                    setIsPlaying(
-                                                                        {
-                                                                            name: sound
-                                                                                .sound[0],
-                                                                            bool: true,
-                                                                        },
+                                                                    setReload(
+                                                                        sound,
                                                                     );
                                                                 }
                                                             }}
@@ -1286,7 +1271,65 @@ const Index = () => {
                                                                     ][0]
                                                                 }
                                                             />
-                                                            {sound.soundName[0]}
+                                                            <div
+                                                                className="desktopOnly"
+                                                                style={
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][0]
+                                                                        .current &&
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][0].current
+                                                                        .paused
+                                                                        ? null
+                                                                        : {
+                                                                              fontFamily:
+                                                                                  "Signifier Italic",
+                                                                          }
+                                                                }
+                                                            >
+                                                                {
+                                                                    sound
+                                                                        .soundName[0]
+                                                                }
+                                                            </div>
+                                                            <div
+                                                                className="mobileOnly"
+                                                                style={
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][0]
+                                                                        .current &&
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][0].current
+                                                                        .paused
+                                                                        ? null
+                                                                        : {
+                                                                              fontFamily:
+                                                                                  "Signifier Italic",
+                                                                          }
+                                                                }
+                                                            >
+                                                                {sound.soundName[0].slice(
+                                                                    sound
+                                                                        .soundName[0]
+                                                                        .length -
+                                                                        2,
+                                                                    sound
+                                                                        .soundName[0]
+                                                                        .length,
+                                                                )}
+                                                            </div>
                                                         </div>
                                                         <div
                                                             className="clickable"
@@ -1310,11 +1353,28 @@ const Index = () => {
                                                             }
                                                             onClick={() => {
                                                                 if (
-                                                                    isPlaying.bool &&
-                                                                    isPlaying.name ===
-                                                                        sound
-                                                                            .sound[1]
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][1]
+                                                                        .current &&
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][1].current
+                                                                        .paused
                                                                 ) {
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][1].current.play();
+                                                                    setReload(
+                                                                        sound,
+                                                                    );
+                                                                } else {
                                                                     refArr[
                                                                         soundObj.indexOf(
                                                                             sound,
@@ -1325,25 +1385,8 @@ const Index = () => {
                                                                             sound,
                                                                         )
                                                                     ][1].current.currentTime = 0;
-                                                                    setIsPlaying(
-                                                                        {
-                                                                            name: sound
-                                                                                .sound[1],
-                                                                            bool: false,
-                                                                        },
-                                                                    );
-                                                                } else {
-                                                                    refArr[
-                                                                        soundObj.indexOf(
-                                                                            sound,
-                                                                        )
-                                                                    ][1].current.play();
-                                                                    setIsPlaying(
-                                                                        {
-                                                                            name: sound
-                                                                                .sound[1],
-                                                                            bool: true,
-                                                                        },
+                                                                    setReload(
+                                                                        sound,
                                                                     );
                                                                 }
                                                             }}
@@ -1362,7 +1405,65 @@ const Index = () => {
                                                                     ][1]
                                                                 }
                                                             />
-                                                            {sound.soundName[1]}
+                                                            <div
+                                                                className="desktopOnly"
+                                                                style={
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][1]
+                                                                        .current &&
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][1].current
+                                                                        .paused
+                                                                        ? null
+                                                                        : {
+                                                                              fontFamily:
+                                                                                  "Signifier Italic",
+                                                                          }
+                                                                }
+                                                            >
+                                                                {
+                                                                    sound
+                                                                        .soundName[1]
+                                                                }
+                                                            </div>
+                                                            <div
+                                                                className="mobileOnly"
+                                                                style={
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][1]
+                                                                        .current &&
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][1].current
+                                                                        .paused
+                                                                        ? null
+                                                                        : {
+                                                                              fontFamily:
+                                                                                  "Signifier Italic",
+                                                                          }
+                                                                }
+                                                            >
+                                                                {sound.soundName[1].slice(
+                                                                    sound
+                                                                        .soundName[1]
+                                                                        .length -
+                                                                        2,
+                                                                    sound
+                                                                        .soundName[1]
+                                                                        .length,
+                                                                )}
+                                                            </div>
                                                         </div>
                                                         <div
                                                             className="clickable"
@@ -1386,11 +1487,28 @@ const Index = () => {
                                                             }
                                                             onClick={() => {
                                                                 if (
-                                                                    isPlaying.bool &&
-                                                                    isPlaying.name ===
-                                                                        sound
-                                                                            .sound[2]
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][2]
+                                                                        .current &&
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][2].current
+                                                                        .paused
                                                                 ) {
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][2].current.play();
+                                                                    setReload(
+                                                                        sound,
+                                                                    );
+                                                                } else {
                                                                     refArr[
                                                                         soundObj.indexOf(
                                                                             sound,
@@ -1401,25 +1519,8 @@ const Index = () => {
                                                                             sound,
                                                                         )
                                                                     ][2].current.currentTime = 0;
-                                                                    setIsPlaying(
-                                                                        {
-                                                                            name: sound
-                                                                                .sound[2],
-                                                                            bool: false,
-                                                                        },
-                                                                    );
-                                                                } else {
-                                                                    refArr[
-                                                                        soundObj.indexOf(
-                                                                            sound,
-                                                                        )
-                                                                    ][2].current.play();
-                                                                    setIsPlaying(
-                                                                        {
-                                                                            name: sound
-                                                                                .sound[2],
-                                                                            bool: true,
-                                                                        },
+                                                                    setReload(
+                                                                        sound,
                                                                     );
                                                                 }
                                                             }}
@@ -1438,35 +1539,92 @@ const Index = () => {
                                                                     ][2]
                                                                 }
                                                             />
-                                                            {sound.soundName[2]}
+                                                            <div
+                                                                className="desktopOnly"
+                                                                style={
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][2]
+                                                                        .current &&
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][2].current
+                                                                        .paused
+                                                                        ? null
+                                                                        : {
+                                                                              fontFamily:
+                                                                                  "Signifier Italic",
+                                                                          }
+                                                                }
+                                                            >
+                                                                {
+                                                                    sound
+                                                                        .soundName[2]
+                                                                }
+                                                            </div>
+                                                            <div
+                                                                className="mobileOnly"
+                                                                style={
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][2]
+                                                                        .current &&
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][2].current
+                                                                        .paused
+                                                                        ? null
+                                                                        : {
+                                                                              fontFamily:
+                                                                                  "Signifier Italic",
+                                                                          }
+                                                                }
+                                                            >
+                                                                {sound.soundName[2].slice(
+                                                                    sound
+                                                                        .soundName[2]
+                                                                        .length -
+                                                                        2,
+                                                                    sound
+                                                                        .soundName[2]
+                                                                        .length,
+                                                                )}
+                                                            </div>
                                                         </div>
                                                         <div
                                                             className="clickable"
-                                                            style={
-                                                                refArr[
-                                                                    soundObj.indexOf(
-                                                                        sound,
-                                                                    )
-                                                                ][3].current &&
-                                                                refArr[
-                                                                    soundObj.indexOf(
-                                                                        sound,
-                                                                    )
-                                                                ][3].current
-                                                                    .paused
-                                                                    ? null
-                                                                    : {
-                                                                          fontFamily:
-                                                                              "Signifier Italic",
-                                                                      }
-                                                            }
                                                             onClick={() => {
                                                                 if (
-                                                                    isPlaying.bool &&
-                                                                    isPlaying.name ===
-                                                                        sound
-                                                                            .sound[3]
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][3]
+                                                                        .current &&
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][3].current
+                                                                        .paused
                                                                 ) {
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][3].current.play();
+                                                                    setReload(
+                                                                        sound,
+                                                                    );
+                                                                } else {
                                                                     refArr[
                                                                         soundObj.indexOf(
                                                                             sound,
@@ -1477,25 +1635,8 @@ const Index = () => {
                                                                             sound,
                                                                         )
                                                                     ][3].current.currentTime = 0;
-                                                                    setIsPlaying(
-                                                                        {
-                                                                            name: sound
-                                                                                .sound[3],
-                                                                            bool: false,
-                                                                        },
-                                                                    );
-                                                                } else {
-                                                                    refArr[
-                                                                        soundObj.indexOf(
-                                                                            sound,
-                                                                        )
-                                                                    ][3].current.play();
-                                                                    setIsPlaying(
-                                                                        {
-                                                                            name: sound
-                                                                                .sound[3],
-                                                                            bool: true,
-                                                                        },
+                                                                    setReload(
+                                                                        sound,
                                                                     );
                                                                 }
                                                             }}
@@ -1514,7 +1655,65 @@ const Index = () => {
                                                                     ][3]
                                                                 }
                                                             />
-                                                            {sound.soundName[3]}
+                                                            <div
+                                                                className="desktopOnly"
+                                                                style={
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][3]
+                                                                        .current &&
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][3].current
+                                                                        .paused
+                                                                        ? null
+                                                                        : {
+                                                                              fontFamily:
+                                                                                  "Signifier Italic",
+                                                                          }
+                                                                }
+                                                            >
+                                                                {
+                                                                    sound
+                                                                        .soundName[3]
+                                                                }
+                                                            </div>
+                                                            <div
+                                                                className="mobileOnly"
+                                                                style={
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][3]
+                                                                        .current &&
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][3].current
+                                                                        .paused
+                                                                        ? null
+                                                                        : {
+                                                                              fontFamily:
+                                                                                  "Signifier Italic",
+                                                                          }
+                                                                }
+                                                            >
+                                                                {sound.soundName[3].slice(
+                                                                    sound
+                                                                        .soundName[3]
+                                                                        .length -
+                                                                        2,
+                                                                    sound
+                                                                        .soundName[3]
+                                                                        .length,
+                                                                )}
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
