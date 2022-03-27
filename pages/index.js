@@ -6,6 +6,8 @@ import Link from "next/link";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import SlideShow from "../components/SlideShow";
+import dataSet from "../constants/dataSet";
+import { useRouter } from "next/router";
 
 const delay = 5000;
 
@@ -18,117 +20,6 @@ const thumbArr = [
     { img: "../static/images/minjung.jpg", artist: "minjung" },
 ];
 
-const dataSet = [
-    {
-        index: 0,
-        flag: "taiki",
-        artist: "Taiki Sakpisit",
-        keyword: [
-            "alchemical Transmutation",
-            "mysticism",
-            "phantasmagoria",
-            "disembodiment",
-            "sensory Stimulus",
-            "eschatology",
-            "spectrality",
-        ],
-        thumb: "../static/images/taiki.jpg",
-    },
-    {
-        index: 1,
-        flag: "wonjung",
-        artist: "Wonjung Shin",
-        keyword: [
-            "gesture",
-            "sounda",
-            "network",
-            "abject",
-            "non-verbal",
-            "dialog",
-            "stress",
-            "thing-in-itself",
-            "noting",
-        ],
-        thumb: "../static/images/wonjung.jpg",
-    },
-    {
-        index: 2,
-        flag: "sabina",
-        artist: "Sabina Hyoju AHN",
-        keyword: [
-            "covid19",
-            "ai",
-            "machine learning",
-            "daily life",
-            "soundb",
-            "local",
-            "digital",
-            "artist",
-            "residency",
-            "air",
-            "germany",
-            "stuttgart",
-            "akademies",
-            "schloss",
-            "solitude",
-            "forest",
-            "walk",
-            "lockdown",
-        ],
-        thumb: "../static/images/sabina.jpg",
-    },
-    {
-        index: 3,
-        flag: "aamp",
-        artist: "AAMP",
-        keyword: [
-            "onta",
-            "caring",
-            "ergliffenheit",
-            "minority language",
-            "xeo",
-            "mountain",
-            "foresta",
-            "entanglement",
-            "touch the ground",
-        ],
-        thumb: "../static/images/aamp.jpg",
-    },
-    {
-        index: 4,
-        flag: "minjung",
-        artist: "Minjung Kim",
-        keyword: [
-            "connected",
-            "border",
-            "interaction",
-            "settle down",
-            "interlock",
-            "tide",
-            "native",
-            "roam",
-        ],
-        thumb: "../static/images/minjung.jpg",
-    },
-    {
-        index: 5,
-        flag: "john",
-        artist: "John Torres",
-        keyword: [
-            "intro2barter",
-            "denvicky",
-            "findings",
-            "felicity",
-            "patkay",
-            "shady",
-            "waiting",
-            "badvibes",
-            "narratives",
-        ],
-        thumb: "../static/images/john.jpg",
-    },
-];
-
 const Index = () => {
     const [keyword, setKeyword] = useState("");
     const [loading, setLoading] = useState(true);
@@ -139,6 +30,10 @@ const Index = () => {
     const [isKeyClicked, setIsKeyClicked] = useState(false);
     const [index, setIndex] = useState(0);
     const timeoutRef = useRef(null);
+    const [keywordArr, setKeywordArr] = useState([]);
+    const router = useRouter();
+
+    const locale = router.locale;
 
     function resetTimeout() {
         if (timeoutRef.current) {
@@ -161,12 +56,22 @@ const Index = () => {
         };
     }, [index]);
 
-    let keywordArr = [].concat.apply(
-        [],
-        dataSet.map(item => item.keyword),
-    );
-
     useEffect(() => {
+        if (router.locale === "en") {
+            setKeywordArr(
+                [].concat.apply(
+                    [],
+                    dataSet.map(item => item.keyword),
+                ),
+            );
+        } else if (router.locale === "ko") {
+            setKeywordArr(
+                [].concat.apply(
+                    [],
+                    dataSet.map(item => item.keywordKr),
+                ),
+            );
+        }
         setTimeout(() => {
             setLoading(true);
         }, 500);
@@ -181,23 +86,481 @@ const Index = () => {
                   .map(item => (item.style.opacity = "0"))
             : null;
 
-        dataSet.map(item => {
-            if (!isKeyClicked && item.keyword.includes(keyword)) {
-                setFlag(item.flag);
-                setThumbUrl(item.thumb);
-            } else return null;
-        });
+        if (locale === "en") {
+            dataSet.map(item => {
+                if (!isKeyClicked && item.keyword.includes(keyword)) {
+                    setFlag(item.flag);
+                    setThumbUrl(item.thumb);
+                } else return null;
+            });
+        } else if (locale === "ko") {
+            dataSet.map(item => {
+                if (!isKeyClicked && item.keywordKr.includes(keyword)) {
+                    setFlag(item.flag);
+                    setThumbUrl(item.thumb);
+                } else return null;
+            });
+        }
 
         const italicTarget = [...document.getElementsByClassName(flag)];
 
-        isItalic
-            ? italicTarget.map(
-                  item => (item.style.fontFamily = "Signifier Italic"),
-              )
-            : italicTarget.map(
-                  item => (item.style.fontFamily = "Signifier Regular"),
-              );
-    }, [keyword, thumbUrl, flag, isItalic, loading, isKeyClicked, curIdx]);
+        if (locale === "en") {
+            isItalic
+                ? italicTarget.map(
+                      item => (item.style.fontFamily = "Signifier Italic"),
+                  )
+                : italicTarget.map(
+                      item => (item.style.fontFamily = "Signifier Regular"),
+                  );
+        } else if (locale === "ko") {
+            isItalic
+                ? italicTarget.map(item => {
+                      item.style.fontFamily = "Noto Serif KR";
+                      item.style.fontStyle = "italic";
+                  })
+                : italicTarget.map(item => {
+                      item.style.fontFamily = "Noto Serif KR";
+                      item.style.fontStyle = "normal";
+                  });
+        }
+    }, [
+        keyword,
+        thumbUrl,
+        flag,
+        isItalic,
+        loading,
+        isKeyClicked,
+        curIdx,
+        locale,
+        keyword,
+        router,
+        router.locale,
+    ]);
+
+    if (locale === "ko") {
+        return (
+            <ThemeProvider theme={theme}>
+                {loading && (
+                    <>
+                        <PageLayout>
+                            {thumbUrl && (
+                                <div className="thumbnail_container">
+                                    <img id="thumbnail" src={thumbUrl}></img>
+                                </div>
+                            )}
+                            <div className="mobile_thumbnail_container">
+                                <SlideShow
+                                    isMobile={true}
+                                    imgPath={thumbArr}
+                                ></SlideShow>
+                            </div>
+                            <div className="keyword_container_wrapper">
+                                <div
+                                    className="keyword_container"
+                                    onMouseOut={() => {
+                                        setIsItalic(false);
+                                    }}
+                                >
+                                    <div>
+                                        {keywordArr &&
+                                            keywordArr
+                                                .sort()
+                                                .slice(0, 15)
+                                                .map((item, index) => {
+                                                    return (
+                                                        <Link
+                                                            href={`/${dataSet
+                                                                .map(el => {
+                                                                    if (
+                                                                        el.keywordKr.includes(
+                                                                            item,
+                                                                        )
+                                                                    )
+                                                                        return el.flag;
+                                                                })
+                                                                .filter(el => {
+                                                                    if (
+                                                                        el !=
+                                                                        ","
+                                                                    )
+                                                                        return el;
+                                                                })}`}
+                                                        >
+                                                            <span
+                                                                className={`${dataSet
+                                                                    .map(el => {
+                                                                        if (
+                                                                            el.keywordKr.includes(
+                                                                                item,
+                                                                            )
+                                                                        )
+                                                                            return el.flag;
+                                                                    })
+                                                                    .filter(
+                                                                        el => {
+                                                                            if (
+                                                                                el !=
+                                                                                ","
+                                                                            )
+                                                                                return el;
+                                                                        },
+                                                                    )} keyword`}
+                                                                key={item}
+                                                                onMouseOver={() => {
+                                                                    if (
+                                                                        !isKeyClicked
+                                                                    ) {
+                                                                        setTimeout(
+                                                                            () =>
+                                                                                setIsItalic(
+                                                                                    true,
+                                                                                ),
+                                                                            50,
+                                                                        );
+                                                                        setKeyword(
+                                                                            item,
+                                                                        );
+                                                                    }
+                                                                }}
+                                                                onMouseOut={() => {
+                                                                    setIsItalic(
+                                                                        false,
+                                                                    );
+                                                                    setIsKeyClicked(
+                                                                        false,
+                                                                    );
+                                                                }}
+                                                                onClick={() => {
+                                                                    setIsKeyClicked(
+                                                                        true,
+                                                                    );
+                                                                }}
+                                                            >
+                                                                {item}
+                                                            </span>
+                                                        </Link>
+                                                    );
+                                                })}
+                                    </div>
+                                    <div>
+                                        {keywordArr &&
+                                            keywordArr
+                                                .sort()
+                                                .slice(15, 30)
+                                                .map((item, index) => {
+                                                    if (
+                                                        item === "소리1" ||
+                                                        item === "소리2"
+                                                    )
+                                                        return (
+                                                            <Link
+                                                                href={`/${dataSet
+                                                                    .map(el => {
+                                                                        if (
+                                                                            el.keywordKr.includes(
+                                                                                item,
+                                                                            )
+                                                                        )
+                                                                            return el.flag;
+                                                                    })
+                                                                    .filter(
+                                                                        el => {
+                                                                            if (
+                                                                                el !=
+                                                                                ","
+                                                                            )
+                                                                                return el;
+                                                                        },
+                                                                    )}`}
+                                                            >
+                                                                <span
+                                                                    key={item}
+                                                                    className={`${dataSet
+                                                                        .map(
+                                                                            el => {
+                                                                                if (
+                                                                                    el.keywordKr.includes(
+                                                                                        item,
+                                                                                    )
+                                                                                )
+                                                                                    return el.flag;
+                                                                            },
+                                                                        )
+                                                                        .filter(
+                                                                            el => {
+                                                                                if (
+                                                                                    el !=
+                                                                                    ","
+                                                                                )
+                                                                                    return el;
+                                                                            },
+                                                                        )} keyword`}
+                                                                    onMouseOver={() => {
+                                                                        setTimeout(
+                                                                            () =>
+                                                                                setIsItalic(
+                                                                                    true,
+                                                                                ),
+                                                                            50,
+                                                                        );
+                                                                        setKeyword(
+                                                                            item,
+                                                                        );
+                                                                    }}
+                                                                    onMouseOut={() => {
+                                                                        setIsItalic(
+                                                                            false,
+                                                                        );
+                                                                        setIsKeyClicked(
+                                                                            false,
+                                                                        );
+                                                                    }}
+                                                                    onClick={() => {
+                                                                        setIsKeyClicked(
+                                                                            true,
+                                                                        );
+                                                                    }}
+                                                                >
+                                                                    소리
+                                                                </span>
+                                                            </Link>
+                                                        );
+                                                    return (
+                                                        <Link
+                                                            href={`/${dataSet
+                                                                .map(el => {
+                                                                    if (
+                                                                        el.keywordKr.includes(
+                                                                            item,
+                                                                        )
+                                                                    )
+                                                                        return el.flag;
+                                                                })
+                                                                .filter(el => {
+                                                                    if (
+                                                                        el !=
+                                                                        ","
+                                                                    )
+                                                                        return el;
+                                                                })}`}
+                                                        >
+                                                            <span
+                                                                className={`${dataSet
+                                                                    .map(el => {
+                                                                        if (
+                                                                            el.keywordKr.includes(
+                                                                                item,
+                                                                            )
+                                                                        )
+                                                                            return el.flag;
+                                                                    })
+                                                                    .filter(
+                                                                        el => {
+                                                                            if (
+                                                                                el !=
+                                                                                ","
+                                                                            )
+                                                                                return el;
+                                                                        },
+                                                                    )} keyword`}
+                                                                key={item}
+                                                                onMouseOver={() => {
+                                                                    setTimeout(
+                                                                        () =>
+                                                                            setIsItalic(
+                                                                                true,
+                                                                            ),
+                                                                        50,
+                                                                    );
+                                                                    setKeyword(
+                                                                        item,
+                                                                    );
+                                                                }}
+                                                                onMouseOut={() => {
+                                                                    setIsItalic(
+                                                                        false,
+                                                                    );
+                                                                    setIsKeyClicked(
+                                                                        false,
+                                                                    );
+                                                                }}
+                                                                onClick={() => {
+                                                                    setIsKeyClicked(
+                                                                        true,
+                                                                    );
+                                                                }}
+                                                            >
+                                                                {item}
+                                                            </span>
+                                                        </Link>
+                                                    );
+                                                })}
+                                    </div>
+                                    <div>
+                                        {keywordArr &&
+                                            keywordArr
+                                                .sort()
+                                                .slice(30, 45)
+                                                .map((item, index) => {
+                                                    return (
+                                                        <Link
+                                                            href={`/${dataSet
+                                                                .map(el => {
+                                                                    if (
+                                                                        el.keywordKr.includes(
+                                                                            item,
+                                                                        )
+                                                                    )
+                                                                        return el.flag;
+                                                                })
+                                                                .filter(el => {
+                                                                    if (
+                                                                        el !=
+                                                                        ","
+                                                                    )
+                                                                        return el;
+                                                                })}`}
+                                                        >
+                                                            <span
+                                                                className={`${dataSet
+                                                                    .map(el => {
+                                                                        if (
+                                                                            el.keywordKr.includes(
+                                                                                item,
+                                                                            )
+                                                                        )
+                                                                            return el.flag;
+                                                                    })
+                                                                    .filter(
+                                                                        el => {
+                                                                            if (
+                                                                                el !=
+                                                                                ","
+                                                                            )
+                                                                                return el;
+                                                                        },
+                                                                    )} keyword`}
+                                                                key={item}
+                                                                onMouseOver={() => {
+                                                                    setTimeout(
+                                                                        () =>
+                                                                            setIsItalic(
+                                                                                true,
+                                                                            ),
+                                                                        50,
+                                                                    );
+                                                                    setKeyword(
+                                                                        item,
+                                                                    );
+                                                                }}
+                                                                onMouseOut={() => {
+                                                                    setIsItalic(
+                                                                        false,
+                                                                    );
+                                                                    setIsKeyClicked(
+                                                                        false,
+                                                                    );
+                                                                }}
+                                                                onClick={() => {
+                                                                    setIsKeyClicked(
+                                                                        true,
+                                                                    );
+                                                                }}
+                                                            >
+                                                                {item}
+                                                            </span>
+                                                        </Link>
+                                                    );
+                                                })}
+                                    </div>
+                                    <div>
+                                        {keywordArr &&
+                                            keywordArr
+                                                .sort()
+                                                .slice(45, 60)
+                                                .map((item, index) => {
+                                                    return (
+                                                        <Link
+                                                            href={`/${dataSet
+                                                                .map(el => {
+                                                                    if (
+                                                                        el.keywordKr.includes(
+                                                                            item,
+                                                                        )
+                                                                    )
+                                                                        return el.flag;
+                                                                })
+                                                                .filter(el => {
+                                                                    if (
+                                                                        el !=
+                                                                        ","
+                                                                    )
+                                                                        return el;
+                                                                })}`}
+                                                        >
+                                                            <span
+                                                                key={item}
+                                                                className={`${dataSet
+                                                                    .map(el => {
+                                                                        if (
+                                                                            el.keywordKr.includes(
+                                                                                item,
+                                                                            )
+                                                                        )
+                                                                            return el.flag;
+                                                                    })
+                                                                    .filter(
+                                                                        el => {
+                                                                            if (
+                                                                                el !=
+                                                                                ","
+                                                                            )
+                                                                                return el;
+                                                                        },
+                                                                    )} keyword`}
+                                                                onMouseOver={() => {
+                                                                    setTimeout(
+                                                                        () =>
+                                                                            setIsItalic(
+                                                                                true,
+                                                                            ),
+                                                                        50,
+                                                                    );
+                                                                    setKeyword(
+                                                                        item,
+                                                                    );
+                                                                }}
+                                                                onMouseOut={() => {
+                                                                    setIsItalic(
+                                                                        false,
+                                                                    );
+                                                                    setIsKeyClicked(
+                                                                        false,
+                                                                    );
+                                                                }}
+                                                                onClick={() => {
+                                                                    setIsKeyClicked(
+                                                                        true,
+                                                                    );
+                                                                }}
+                                                            >
+                                                                {item}
+                                                            </span>
+                                                        </Link>
+                                                    );
+                                                })}
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="footer_container">
+                                <span>Becoming Local</span>
+                            </div>
+                        </PageLayout>
+                    </>
+                )}
+            </ThemeProvider>
+        );
+    }
 
     return (
         <ThemeProvider theme={theme}>

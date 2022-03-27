@@ -8,122 +8,12 @@ import SlideShow from "../components/SlideShow";
 import parse from "html-react-parser";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
+import dataSet from "../constants/dataSet";
 
 const slideArr = [
     "../static/images/wonjung/slide1.jpg",
     "../static/images/wonjung/slide2.jpg",
     "../static/images/wonjung/slide3.jpg",
-];
-
-const dataSet = [
-    {
-        index: 0,
-        flag: "taiki",
-        artist: "Taiki Sakpisit",
-        keyword: [
-            "alchemical transmutation",
-            "mysticism",
-            "phantasmagoria",
-            "disembodiment",
-            "sensory stimulus",
-            "eschatology",
-            "spectrality",
-        ],
-        thumb: "../static/images/taiki.jpg",
-    },
-    {
-        index: 1,
-        flag: "wonjung",
-        artist: "Wonjung Shin",
-        keyword: [
-            "gesture",
-            "sounda",
-            "network",
-            "abject",
-            "non-verbal",
-            "dialog",
-            "stress",
-            "thing-in-itself",
-            "noting",
-        ],
-        thumb: "../static/images/wonjung.jpg",
-    },
-    {
-        index: 2,
-        flag: "sabina",
-        artist: "Sabina Hyoju AHN",
-        keyword: [
-            "covid19",
-            "ai",
-            "machine learning",
-            "daily life",
-            "soundb",
-            "local",
-            "digital",
-            "artist",
-            "residency",
-            "air",
-            "germany",
-            "stuttgart",
-            "akademies",
-            "schloss",
-            "solitude",
-            "forest",
-            "walk",
-            "lockdown",
-        ],
-        thumb: "../static/images/sabina.png",
-    },
-    {
-        index: 3,
-        flag: "aamp",
-        artist: "AAMP",
-        keyword: [
-            "onta",
-            "caring",
-            "ergliffenheit",
-            "minority language",
-            "xeo",
-            "mountain",
-            "foresta",
-            "entanglement",
-            "touch the ground",
-        ],
-        thumb: "../static/images/aamp.png",
-    },
-    {
-        index: 4,
-        flag: "minjung",
-        artist: "Minjung Kim",
-        keyword: [
-            "connected",
-            "border",
-            "interaction",
-            "settle down",
-            "interlock",
-            "tide",
-            "native",
-            "roam",
-        ],
-        thumb: "../static/images/minjung.jpg",
-    },
-    {
-        index: 5,
-        flag: "john",
-        artist: "John Torres",
-        keyword: [
-            "intro2barter",
-            "denvicky",
-            "findings",
-            "felicity",
-            "patkay",
-            "shady",
-            "waiting",
-            "badvibes",
-            "narratives",
-        ],
-        thumb: "../static/images/john.png",
-    },
 ];
 
 const Index = () => {
@@ -141,8 +31,7 @@ const Index = () => {
     const { t } = useTranslation("wonjung");
     const [reload, setReload] = useState("");
     const locale = router.locale;
-
-    console.log(locale);
+    const [keywordArr, setKeywordArr] = useState([]);
 
     const aluminum_tunner01_01 = useRef();
     const aluminum_tunner01_02 = useRef();
@@ -369,12 +258,23 @@ const Index = () => {
         },
     ];
 
-    let keywordArr = [].concat.apply(
-        [],
-        dataSet.map(item => item.keyword),
-    );
-
     useEffect(() => {
+        if (router.locale === "en") {
+            setKeywordArr(
+                [].concat.apply(
+                    [],
+                    dataSet.map(item => item.keyword),
+                ),
+            );
+        } else if (router.locale === "ko") {
+            setKeywordArr(
+                [].concat.apply(
+                    [],
+                    dataSet.map(item => item.keywordKr),
+                ),
+            );
+        }
+
         setTimeout(() => {
             setLoading(true);
             setReload(true);
@@ -391,6 +291,1008 @@ const Index = () => {
         const italicTarget = [...document.getElementsByClassName("wonjung")];
         italicTarget.map(item => (item.style.fontFamily = "Signifier Italic"));
     }, [keyword, thumbUrl, flag, isItalic, loading, isKeyClicked, reload]);
+
+    if (locale === "ko" && keywordArr !== []) {
+        useEffect(() => {
+            let italicTarget = [...document.getElementsByClassName("wonjung")];
+            italicTarget.map(item => {
+                item.style.fontFamily = "Noto Serif KR";
+                item.style.fontStyle = "italic";
+            });
+        }, [keyword, thumbUrl, flag, isItalic, loading, isKeyClicked]);
+
+        return (
+            <ThemeProvider theme={theme}>
+                {loading && (
+                    <>
+                        <PageLayout>
+                            {thumbUrl && (
+                                <div className="thumbnail_container">
+                                    <img id="thumbnail" src={thumbUrl}></img>
+                                </div>
+                            )}
+                            <div
+                                id="mobileOnly"
+                                className="mobile_keyword_container"
+                            >
+                                <div>
+                                    {dataSet[1].keywordKr.map(item => {
+                                        if (item === "sounda")
+                                            return <span>sound</span>;
+                                        return <span>{item}</span>;
+                                    })}
+                                </div>
+                            </div>
+                            <div className="keyword_container_wrapper">
+                                <div
+                                    className="keyword_container"
+                                    onMouseOut={() => {
+                                        setIsItalic(false);
+                                    }}
+                                >
+                                    <div>
+                                        {keywordArr &&
+                                            keywordArr
+                                                .sort()
+                                                .slice(0, 15)
+                                                .map((item, index) => {
+                                                    return (
+                                                        <span
+                                                            className={`${dataSet
+                                                                .map(el => {
+                                                                    if (
+                                                                        el.keywordKr.includes(
+                                                                            item,
+                                                                        )
+                                                                    )
+                                                                        return el.flag;
+                                                                })
+                                                                .filter(el => {
+                                                                    if (
+                                                                        el !=
+                                                                        ","
+                                                                    )
+                                                                        return el;
+                                                                })} keyword`}
+                                                            key={item}
+                                                            onMouseOver={() => {
+                                                                if (
+                                                                    !isKeyClicked
+                                                                ) {
+                                                                    setTimeout(
+                                                                        () =>
+                                                                            setIsItalic(
+                                                                                true,
+                                                                            ),
+                                                                        100,
+                                                                    );
+                                                                    setKeyword(
+                                                                        item,
+                                                                    );
+                                                                }
+                                                            }}
+                                                            onMouseOut={() => {
+                                                                setIsItalic(
+                                                                    false,
+                                                                );
+                                                                setIsKeyClicked(
+                                                                    false,
+                                                                );
+                                                            }}
+                                                        >
+                                                            {item}
+                                                        </span>
+                                                    );
+                                                })}
+                                    </div>
+                                    <div>
+                                        {keywordArr &&
+                                            keywordArr
+                                                .sort()
+                                                .slice(15, 30)
+                                                .map((item, index) => {
+                                                    if (
+                                                        item === "소리1" ||
+                                                        item === "소리2"
+                                                    )
+                                                        return (
+                                                            <span
+                                                                key={item}
+                                                                className={`${dataSet
+                                                                    .map(el => {
+                                                                        if (
+                                                                            el.keywordKr.includes(
+                                                                                item,
+                                                                            )
+                                                                        )
+                                                                            return el.flag;
+                                                                    })
+                                                                    .filter(
+                                                                        el => {
+                                                                            if (
+                                                                                el !=
+                                                                                ","
+                                                                            )
+                                                                                return el;
+                                                                        },
+                                                                    )} keyword`}
+                                                                onMouseOver={() => {
+                                                                    setTimeout(
+                                                                        () =>
+                                                                            setIsItalic(
+                                                                                true,
+                                                                            ),
+                                                                        100,
+                                                                    );
+                                                                    setKeyword(
+                                                                        item,
+                                                                    );
+                                                                }}
+                                                                onMouseOut={() => {
+                                                                    setIsItalic(
+                                                                        false,
+                                                                    );
+                                                                    setIsKeyClicked(
+                                                                        false,
+                                                                    );
+                                                                }}
+                                                            >
+                                                                소리
+                                                            </span>
+                                                        );
+                                                    return (
+                                                        <span
+                                                            className={`${dataSet
+                                                                .map(el => {
+                                                                    if (
+                                                                        el.keywordKr.includes(
+                                                                            item,
+                                                                        )
+                                                                    )
+                                                                        return el.flag;
+                                                                })
+                                                                .filter(el => {
+                                                                    if (
+                                                                        el !=
+                                                                        ","
+                                                                    )
+                                                                        return el;
+                                                                })} keyword`}
+                                                            key={item}
+                                                            onMouseOver={() => {
+                                                                setTimeout(
+                                                                    () =>
+                                                                        setIsItalic(
+                                                                            true,
+                                                                        ),
+                                                                    100,
+                                                                );
+                                                                setKeyword(
+                                                                    item,
+                                                                );
+                                                            }}
+                                                            onMouseOut={() => {
+                                                                setIsItalic(
+                                                                    false,
+                                                                );
+                                                                setIsKeyClicked(
+                                                                    false,
+                                                                );
+                                                            }}
+                                                        >
+                                                            {item}
+                                                        </span>
+                                                    );
+                                                })}
+                                    </div>
+                                    <div>
+                                        {keywordArr &&
+                                            keywordArr
+                                                .sort()
+                                                .slice(30, 45)
+                                                .map((item, index) => {
+                                                    return (
+                                                        <span
+                                                            className={`${dataSet
+                                                                .map(el => {
+                                                                    if (
+                                                                        el.keywordKr.includes(
+                                                                            item,
+                                                                        )
+                                                                    )
+                                                                        return el.flag;
+                                                                })
+                                                                .filter(el => {
+                                                                    if (
+                                                                        el !=
+                                                                        ","
+                                                                    )
+                                                                        return el;
+                                                                })} keyword`}
+                                                            key={item}
+                                                            onMouseOver={() => {
+                                                                setTimeout(
+                                                                    () =>
+                                                                        setIsItalic(
+                                                                            true,
+                                                                        ),
+                                                                    100,
+                                                                );
+                                                                setKeyword(
+                                                                    item,
+                                                                );
+                                                            }}
+                                                            onMouseOut={() => {
+                                                                setIsItalic(
+                                                                    false,
+                                                                );
+                                                                setIsKeyClicked(
+                                                                    false,
+                                                                );
+                                                            }}
+                                                        >
+                                                            {item}
+                                                        </span>
+                                                    );
+                                                })}
+                                    </div>
+                                    <div>
+                                        {keywordArr &&
+                                            keywordArr
+                                                .sort()
+                                                .slice(45, 60)
+                                                .map((item, index) => {
+                                                    if (
+                                                        item === "sounda" ||
+                                                        item === "soundb"
+                                                    )
+                                                        return (
+                                                            <span
+                                                                key={item}
+                                                                className={`${dataSet
+                                                                    .map(el => {
+                                                                        if (
+                                                                            el.keywordKr.includes(
+                                                                                item,
+                                                                            )
+                                                                        )
+                                                                            return el.flag;
+                                                                    })
+                                                                    .filter(
+                                                                        el => {
+                                                                            if (
+                                                                                el !=
+                                                                                ","
+                                                                            )
+                                                                                return el;
+                                                                        },
+                                                                    )} keyword`}
+                                                                onMouseOver={() => {
+                                                                    setTimeout(
+                                                                        () =>
+                                                                            setIsItalic(
+                                                                                true,
+                                                                            ),
+                                                                        100,
+                                                                    );
+                                                                    setKeyword(
+                                                                        item,
+                                                                    );
+                                                                }}
+                                                                onMouseOut={() => {
+                                                                    setIsItalic(
+                                                                        false,
+                                                                    );
+                                                                    setIsKeyClicked(
+                                                                        false,
+                                                                    );
+                                                                }}
+                                                            >
+                                                                {item.slice(
+                                                                    0,
+                                                                    5,
+                                                                )}
+                                                            </span>
+                                                        );
+                                                    return (
+                                                        <span
+                                                            key={item}
+                                                            className={`${dataSet
+                                                                .map(el => {
+                                                                    if (
+                                                                        el.keyword.includes(
+                                                                            item,
+                                                                        )
+                                                                    )
+                                                                        return el.flag;
+                                                                })
+                                                                .filter(el => {
+                                                                    if (
+                                                                        el !=
+                                                                        ","
+                                                                    )
+                                                                        return el;
+                                                                })} keyword`}
+                                                            onMouseOver={() => {
+                                                                setTimeout(
+                                                                    () =>
+                                                                        setIsItalic(
+                                                                            true,
+                                                                        ),
+                                                                    100,
+                                                                );
+                                                                setKeyword(
+                                                                    item,
+                                                                );
+                                                            }}
+                                                            onMouseOut={() => {
+                                                                setIsItalic(
+                                                                    false,
+                                                                );
+                                                                setIsKeyClicked(
+                                                                    false,
+                                                                );
+                                                            }}
+                                                        >
+                                                            {item}
+                                                        </span>
+                                                    );
+                                                })}
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                className={
+                                    locale === "en"
+                                        ? "content_container"
+                                        : "ko_type content_container"
+                                }
+                            >
+                                <div className="title_container">
+                                    <div className="left_arrow">
+                                        <Link href="/sabina">
+                                            <span>◀︎</span>
+                                        </Link>
+                                    </div>
+                                    <div>
+                                        <span>{t("title")}</span>
+                                        <span>{t("artist")}</span>
+                                    </div>
+                                    <div className="right_arrow">
+                                        <Link href="/minjung">
+                                            <span>▶︎</span>
+                                        </Link>
+                                    </div>
+                                </div>
+                                <div className="description_container">
+                                    <p>{t("p1")}</p>
+                                    <p className="exeption">{parse(t("p2"))}</p>
+                                    <p>{t("p3")}</p>
+                                    <p>{t("p4")}</p>
+                                    <p className="exeption">{parse(t("p5"))}</p>
+                                </div>
+                                <div
+                                    className="description_container"
+                                    onClick={() => {
+                                        if (
+                                            isPlaying.bool &&
+                                            isPlaying.name === "all"
+                                        ) {
+                                            allRef.current.pause();
+                                            allRef.current.currentTime = 0;
+                                            setIsPlaying({
+                                                name: "all",
+                                                bool: false,
+                                            });
+                                        } else {
+                                            allRef.current.play();
+                                            setIsPlaying({
+                                                name: "all",
+                                                bool: true,
+                                            });
+                                        }
+                                    }}
+                                >
+                                    <span>►</span>{" "}
+                                    <audio
+                                        src="../static/sound/wonjung/all.mp3"
+                                        ref={allRef}
+                                    />
+                                    <span
+                                        className="clickable"
+                                        style={
+                                            isPlaying.bool &&
+                                            isPlaying.name === "all"
+                                                ? locale === "ko"
+                                                    ? {
+                                                          fontStyle: "italic",
+                                                      }
+                                                    : {
+                                                          fontFamily:
+                                                              "Signifier Italic",
+                                                      }
+                                                : null
+                                        }
+                                    >
+                                        {t("title")}
+                                    </span>
+                                </div>
+                                <div className="video_container">
+                                    <SlideShow imgPath={slideArr}></SlideShow>
+                                </div>
+                                <div className="module_container">
+                                    <div className="module_row">
+                                        {soundObj &&
+                                            soundObj.map(sound => {
+                                                return (
+                                                    <div className="module">
+                                                        <div className="image_row">
+                                                            <span>
+                                                                {sound.title}
+                                                            </span>
+                                                            <img
+                                                                src={sound.img}
+                                                            ></img>
+                                                        </div>
+                                                        <div className="sound_row">
+                                                            <div
+                                                                className="clickable"
+                                                                style={
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][0]
+                                                                        .current &&
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][0].current
+                                                                        .paused
+                                                                        ? null
+                                                                        : {
+                                                                              fontFamily:
+                                                                                  "Signifier Italic",
+                                                                          }
+                                                                }
+                                                                onClick={() => {
+                                                                    if (
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][0]
+                                                                            .current &&
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][0]
+                                                                            .current
+                                                                            .paused
+                                                                    ) {
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][0].current.play();
+                                                                        setReload(
+                                                                            sound,
+                                                                        );
+                                                                    } else {
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][0].current.pause();
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][0].current.currentTime = 0;
+                                                                        setReload(
+                                                                            sound,
+                                                                        );
+                                                                    }
+                                                                }}
+                                                            >
+                                                                <span>►</span>
+                                                                <audio
+                                                                    src={
+                                                                        sound
+                                                                            .sound[0]
+                                                                    }
+                                                                    ref={
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][0]
+                                                                    }
+                                                                />
+                                                                <div
+                                                                    className="desktopOnly"
+                                                                    style={
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][0]
+                                                                            .current &&
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][0]
+                                                                            .current
+                                                                            .paused
+                                                                            ? null
+                                                                            : {
+                                                                                  fontFamily:
+                                                                                      "Signifier Italic",
+                                                                              }
+                                                                    }
+                                                                >
+                                                                    {
+                                                                        sound
+                                                                            .soundName[0]
+                                                                    }
+                                                                </div>
+                                                                <div
+                                                                    className="mobileOnly"
+                                                                    style={
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][0]
+                                                                            .current &&
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][0]
+                                                                            .current
+                                                                            .paused
+                                                                            ? null
+                                                                            : {
+                                                                                  fontFamily:
+                                                                                      "Signifier Italic",
+                                                                              }
+                                                                    }
+                                                                >
+                                                                    {sound.soundName[0].slice(
+                                                                        sound
+                                                                            .soundName[0]
+                                                                            .length -
+                                                                            2,
+                                                                        sound
+                                                                            .soundName[0]
+                                                                            .length,
+                                                                    )}
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                className="clickable"
+                                                                style={
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][1]
+                                                                        .current &&
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][1].current
+                                                                        .paused
+                                                                        ? null
+                                                                        : {
+                                                                              fontFamily:
+                                                                                  "Signifier Italic",
+                                                                          }
+                                                                }
+                                                                onClick={() => {
+                                                                    if (
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][1]
+                                                                            .current &&
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][1]
+                                                                            .current
+                                                                            .paused
+                                                                    ) {
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][1].current.play();
+                                                                        setReload(
+                                                                            sound,
+                                                                        );
+                                                                    } else {
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][1].current.pause();
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][1].current.currentTime = 0;
+                                                                        setReload(
+                                                                            sound,
+                                                                        );
+                                                                    }
+                                                                }}
+                                                            >
+                                                                <span>►</span>
+                                                                <audio
+                                                                    src={
+                                                                        sound
+                                                                            .sound[1]
+                                                                    }
+                                                                    ref={
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][1]
+                                                                    }
+                                                                />
+                                                                <div
+                                                                    className="desktopOnly"
+                                                                    style={
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][1]
+                                                                            .current &&
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][1]
+                                                                            .current
+                                                                            .paused
+                                                                            ? null
+                                                                            : {
+                                                                                  fontFamily:
+                                                                                      "Signifier Italic",
+                                                                              }
+                                                                    }
+                                                                >
+                                                                    {
+                                                                        sound
+                                                                            .soundName[1]
+                                                                    }
+                                                                </div>
+                                                                <div
+                                                                    className="mobileOnly"
+                                                                    style={
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][1]
+                                                                            .current &&
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][1]
+                                                                            .current
+                                                                            .paused
+                                                                            ? null
+                                                                            : {
+                                                                                  fontFamily:
+                                                                                      "Signifier Italic",
+                                                                              }
+                                                                    }
+                                                                >
+                                                                    {sound.soundName[1].slice(
+                                                                        sound
+                                                                            .soundName[1]
+                                                                            .length -
+                                                                            2,
+                                                                        sound
+                                                                            .soundName[1]
+                                                                            .length,
+                                                                    )}
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                className="clickable"
+                                                                style={
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][2]
+                                                                        .current &&
+                                                                    refArr[
+                                                                        soundObj.indexOf(
+                                                                            sound,
+                                                                        )
+                                                                    ][2].current
+                                                                        .paused
+                                                                        ? null
+                                                                        : {
+                                                                              fontFamily:
+                                                                                  "Signifier Italic",
+                                                                          }
+                                                                }
+                                                                onClick={() => {
+                                                                    if (
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][2]
+                                                                            .current &&
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][2]
+                                                                            .current
+                                                                            .paused
+                                                                    ) {
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][2].current.play();
+                                                                        setReload(
+                                                                            sound,
+                                                                        );
+                                                                    } else {
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][2].current.pause();
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][2].current.currentTime = 0;
+                                                                        setReload(
+                                                                            sound,
+                                                                        );
+                                                                    }
+                                                                }}
+                                                            >
+                                                                <span>►</span>
+                                                                <audio
+                                                                    src={
+                                                                        sound
+                                                                            .sound[2]
+                                                                    }
+                                                                    ref={
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][2]
+                                                                    }
+                                                                />
+                                                                <div
+                                                                    className="desktopOnly"
+                                                                    style={
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][2]
+                                                                            .current &&
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][2]
+                                                                            .current
+                                                                            .paused
+                                                                            ? null
+                                                                            : {
+                                                                                  fontFamily:
+                                                                                      "Signifier Italic",
+                                                                              }
+                                                                    }
+                                                                >
+                                                                    {
+                                                                        sound
+                                                                            .soundName[2]
+                                                                    }
+                                                                </div>
+                                                                <div
+                                                                    className="mobileOnly"
+                                                                    style={
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][2]
+                                                                            .current &&
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][2]
+                                                                            .current
+                                                                            .paused
+                                                                            ? null
+                                                                            : {
+                                                                                  fontFamily:
+                                                                                      "Signifier Italic",
+                                                                              }
+                                                                    }
+                                                                >
+                                                                    {sound.soundName[2].slice(
+                                                                        sound
+                                                                            .soundName[2]
+                                                                            .length -
+                                                                            2,
+                                                                        sound
+                                                                            .soundName[2]
+                                                                            .length,
+                                                                    )}
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                className="clickable"
+                                                                onClick={() => {
+                                                                    if (
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][3]
+                                                                            .current &&
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][3]
+                                                                            .current
+                                                                            .paused
+                                                                    ) {
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][3].current.play();
+                                                                        setReload(
+                                                                            sound,
+                                                                        );
+                                                                    } else {
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][3].current.pause();
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][3].current.currentTime = 0;
+                                                                        setReload(
+                                                                            sound,
+                                                                        );
+                                                                    }
+                                                                }}
+                                                            >
+                                                                <span>►</span>
+                                                                <audio
+                                                                    src={
+                                                                        sound
+                                                                            .sound[3]
+                                                                    }
+                                                                    ref={
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][3]
+                                                                    }
+                                                                />
+                                                                <div
+                                                                    className="desktopOnly"
+                                                                    style={
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][3]
+                                                                            .current &&
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][3]
+                                                                            .current
+                                                                            .paused
+                                                                            ? null
+                                                                            : {
+                                                                                  fontFamily:
+                                                                                      "Signifier Italic",
+                                                                              }
+                                                                    }
+                                                                >
+                                                                    {
+                                                                        sound
+                                                                            .soundName[3]
+                                                                    }
+                                                                </div>
+                                                                <div
+                                                                    className="mobileOnly"
+                                                                    style={
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][3]
+                                                                            .current &&
+                                                                        refArr[
+                                                                            soundObj.indexOf(
+                                                                                sound,
+                                                                            )
+                                                                        ][3]
+                                                                            .current
+                                                                            .paused
+                                                                            ? null
+                                                                            : {
+                                                                                  fontFamily:
+                                                                                      "Signifier Italic",
+                                                                              }
+                                                                    }
+                                                                >
+                                                                    {sound.soundName[3].slice(
+                                                                        sound
+                                                                            .soundName[3]
+                                                                            .length -
+                                                                            2,
+                                                                        sound
+                                                                            .soundName[3]
+                                                                            .length,
+                                                                    )}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                );
+                                            })}
+                                    </div>
+                                </div>
+                                <div className="artist_info_container">
+                                    <div>{t("artist")}</div>
+                                    <div>
+                                        <p>{t("artistInfo")}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="keyword_span clickable">
+                                <Link href="/">
+                                    <span className="clickable">Keywords</span>
+                                </Link>
+                            </div>
+                        </PageLayout>
+                    </>
+                )}
+            </ThemeProvider>
+        );
+    }
 
     return (
         <ThemeProvider theme={theme}>
