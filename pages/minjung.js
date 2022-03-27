@@ -82,10 +82,16 @@ const Index = () => {
                             )}
                             <div
                                 id="mobileOnly"
-                                className="mobile_keyword_container"
+                                className="ko_mobile_keyword_container"
                             >
                                 <div>
                                     {dataSet[4].keywordKr.map(item => {
+                                        if (
+                                            item === "소리1" ||
+                                            item === "소리2"
+                                        )
+                                            return <span>소리</span>;
+
                                         return <span>{item}</span>;
                                     })}
                                 </div>

@@ -1083,7 +1083,8 @@ p {
         display: none;
     }
 
-    .mobile_keyword_container {
+    .mobile_keyword_container,
+    .ko_mobile_keyword_container {
         width: 100%;
         font-size: 26px;
         margin-top: 120px;
@@ -1094,7 +1095,8 @@ p {
         justify-content: center;
     }
 
-    .mobile_keyword_container div {
+    .mobile_keyword_container div,
+    .ko_mobile_keyword_container div {
         width: 100%;
         height: fit-content;
     }
@@ -1103,6 +1105,14 @@ p {
         display: block;
         text-align: center;
         font-family: "Signifier Italic";
+        font-size: 20px;
+    }
+
+    .ko_mobile_keyword_container span {
+        display: block;
+        text-align: center;
+        font-family: "Noto Serif KR";
+        font-style: italic;
         font-size: 20px;
     }
 
