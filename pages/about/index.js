@@ -102,7 +102,7 @@ const About = () => {
                                     members of participating artists and writers
                                     <br />
                                     <br />
-                                    ©2020-2021. Artist Research Workshop Project
+                                    ©2020-2022. Artist Research Workshop Project
                                     and 1st e-journal Moving Image in
                                     collaboration with all members of
                                     participating artists and writers
