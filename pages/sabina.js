@@ -31,7 +31,7 @@ const Index = () => {
     const [index, setIndex] = useState(0);
 
     useEffect(() => {
-        setModuleNo(isMobile ? 1 : 3);
+        setModuleNo(isMobile ? 1 : 2.5);
         if (router.locale === "en") {
             setKeywordArr(
                 [].concat.apply(
@@ -518,7 +518,7 @@ const Index = () => {
                                                         slideIndex <
                                                         Math.floor(
                                                             sabinaData.length /
-                                                                3,
+                                                                moduleNo,
                                                         ) -
                                                             1
                                                     )
@@ -530,7 +530,7 @@ const Index = () => {
                                                         slideIndex ==
                                                         Math.floor(
                                                             sabinaData.length /
-                                                                3,
+                                                                moduleNo,
                                                         ) -
                                                             1
                                                     )
