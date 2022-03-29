@@ -925,7 +925,22 @@ p {
     font-family: "Signifier Italic" !important;
 }
 
+.BlockMobileOnly {
+    display: none;
+}
+
 @media screen and (max-width: 780px) {
+    .content_container .triple_row {
+        overflow-x: hidden;
+    }
+
+    .block_mobile_only {
+        display: block !important;
+    }
+
+    .desktopOnly {
+        display: none !important;
+    }
     .sound_row .desktopOnly {
         display: none;
     }
