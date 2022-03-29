@@ -492,7 +492,7 @@ const Index = () => {
                                                         slideIndex <
                                                         Math.floor(
                                                             sabinaData.length /
-                                                                3,
+                                                                moduleNo,
                                                         )
                                                     )
                                                         setSlideIndex(
@@ -502,7 +502,7 @@ const Index = () => {
                                                         setSlideIndex(
                                                             Math.floor(
                                                                 sabinaData.length /
-                                                                    3,
+                                                                    moduleNo,
                                                             ) - 1,
                                                         );
                                                     }
