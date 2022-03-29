@@ -9,6 +9,7 @@ import dataSet from "../constants/dataSet";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import sabinaData from "../constants/sabinaData";
+import { isMobile } from "react-device-detect";
 
 const Index = () => {
     const [keyword, setKeyword] = useState("");
@@ -23,10 +24,14 @@ const Index = () => {
     const [keywordArr, setKeywordArr] = useState([]);
     const [slideIndex, setSlideIndex] = useState(0);
     const timeoutRef = useRef(null);
+    const [moduleNo, setModuleNo] = useState(0);
+
+    console.log(isMobile);
 
     const [index, setIndex] = useState(0);
 
     useEffect(() => {
+        setModuleNo(isMobile ? 1 : 3);
         if (router.locale === "en") {
             setKeywordArr(
                 [].concat.apply(
@@ -1444,7 +1449,8 @@ const Index = () => {
                                                 if (
                                                     slideIndex <
                                                     Math.floor(
-                                                        sabinaData.length / 3,
+                                                        sabinaData.length /
+                                                            moduleNo,
                                                     )
                                                 )
                                                     setSlideIndex(
@@ -1454,7 +1460,7 @@ const Index = () => {
                                                     setSlideIndex(
                                                         Math.floor(
                                                             sabinaData.length /
-                                                                3,
+                                                                moduleNo,
                                                         ) - 1,
                                                     );
                                                 }
@@ -1469,7 +1475,8 @@ const Index = () => {
                                                 if (
                                                     slideIndex <
                                                     Math.floor(
-                                                        sabinaData.length / 3,
+                                                        sabinaData.length /
+                                                            moduleNo,
                                                     ) -
                                                         1
                                                 )
@@ -1480,7 +1487,8 @@ const Index = () => {
                                                 if (
                                                     slideIndex ==
                                                     Math.floor(
-                                                        sabinaData.length / 3,
+                                                        sabinaData.length /
+                                                            moduleNo,
                                                     ) -
                                                         1
                                                 )
