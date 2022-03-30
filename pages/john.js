@@ -412,6 +412,7 @@ const Index = () => {
                                 </div>
                                 <div className="description_container">
                                     <p>{parse(t("intro2barter0"))}</p>
+                                    <p>{parse(t("intro2barter0-1"))}</p>
                                 </div>
                                 <div className="video_container embed-container">
                                     <iframe
@@ -493,10 +494,8 @@ const Index = () => {
                                 <div className="description_container">
                                     <p>
                                         {parse(t("findings3"))}
-                                        <span className="italic">
-                                            {parse(t("italic1"))}
-                                        </span>
-                                        ,{parse(t("findings4"))}
+                                        {parse(t("italic1"))}
+                                        {parse(t("findings4"))}
                                     </p>
                                 </div>
                                 <div className="video_container">
@@ -571,7 +570,10 @@ const Index = () => {
                                     <p>{parse(t("patkay1"))}</p>
                                 </div>
                                 <div className="description_container">
-                                    <p>{parse(t("patkay2"))}</p>
+                                    <p>
+                                        {parse(t("italic2"))}
+                                        {parse(t("patkay2"))}
+                                    </p>
                                 </div>
                                 <div className="video_container">
                                     <img src={johnImgArr[12]} />
@@ -784,11 +786,18 @@ const Index = () => {
                                     </p>
                                     <p>{parse(t("badvibes6"))}</p>
                                 </div>
-                                {/* <div className="audio_player">
-                                <div className="player">
-                                    <img src={playBtn} />
+                                <div className="video_container embed-container">
+                                    <iframe
+                                        src="https://player.vimeo.com/video/572105633?h=2050d62024&amp;title=0&amp;byline=0&amp;portrait=0&amp;controls=1&amp;sidedock=0&amp;loop=1&amp;muted=0&amp;"
+                                        frameBorder="0"
+                                        allow="autoplay;fullscreen;playsinline;"
+                                        allowfullscreen
+                                        playsinline
+                                        webkit-playsinline
+                                        webkitallowfullscreen
+                                        mozallowfullscreen
+                                    ></iframe>
                                 </div>
-                            </div> */}
                                 <div className="description_container">
                                     <p className="center">
                                         {parse(t("badvibes7"))}
@@ -883,7 +892,9 @@ const Index = () => {
                                 </div>
                                 <div className="description_container">
                                     <p>{parse(t("plantandcookies2"))}</p>
-                                    <p>{parse(t("plantandcookies3"))}</p>
+                                    <p style={{ textIndent: 0 }}>
+                                        {parse(t("plantandcookies3"))}
+                                    </p>
                                 </div>
                                 {/* Artist Info */}
                                 {/* Artist Info */}
@@ -1649,6 +1660,7 @@ const Index = () => {
                             </div>
                             <div className="description_container">
                                 <p>{parse(t("intro2barter0"))}</p>
+                                <p>{parse(t("intro2barter0-1"))}</p>
                             </div>
                             <div className="video_container embed-container">
                                 <iframe
