@@ -414,7 +414,7 @@ const Index = () => {
                                     <img src={imgArr && imgArr[1]} />
                                 </div>
                                 <div className="description_container">
-                                    <p>{t("p2")}</p>
+                                    <p className="exeption">{parse(t("p2"))}</p>
                                     <p className="exeption">{parse(t("p3"))}</p>
                                     <p>{t("p4")}</p>
                                     <p>{t("p5")}</p>
@@ -1215,7 +1215,7 @@ const Index = () => {
                                 <img src={imgArr && imgArr[1]} />
                             </div>
                             <div className="description_container">
-                                <p>{t("p2")}</p>
+                                <p className="exeption">{parse(t("p2"))}</p>
                                 <p className="exeption">{parse(t("p3"))}</p>
                                 <p>{t("p4")}</p>
                                 <p>{t("p5")}</p>
