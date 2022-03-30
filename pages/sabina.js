@@ -377,7 +377,7 @@ const Index = () => {
                                 {" "}
                                 <div className="title_container">
                                     <div className="left_arrow">
-                                        <Link href="/sabina">
+                                        <Link href="/taiki">
                                             <span>◀︎</span>
                                         </Link>
                                     </div>
@@ -1322,7 +1322,7 @@ const Index = () => {
                             {" "}
                             <div className="title_container">
                                 <div className="left_arrow">
-                                    <Link href="/sabina">
+                                    <Link href="/taiki">
                                         <span>◀︎</span>
                                     </Link>
                                 </div>
