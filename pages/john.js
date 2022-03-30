@@ -398,8 +398,8 @@ const Index = () => {
                                         </Link>
                                     </div>
                                     <div>
-                                        <span>{t("title")}</span>
-                                        <span>{t("artist")}</span>
+                                        <span>{parse(t("title"))}</span>
+                                        <span>{parse(t("artist"))}</span>
                                     </div>
                                     <div className="right_arrow">
                                         <Link href="/taiki">
@@ -408,10 +408,10 @@ const Index = () => {
                                     </div>
                                 </div>
                                 <div className="description_container title">
-                                    <p>1 {t("intro2barter")}</p>
+                                    <p>1 {parse(t("intro2barter"))}</p>
                                 </div>
                                 <div className="description_container">
-                                    <p>{t("intro2barter0")}</p>
+                                    <p>{parse(t("intro2barter0"))}</p>
                                 </div>
                                 <div className="video_container embed-container">
                                     <iframe
@@ -426,24 +426,24 @@ const Index = () => {
                                     ></iframe>
                                 </div>
                                 <div className="description_container">
-                                    <p>{t("intro2barter1")}</p>
+                                    <p>{parse(t("intro2barter1"))}</p>
                                 </div>
                                 <div className="video_container">
                                     <img src={johnImgArr[0]} />
                                 </div>
                                 <div className="description_container title">
-                                    <p>2 {t("denvicky")}</p>
+                                    <p>2 {parse(t("denvicky"))}</p>
                                 </div>
                                 <div className="description_container">
                                     <p>
                                         <span className="italic">
-                                            {t("italic0")}
+                                            {parse(t("italic0"))}
                                         </span>{" "}
-                                        {t("denvicky0")}
+                                        {parse(t("denvicky0"))}
                                     </p>
-                                    <p>{t("denvicky1")}</p>
+                                    <p>{parse(t("denvicky1"))}</p>
                                     <br />
-                                    <span>{t("denvicky2")}</span>
+                                    <span>{parse(t("denvicky2"))}</span>
                                 </div>
                                 <div className="video_container">
                                     <img src={johnImgArr[1]} />
@@ -452,7 +452,7 @@ const Index = () => {
                                     <img src={johnImgArr[2]} />
                                 </div>
                                 <div className="description_container">
-                                    <span>{t("denvicky3")}</span>
+                                    <span>{parse(t("denvicky3"))}</span>
                                 </div>
                                 <div className="video_container">
                                     <img src={johnImgArr[3]} />
@@ -461,7 +461,7 @@ const Index = () => {
                                     <img src={johnImgArr[4]} />
                                 </div>
                                 <div className="description_container">
-                                    <span>{t("denvicky4")}</span>
+                                    <span>{parse(t("denvicky4"))}</span>
                                 </div>
                                 <div className="video_container">
                                     <img src={johnImgArr[5]} />
@@ -470,38 +470,40 @@ const Index = () => {
                                     <img src={johnImgArr[6]} />
                                 </div>
                                 <div className="description_container">
-                                    <span>{t("denvicky5")}</span>
+                                    <span>{parse(t("denvicky5"))}</span>
                                 </div>
                                 <div className="video_container">
                                     <img src={johnImgArr[7]} />
                                 </div>
                                 <div className="description_container title">
-                                    <p>3 {t("findings")}</p>
+                                    <p>3 {parse(t("findings"))}</p>
                                 </div>
                                 <div className="description_container">
-                                    <p className="center">{t("findings0")}</p>
-                                    <p style={{ textIndent: 0 }}>
-                                        {t("findings1")}
+                                    <p className="center">
+                                        {parse(t("findings0"))}
                                     </p>
-                                    <p>{t("findings2")}</p>
+                                    <p style={{ textIndent: 0 }}>
+                                        {parse(t("findings1"))}
+                                    </p>
+                                    <p>{parse(t("findings2"))}</p>
                                 </div>
                                 <div className="video_container">
                                     <img src={johnImgArr[8]} />
                                 </div>
                                 <div className="description_container">
                                     <p>
-                                        {t("findings3")}
+                                        {parse(t("findings3"))}
                                         <span className="italic">
-                                            {t("italic1")}
+                                            {parse(t("italic1"))}
                                         </span>
-                                        ,{t("findings4")}
+                                        ,{parse(t("findings4"))}
                                     </p>
                                 </div>
                                 <div className="video_container">
                                     <img src={johnImgArr[9]} />
                                 </div>
                                 <div className="description_container">
-                                    <p>{t("findings5")}</p>
+                                    <p>{parse(t("findings5"))}</p>
                                 </div>
                                 <div className="video_container embed-container">
                                     <iframe
@@ -516,12 +518,14 @@ const Index = () => {
                                     ></iframe>
                                 </div>
                                 <div className="description_container">
-                                    <p>{t("findings6")}</p>
+                                    <p>{parse(t("findings6"))}</p>
                                 </div>
                                 <div className="description_container">
-                                    <p className="center">{t("findings7")}</p>
+                                    <p className="center">
+                                        {parse(t("findings7"))}
+                                    </p>
                                     <p style={{ textIndent: 0 }}>
-                                        {t("findings8")}
+                                        {parse(t("findings8"))}
                                     </p>
                                 </div>
                                 <div className="video_container embed-container">
@@ -537,16 +541,16 @@ const Index = () => {
                                     ></iframe>
                                 </div>
                                 <div className="description_container">
-                                    <p>{t("findings9")}</p>
+                                    <p>{parse(t("findings9"))}</p>
                                 </div>
                                 <div className="video_container">
                                     <img src={johnImgArr[10]} />
                                 </div>
                                 <div className="description_container title">
-                                    <p>4 {t("patkay")}</p>
+                                    <p>4 {parse(t("patkay"))}</p>
                                 </div>
                                 <div className="description_container">
-                                    <p>{t("patkay0")}</p>
+                                    <p>{parse(t("patkay0"))}</p>
                                 </div>
                                 <div className="video_container embed-container">
                                     <iframe
@@ -564,7 +568,10 @@ const Index = () => {
                                     <img src={johnImgArr[11]} />
                                 </div>
                                 <div className="description_container">
-                                    <p>{t("patkay1")}</p>
+                                    <p>{parse(t("patkay1"))}</p>
+                                </div>
+                                <div className="description_container">
+                                    <p>{parse(t("patkay2"))}</p>
                                 </div>
                                 <div className="video_container">
                                     <img src={johnImgArr[12]} />
@@ -579,36 +586,40 @@ const Index = () => {
                                     <img src={johnImgArr[15]} />
                                 </div>
                                 <div className="description_container">
-                                    <p>{t("patkay2")}</p>
-                                    <br />
                                     <p
                                         className="center"
                                         style={{ textIndent: 0 }}
                                     >
-                                        {t("patkay3")}
+                                        {parse(t("patkay3"))}
+                                    </p>
+                                    <br />
+                                    <p style={{ textIndent: 0 }}>
+                                        {parse(t("patkay4"))}
                                     </p>
                                 </div>
                                 <div className="video_container">
                                     <img src={johnImgArr[16]} />
                                 </div>
                                 <div className="description_container">
-                                    <p>{t("patkay4")}</p>
+                                    <p>{parse(t("patkay5"))}</p>
                                 </div>
                                 <div className="description_container title">
-                                    <p>5 {t("shady")}</p>
+                                    <p>5 {parse(t("shady"))}</p>
                                 </div>
                                 <div className="description_container">
-                                    <p className="center">{t("shady0")}</p>
+                                    <p className="center">
+                                        {parse(t("shady0"))}
+                                    </p>
                                     <p style={{ textIndent: 0 }}>
-                                        {t("shady1")}
+                                        {parse(t("shady1"))}
                                     </p>
                                 </div>
                                 <div className="video_container">
                                     <img src={johnImgArr[17]} />
                                 </div>
                                 <div className="description_container">
-                                    <p>{t("shady2")}</p>
-                                    <p>{t("shady3")}</p>
+                                    <p>{parse(t("shady2"))}</p>
+                                    <p>{parse(t("shady3"))}</p>
                                 </div>
                                 <div className="video_container embed-container">
                                     <iframe
@@ -623,13 +634,13 @@ const Index = () => {
                                     ></iframe>
                                 </div>
                                 <div className="description_container">
-                                    <p>{t("shady4")}</p>
+                                    <p>{parse(t("shady4"))}</p>
                                 </div>
                                 <div className="video_container">
                                     <img src={johnImgArr[18]} />
                                 </div>
                                 <div className="description_container">
-                                    <p>{t("shady5")}</p>
+                                    <p>{parse(t("shady5"))}</p>
                                 </div>
                                 <div className="description_container">
                                     <p
@@ -669,14 +680,17 @@ const Index = () => {
                                     />
                                 </div>
                                 <div className="description_container">
-                                    <p>{t("shady6")}</p>
+                                    <p>{parse(t("shady6"))}</p>
                                 </div>
                                 <div className="description_container">
-                                    <p className="center"> {t("shady7")}</p>
-                                    <p style={{ textIndent: 0 }}>
-                                        {t("shady8")}
+                                    <p className="center">
+                                        {" "}
+                                        {parse(t("shady7"))}
                                     </p>
-                                    <p>{t("shady9")}</p>
+                                    <p style={{ textIndent: 0 }}>
+                                        {parse(t("shady8"))}
+                                    </p>
+                                    <p>{parse(t("shady9"))}</p>
                                 </div>
                                 <div className="video_container embed-container">
                                     <iframe
@@ -691,12 +705,14 @@ const Index = () => {
                                     ></iframe>
                                 </div>
                                 <div className="description_container title">
-                                    <p>6 {t("waiting")}</p>
+                                    <p>6 {parse(t("waiting"))}</p>
                                 </div>
                                 <div className="description_container">
-                                    <p className="center">{t("waiting0")}</p>
+                                    <p className="center">
+                                        {parse(t("waiting0"))}
+                                    </p>
                                     <p style={{ textIndent: 0 }}>
-                                        {t("waiting1")}
+                                        {parse(t("waiting1"))}
                                     </p>
                                 </div>
                                 <div className="video_container embed-container">
@@ -712,14 +728,17 @@ const Index = () => {
                                     ></iframe>
                                 </div>
                                 <div className="description_container">
-                                    <p className="center"> {t("waiting2")}</p>
-                                    <p style={{ textIndent: 0 }}>
-                                        {t("waiting3")}
+                                    <p className="center">
+                                        {" "}
+                                        {parse(t("waiting2"))}
                                     </p>
-                                    <p>{t("waiting4")}</p>
-                                    <p>{t("waiting5")}</p>
-                                    <p>{t("waiting6")}</p>
-                                    <p>{t("waiting7")}</p>
+                                    <p style={{ textIndent: 0 }}>
+                                        {parse(t("waiting3"))}
+                                    </p>
+                                    <p>{parse(t("waiting4"))}</p>
+                                    <p>{parse(t("waiting5"))}</p>
+                                    <p>{parse(t("waiting6"))}</p>
+                                    <p>{parse(t("waiting7"))}</p>
                                 </div>
                                 <div className="video_container embed-container">
                                     <iframe
@@ -734,29 +753,36 @@ const Index = () => {
                                     ></iframe>
                                 </div>
                                 <div className="description_container">
-                                    <p>{t("waiting8")}</p>
+                                    <p>{parse(t("waiting8"))}</p>
                                 </div>
                                 <div className="description_container title">
-                                    <p>7 {t("badvibes")}</p>
+                                    <p>7 {parse(t("badvibes"))}</p>
                                 </div>
                                 <div className="description_container">
-                                    <p className="center">{t("badvibes0")}</p>
+                                    <p className="center">
+                                        {parse(t("badvibes0"))}
+                                    </p>
                                     <p style={{ textIndent: 0 }}>
-                                        {t("badvibes1")}
+                                        {parse(t("badvibes1"))}
                                     </p>
                                 </div>
                                 <div className="description_container">
-                                    <p className="center">{t("badvibes2")}</p>
-                                    <p style={{ textIndent: 0 }}>
-                                        {t("badvibes3")}
+                                    <p className="center">
+                                        {parse(t("badvibes2"))}
                                     </p>
-                                    <p>{t("badvibes4")}</p>
+                                    <p style={{ textIndent: 0 }}>
+                                        {parse(t("badvibes3"))}
+                                    </p>
+
+                                    <p style={{ textIndent: 0 }}>
+                                        {parse(t("badvibes4"))}
+                                    </p>
                                 </div>
                                 <div className="description_container">
-                                    <p className="center">{t("badvibes5")}</p>
-                                    <p style={{ textIndent: 0 }}>
-                                        {t("badvibes6")}
+                                    <p className="center">
+                                        {parse(t("badvibes5"))}
                                     </p>
+                                    <p>{parse(t("badvibes6"))}</p>
                                 </div>
                                 {/* <div className="audio_player">
                                 <div className="player">
@@ -764,24 +790,28 @@ const Index = () => {
                                 </div>
                             </div> */}
                                 <div className="description_container">
-                                    <p className="center">{t("badvibes7")}</p>
+                                    <p className="center">
+                                        {parse(t("badvibes7"))}
+                                    </p>
                                     <p style={{ textIndent: 0 }}>
-                                        {t("badvibes8")}
+                                        {parse(t("badvibes8"))}
                                     </p>
                                 </div>
                                 <div className="video_container">
                                     <img src={johnImgArr[19]} />
                                 </div>
                                 <div className="description_container">
-                                    <p>{t("badvibes9")}</p>
+                                    <p>{parse(t("badvibes9"))}</p>
                                 </div>
                                 <div className="description_container title">
-                                    <p>8 {t("narratives")}</p>
+                                    <p>8 {parse(t("narratives"))}</p>
                                 </div>
                                 <div className="description_container">
-                                    <p className="center">{t("narratives0")}</p>
+                                    <p className="center">
+                                        {parse(t("narratives0"))}
+                                    </p>
                                     <p style={{ textIndent: 0 }}>
-                                        {t("narratives1")}
+                                        {parse(t("narratives1"))}
                                     </p>
                                 </div>
                                 <div className="video_container embed-container">
@@ -797,18 +827,20 @@ const Index = () => {
                                     ></iframe>
                                 </div>
                                 <div className="description_container">
-                                    <p className="center">{t("narratives2")}</p>
+                                    <p className="center">
+                                        {parse(t("narratives2"))}
+                                    </p>
                                     <p style={{ textIndent: 0 }}>
-                                        {t("narratives3")}
+                                        {parse(t("narratives3"))}
                                     </p>
                                 </div>
                                 <div className="video_container">
                                     <img src={johnImgArr[20]} />
                                 </div>
                                 <div className="description_container">
-                                    <p>{t("narratives4")}</p>
-                                    <p>{t("narratives5")}</p>
-                                    <p>{t("narratives6")}</p>
+                                    <p>{parse(t("narratives4"))}</p>
+                                    <p>{parse(t("narratives5"))}</p>
+                                    <p>{parse(t("narratives6"))}</p>
                                 </div>
                                 <div className="video_container embed-container">
                                     <iframe
@@ -824,10 +856,10 @@ const Index = () => {
                                 </div>
                                 <div className="description_container">
                                     <p className="center">
-                                        {t("plantandcookies")}
+                                        {parse(t("plantandcookies"))}
                                     </p>
                                     <p style={{ textIndent: 0 }}>
-                                        {t("plantandcookies0")}
+                                        {parse(t("plantandcookies0"))}
                                     </p>
                                 </div>
                                 <div className="video_container">
@@ -835,7 +867,7 @@ const Index = () => {
                                 </div>
 
                                 <div className="description_container">
-                                    <p>{t("plantandcookies1")}</p>
+                                    <p>{parse(t("plantandcookies1"))}</p>
                                 </div>
                                 <div className="video_container embed-container">
                                     <iframe
@@ -850,8 +882,8 @@ const Index = () => {
                                     ></iframe>
                                 </div>
                                 <div className="description_container">
-                                    <p>{t("plantandcookies2")}</p>
-                                    <p>{t("plantandcookies3")}</p>
+                                    <p>{parse(t("plantandcookies2"))}</p>
+                                    <p>{parse(t("plantandcookies3"))}</p>
                                 </div>
                                 {/* Artist Info */}
                                 {/* Artist Info */}
@@ -859,7 +891,7 @@ const Index = () => {
                                 {/* Artist Info */}
                                 {/* Artist Info */}
                                 <div className="artist_info_container">
-                                    <div> {t("artist")}</div>
+                                    <div> {parse(t("artist"))}</div>
                                     <div>
                                         <p className="exeption">
                                             {parse(t("artistInfo"))}
@@ -1603,8 +1635,8 @@ const Index = () => {
                                     </Link>
                                 </div>
                                 <div>
-                                    <span>{t("title")}</span>
-                                    <span>{t("artist")}</span>
+                                    <span>{parse(t("title"))}</span>
+                                    <span>{parse(t("artist"))}</span>
                                 </div>
                                 <div className="right_arrow">
                                     <Link href="/taiki">
@@ -1613,10 +1645,10 @@ const Index = () => {
                                 </div>
                             </div>
                             <div className="description_container title">
-                                <p>1 {t("intro2barter")}</p>
+                                <p>1 {parse(t("intro2barter"))}</p>
                             </div>
                             <div className="description_container">
-                                <p>{t("intro2barter0")}</p>
+                                <p>{parse(t("intro2barter0"))}</p>
                             </div>
                             <div className="video_container embed-container">
                                 <iframe
@@ -1631,24 +1663,24 @@ const Index = () => {
                                 ></iframe>
                             </div>
                             <div className="description_container">
-                                <p>{t("intro2barter1")}</p>
+                                <p>{parse(t("intro2barter1"))}</p>
                             </div>
                             <div className="video_container">
                                 <img src={johnImgArr[0]} />
                             </div>
                             <div className="description_container title">
-                                <p>2 {t("denvicky")}</p>
+                                <p>2 {parse(t("denvicky"))}</p>
                             </div>
                             <div className="description_container">
                                 <p>
                                     <span className="italic">
-                                        {t("italic0")}
+                                        {parse(t("italic0"))}
                                     </span>{" "}
-                                    {t("denvicky0")}
+                                    {parse(t("denvicky0"))}
                                 </p>
-                                <p>{t("denvicky1")}</p>
+                                <p>{parse(t("denvicky1"))}</p>
                                 <br />
-                                <span>{t("denvicky2")}</span>
+                                <span>{parse(t("denvicky2"))}</span>
                             </div>
                             <div className="video_container">
                                 <img src={johnImgArr[1]} />
@@ -1657,7 +1689,7 @@ const Index = () => {
                                 <img src={johnImgArr[2]} />
                             </div>
                             <div className="description_container">
-                                <span>{t("denvicky3")}</span>
+                                <span>{parse(t("denvicky3"))}</span>
                             </div>
                             <div className="video_container">
                                 <img src={johnImgArr[3]} />
@@ -1666,7 +1698,7 @@ const Index = () => {
                                 <img src={johnImgArr[4]} />
                             </div>
                             <div className="description_container">
-                                <span>{t("denvicky4")}</span>
+                                <span>{parse(t("denvicky4"))}</span>
                             </div>
                             <div className="video_container">
                                 <img src={johnImgArr[5]} />
@@ -1675,38 +1707,40 @@ const Index = () => {
                                 <img src={johnImgArr[6]} />
                             </div>
                             <div className="description_container">
-                                <span>{t("denvicky5")}</span>
+                                <span>{parse(t("denvicky5"))}</span>
                             </div>
                             <div className="video_container">
                                 <img src={johnImgArr[7]} />
                             </div>
                             <div className="description_container title">
-                                <p>3 {t("findings")}</p>
+                                <p>3 {parse(t("findings"))}</p>
                             </div>
                             <div className="description_container">
-                                <p className="center">{t("findings0")}</p>
-                                <p style={{ textIndent: 0 }}>
-                                    {t("findings1")}
+                                <p className="center">
+                                    {parse(t("findings0"))}
                                 </p>
-                                <p>{t("findings2")}</p>
+                                <p style={{ textIndent: 0 }}>
+                                    {parse(t("findings1"))}
+                                </p>
+                                <p>{parse(t("findings2"))}</p>
                             </div>
                             <div className="video_container">
                                 <img src={johnImgArr[8]} />
                             </div>
                             <div className="description_container">
                                 <p>
-                                    {t("findings3")}
+                                    {parse(t("findings3"))}
                                     <span className="italic">
-                                        {t("italic1")}
+                                        {parse(t("italic1"))}
                                     </span>
-                                    ,{t("findings4")}
+                                    ,{parse(t("findings4"))}
                                 </p>
                             </div>
                             <div className="video_container">
                                 <img src={johnImgArr[9]} />
                             </div>
                             <div className="description_container">
-                                <p>{t("findings5")}</p>
+                                <p>{parse(t("findings5"))}</p>
                             </div>
                             <div className="video_container embed-container">
                                 <iframe
@@ -1721,12 +1755,14 @@ const Index = () => {
                                 ></iframe>
                             </div>
                             <div className="description_container">
-                                <p>{t("findings6")}</p>
+                                <p>{parse(t("findings6"))}</p>
                             </div>
                             <div className="description_container">
-                                <p className="center">{t("findings7")}</p>
+                                <p className="center">
+                                    {parse(t("findings7"))}
+                                </p>
                                 <p style={{ textIndent: 0 }}>
-                                    {t("findings8")}
+                                    {parse(t("findings8"))}
                                 </p>
                             </div>
                             <div className="video_container embed-container">
@@ -1742,16 +1778,16 @@ const Index = () => {
                                 ></iframe>
                             </div>
                             <div className="description_container">
-                                <p>{t("findings9")}</p>
+                                <p>{parse(t("findings9"))}</p>
                             </div>
                             <div className="video_container">
                                 <img src={johnImgArr[10]} />
                             </div>
                             <div className="description_container title">
-                                <p>4 {t("patkay")}</p>
+                                <p>4 {parse(t("patkay"))}</p>
                             </div>
                             <div className="description_container">
-                                <p>{t("patkay0")}</p>
+                                <p>{parse(t("patkay0"))}</p>
                             </div>
                             <div className="video_container embed-container">
                                 <iframe
@@ -1769,7 +1805,10 @@ const Index = () => {
                                 <img src={johnImgArr[11]} />
                             </div>
                             <div className="description_container">
-                                <p>{t("patkay1")}</p>
+                                <p>{parse(t("patkay1"))}</p>
+                            </div>
+                            <div className="description_container">
+                                <p>{parse(t("patkay2"))}</p>
                             </div>
                             <div className="video_container">
                                 <img src={johnImgArr[12]} />
@@ -1784,31 +1823,35 @@ const Index = () => {
                                 <img src={johnImgArr[15]} />
                             </div>
                             <div className="description_container">
-                                <p>{t("patkay2")}</p>
-                                <br />
                                 <p className="center" style={{ textIndent: 0 }}>
-                                    {t("patkay3")}
+                                    {parse(t("patkay3"))}
+                                </p>
+                                <br />
+                                <p style={{ textIndent: 0 }}>
+                                    {parse(t("patkay4"))}
                                 </p>
                             </div>
                             <div className="video_container">
                                 <img src={johnImgArr[16]} />
                             </div>
                             <div className="description_container">
-                                <p>{t("patkay4")}</p>
+                                <p>{parse(t("patkay5"))}</p>
                             </div>
                             <div className="description_container title">
-                                <p>5 {t("shady")}</p>
+                                <p>5 {parse(t("shady"))}</p>
                             </div>
                             <div className="description_container">
-                                <p className="center">{t("shady0")}</p>
-                                <p style={{ textIndent: 0 }}>{t("shady1")}</p>
+                                <p className="center">{parse(t("shady0"))}</p>
+                                <p style={{ textIndent: 0 }}>
+                                    {parse(t("shady1"))}
+                                </p>
                             </div>
                             <div className="video_container">
                                 <img src={johnImgArr[17]} />
                             </div>
                             <div className="description_container">
-                                <p>{t("shady2")}</p>
-                                <p>{t("shady3")}</p>
+                                <p>{parse(t("shady2"))}</p>
+                                <p>{parse(t("shady3"))}</p>
                             </div>
                             <div className="video_container embed-container">
                                 <iframe
@@ -1823,13 +1866,13 @@ const Index = () => {
                                 ></iframe>
                             </div>
                             <div className="description_container">
-                                <p>{t("shady4")}</p>
+                                <p>{parse(t("shady4"))}</p>
                             </div>
                             <div className="video_container">
                                 <img src={johnImgArr[18]} />
                             </div>
                             <div className="description_container">
-                                <p>{t("shady5")}</p>
+                                <p>{parse(t("shady5"))}</p>
                             </div>
                             <div className="description_container">
                                 <p
@@ -1867,12 +1910,14 @@ const Index = () => {
                                 />
                             </div>
                             <div className="description_container">
-                                <p>{t("shady6")}</p>
+                                <p>{parse(t("shady6"))}</p>
                             </div>
                             <div className="description_container">
-                                <p className="center"> {t("shady7")}</p>
-                                <p style={{ textIndent: 0 }}>{t("shady8")}</p>
-                                <p>{t("shady9")}</p>
+                                <p className="center"> {parse(t("shady7"))}</p>
+                                <p style={{ textIndent: 0 }}>
+                                    {parse(t("shady8"))}
+                                </p>
+                                <p>{parse(t("shady9"))}</p>
                             </div>
                             <div className="video_container embed-container">
                                 <iframe
@@ -1887,11 +1932,13 @@ const Index = () => {
                                 ></iframe>
                             </div>
                             <div className="description_container title">
-                                <p>6 {t("waiting")}</p>
+                                <p>6 {parse(t("waiting"))}</p>
                             </div>
                             <div className="description_container">
-                                <p className="center">{t("waiting0")}</p>
-                                <p style={{ textIndent: 0 }}>{t("waiting1")}</p>
+                                <p className="center">{parse(t("waiting0"))}</p>
+                                <p style={{ textIndent: 0 }}>
+                                    {parse(t("waiting1"))}
+                                </p>
                             </div>
                             <div className="video_container embed-container">
                                 <iframe
@@ -1906,12 +1953,17 @@ const Index = () => {
                                 ></iframe>
                             </div>
                             <div className="description_container">
-                                <p className="center"> {t("waiting2")}</p>
-                                <p style={{ textIndent: 0 }}>{t("waiting3")}</p>
-                                <p>{t("waiting4")}</p>
-                                <p>{t("waiting5")}</p>
-                                <p>{t("waiting6")}</p>
-                                <p>{t("waiting7")}</p>
+                                <p className="center">
+                                    {" "}
+                                    {parse(t("waiting2"))}
+                                </p>
+                                <p style={{ textIndent: 0 }}>
+                                    {parse(t("waiting3"))}
+                                </p>
+                                <p>{parse(t("waiting4"))}</p>
+                                <p>{parse(t("waiting5"))}</p>
+                                <p>{parse(t("waiting6"))}</p>
+                                <p>{parse(t("waiting7"))}</p>
                             </div>
                             <div className="video_container embed-container">
                                 <iframe
@@ -1926,54 +1978,75 @@ const Index = () => {
                                 ></iframe>
                             </div>
                             <div className="description_container">
-                                <p>{t("waiting8")}</p>
+                                <p>{parse(t("waiting8"))}</p>
                             </div>
                             <div className="description_container title">
-                                <p>7 {t("badvibes")}</p>
+                                <p>7 {parse(t("badvibes"))}</p>
                             </div>
                             <div className="description_container">
-                                <p className="center">{t("badvibes0")}</p>
+                                <p className="center">
+                                    {parse(t("badvibes0"))}
+                                </p>
                                 <p style={{ textIndent: 0 }}>
-                                    {t("badvibes1")}
+                                    {parse(t("badvibes1"))}
                                 </p>
                             </div>
                             <div className="description_container">
-                                <p className="center">{t("badvibes2")}</p>
-                                <p style={{ textIndent: 0 }}>
-                                    {t("badvibes3")}
+                                <p className="center">
+                                    {parse(t("badvibes2"))}
                                 </p>
-                                <p>{t("badvibes4")}</p>
+                                <p style={{ textIndent: 0 }}>
+                                    {parse(t("badvibes3"))}
+                                </p>
+                                <br />
+                                <p style={{ textIndent: 0 }}>
+                                    {parse(t("badvibes4"))}
+                                </p>
                             </div>
                             <div className="description_container">
-                                <p className="center">{t("badvibes5")}</p>
-                                <p style={{ textIndent: 0 }}>
-                                    {t("badvibes6")}
+                                <p className="center">
+                                    {parse(t("badvibes5"))}
                                 </p>
-                            </div>
-                            {/* <div className="audio_player">
-                                <div className="player">
-                                    <img src={playBtn} />
-                                </div>
-                            </div> */}
-                            <div className="description_container">
-                                <p className="center">{t("badvibes7")}</p>
                                 <p style={{ textIndent: 0 }}>
-                                    {t("badvibes8")}
+                                    {parse(t("badvibes6"))}
+                                </p>
+                                <p>{parse(t("badvibes6-1"))}</p>
+                            </div>
+                            <div className="video_container embed-container">
+                                <iframe
+                                    src="https://player.vimeo.com/video/572105633?h=2050d62024&amp;title=0&amp;byline=0&amp;portrait=0&amp;controls=1&amp;sidedock=0&amp;loop=1&amp;muted=0&amp;"
+                                    frameBorder="0"
+                                    allow="autoplay;fullscreen;playsinline;"
+                                    allowfullscreen
+                                    playsinline
+                                    webkit-playsinline
+                                    webkitallowfullscreen
+                                    mozallowfullscreen
+                                ></iframe>
+                            </div>
+                            <div className="description_container">
+                                <p className="center">
+                                    {parse(t("badvibes7"))}
+                                </p>
+                                <p style={{ textIndent: 0 }}>
+                                    {parse(t("badvibes8"))}
                                 </p>
                             </div>
                             <div className="video_container">
                                 <img src={johnImgArr[19]} />
                             </div>
                             <div className="description_container">
-                                <p>{t("badvibes9")}</p>
+                                <p>{parse(t("badvibes9"))}</p>
                             </div>
                             <div className="description_container title">
-                                <p>8 {t("narratives")}</p>
+                                <p>8 {parse(t("narratives"))}</p>
                             </div>
                             <div className="description_container">
-                                <p className="center">{t("narratives0")}</p>
+                                <p className="center">
+                                    {parse(t("narratives0"))}
+                                </p>
                                 <p style={{ textIndent: 0 }}>
-                                    {t("narratives1")}
+                                    {parse(t("narratives1"))}
                                 </p>
                             </div>
                             <div className="video_container embed-container">
@@ -1989,18 +2062,20 @@ const Index = () => {
                                 ></iframe>
                             </div>
                             <div className="description_container">
-                                <p className="center">{t("narratives2")}</p>
+                                <p className="center">
+                                    {parse(t("narratives2"))}
+                                </p>
                                 <p style={{ textIndent: 0 }}>
-                                    {t("narratives3")}
+                                    {parse(t("narratives3"))}
                                 </p>
                             </div>
                             <div className="video_container">
                                 <img src={johnImgArr[20]} />
                             </div>
                             <div className="description_container">
-                                <p>{t("narratives4")}</p>
-                                <p>{t("narratives5")}</p>
-                                <p>{t("narratives6")}</p>
+                                <p>{parse(t("narratives4"))}</p>
+                                <p>{parse(t("narratives5"))}</p>
+                                <p>{parse(t("narratives6"))}</p>
                             </div>
                             <div className="video_container embed-container">
                                 <iframe
@@ -2015,9 +2090,11 @@ const Index = () => {
                                 ></iframe>
                             </div>
                             <div className="description_container">
-                                <p className="center">{t("plantandcookies")}</p>
+                                <p className="center">
+                                    {parse(t("plantandcookies"))}
+                                </p>
                                 <p style={{ textIndent: 0 }}>
-                                    {t("plantandcookies0")}
+                                    {parse(t("plantandcookies0"))}
                                 </p>
                             </div>
                             <div className="video_container">
@@ -2025,7 +2102,7 @@ const Index = () => {
                             </div>
 
                             <div className="description_container">
-                                <p>{t("plantandcookies1")}</p>
+                                <p>{parse(t("plantandcookies1"))}</p>
                             </div>
                             <div className="video_container embed-container">
                                 <iframe
@@ -2040,8 +2117,10 @@ const Index = () => {
                                 ></iframe>
                             </div>
                             <div className="description_container">
-                                <p>{t("plantandcookies2")}</p>
-                                <p>{t("plantandcookies3")}</p>
+                                <p>{parse(t("plantandcookies2"))}</p>
+                                <p style={{ textIndent: 0 }}>
+                                    {parse(t("plantandcookies3"))}
+                                </p>
                             </div>
                             {/* Artist Info */}
                             {/* Artist Info */}
@@ -2049,7 +2128,7 @@ const Index = () => {
                             {/* Artist Info */}
                             {/* Artist Info */}
                             <div className="artist_info_container">
-                                <div> {t("artist")}</div>
+                                <div> {parse(t("artist"))}</div>
                                 <div>
                                     <p className="exeption">
                                         {parse(t("artistInfo"))}
