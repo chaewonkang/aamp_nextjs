@@ -31,6 +31,21 @@ p {
     word-break: keep-all;
 }
 
+.bolder,
+.bolder_included span {
+    font-weight: 900;
+}
+
+.bolderKo {
+    font-weight: bold;
+}
+
+.bolder_included_two span,
+.bolder_included span:nth-of-type(2) {
+    font-weight: normal;
+    font-style: "Signifier Italic";
+}
+
 .sound_button {
     cursor: pointer;
 }
