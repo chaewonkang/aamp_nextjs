@@ -36,14 +36,26 @@ p {
     font-weight: 900;
 }
 
-.bolderKo {
+.bolder_included_two span,
+.exeption_mixed span,
+.bolder_included span {
+    font-weight: normal;
+    font-family: "Signifier Italic";
+}
+
+.bolderKo,
+.exeption_mixed span:nth-of-type(2) {
     font-weight: bold;
 }
 
-.bolder_included_two span,
-.bolder_included span:nth-of-type(2) {
-    font-weight: normal;
-    font-style: "Signifier Italic";
+.exeption_mixed span:nth-of-type(2) {
+    font-family: "Signifier Regular";
+}
+
+.exeption span {
+    font-family: "Signifier Italic";
+    width: fit-content !important;
+    display: inline !important;
 }
 
 .sound_button {
@@ -130,12 +142,6 @@ p {
 
 .italic {
     font-family: "Signifier Italic";
-}
-
-.exeption span {
-    font-family: "Signifier Italic";
-    width: fit-content !important;
-    display: inline !important;
 }
 
 .center {

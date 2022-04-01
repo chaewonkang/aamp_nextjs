@@ -839,7 +839,10 @@ const Index = () => {
                                     <p className="center bolderKo">
                                         {parse(t("narratives0"))}
                                     </p>
-                                    <p style={{ textIndent: 0 }}>
+                                    <p
+                                        className="exeption"
+                                        style={{ textIndent: 0 }}
+                                    >
                                         {parse(t("narratives1"))}
                                     </p>
                                 </div>
@@ -869,7 +872,9 @@ const Index = () => {
                                 <div className="description_container">
                                     <p>{parse(t("narratives4"))}</p>
                                     <p>{parse(t("narratives5"))}</p>
-                                    <p>{parse(t("narratives6"))}</p>
+                                    <p className="exeption">
+                                        {parse(t("narratives6"))}
+                                    </p>
                                 </div>
                                 <div className="video_container embed-container">
                                     <iframe
@@ -1713,7 +1718,7 @@ const Index = () => {
                                 <p>
                                     <span className="bolder">
                                         {parse(t("italic0"))}
-                                    </span>
+                                    </span>{" "}
                                     {parse(t("denvicky0"))}
                                 </p>
                                 <p>{parse(t("denvicky1"))}</p>
@@ -2105,7 +2110,7 @@ const Index = () => {
                                     {parse(t("narratives0"))}
                                 </p>
                                 <p
-                                    className="bolder_included"
+                                    className="exeption_mixed"
                                     style={{ textIndent: 0 }}
                                 >
                                     {parse(t("narratives1"))}
