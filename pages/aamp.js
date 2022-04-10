@@ -388,6 +388,8 @@ const Index = () => {
                                         src="/static/images/aamp.png"
                                         alt="aamp_thumbnail"
                                     />
+                                                                     <p className="subtext">The Rocks in the forest of Bukhansan, Gugi-dong, Seoul, 2021</p>
+
                                 </div>
                                 <div className="description_container">
                                     <p style={{ textAlign: "right" }}>
@@ -1171,7 +1173,9 @@ const Index = () => {
                                     src="/static/images/aamp.png"
                                     alt="aamp_thumbnail"
                                 />
+                                 <p className="subtext">The Rocks in the forest of Bukhansan, Gugi-dong, Seoul, 2021</p>
                             </div>
+                         
                             <div className="description_container">
                                 <p style={{ textAlign: "right" }}>
                                     {parse(t("text1"))}
