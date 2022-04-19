@@ -695,6 +695,11 @@ p {
     margin-top: 20px;
 }
 
+.video_container p.subtext {
+    font-size: 20px;
+    margin-top: 5px;
+}
+
 .content_container .artist_info_container {
     display: flex;
     flex-direction: row;
@@ -1006,6 +1011,12 @@ p {
     .content_container .description_container p.subtext {
         font-size: 16px;
         line-height: normal;
+    }
+
+    .video_container p.subtext {
+        font-size: 16px;
+        margin-top: 3px;
+        line-height: normal !important;
     }
 
     .ko_type .description_container p.subtext {
